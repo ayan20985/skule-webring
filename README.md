@@ -127,15 +127,7 @@ You can create a custom badge for your website to display in the members table. 
    - For badges included in a PR: use a relative path (e.g., `badges/your-custom-badge.svg`)
 
 ### Badge Examples
-
-Here are some example badge styles you might consider:
-
-- **Simple Text**: Your website name in a distinctive font with a simple border
-- **Logo Badge**: Include your personal logo or icon alongside your website name
-- **Animated GIF**: A subtle animation can make your badge stand out (keep file size small)
-- **Pixel Art**: Retro-style pixel art badges are perfect for the webring aesthetic
-
-The webring provides a default badge, but creating your own is encouraged to showcase your personal style.
+[Here](https://cyber.dabamos.de/88x31/index2.html) are some example badge styles you might consider.
 
 ### HTML for Linking Your Badge
 
