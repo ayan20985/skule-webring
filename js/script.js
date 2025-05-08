@@ -112,6 +112,11 @@ function initWebring() {
         handleNavigation(currentHash);
     }
     
+    // Add an event listener for hash changes to handle navigation
+    window.addEventListener('hashchange', () => {
+        handleNavigation(window.location.hash);
+    });
+    
     // Set up random link functionality
     randomLink.addEventListener('click', (e) => {
         e.preventDefault();
@@ -373,15 +378,27 @@ function formatGradYear(grad) {
 function handleNavigation(hashString) {
     // Extract website URL and navigation direction from hash
     // Expected format: #https://example.com?nav=prev or #https://example.com?nav=next
+    if (!hashString || hashString.length <= 1) return;
+    
+    console.log('Handling navigation for hash:', hashString);
+    
     const [websiteUrl, navQuery] = hashString.substring(1).split('?');
     
     if (!websiteUrl) return;
     
     const navDirection = navQuery ? navQuery.split('=')[1] : null;
+    console.log('Navigation direction:', navDirection);
+    console.log('Website URL:', websiteUrl);
     
     if (navDirection === 'prev' || navDirection === 'next') {
         // Find the current website in the members array
-        const currentIndex = members.findIndex(member => member.website === websiteUrl);
+        const currentIndex = members.findIndex(member => 
+            member.website === websiteUrl || 
+            member.website === 'https://' + websiteUrl || 
+            member.website === 'http://' + websiteUrl
+        );
+        
+        console.log('Current index in members array:', currentIndex);
         
         if (currentIndex !== -1) {
             let targetIndex;
@@ -394,11 +411,16 @@ function handleNavigation(hashString) {
                 targetIndex = (currentIndex + 1) % members.length;
             }
             
+            console.log('Target index:', targetIndex);
+            console.log('Navigating to:', members[targetIndex].website);
+            
             // Navigate to the target website
             window.location.href = members[targetIndex].website;
+        } else {
+            console.log('Website not found in members array');
         }
     } else {
         // Just a hash without navigation, possibly for embedding the webring
-        // No action needed
+        console.log('No navigation direction specified');
     }
 } 
