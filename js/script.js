@@ -390,10 +390,18 @@ function handleNavigation(hashString) {
     console.log('Navigation direction:', navDirection);
     console.log('Website URL:', websiteUrl);
     
-    // Special case: If navigating from the webring homepage, go to the first member
+    // Special case: If navigating from the webring homepage
     if (websiteUrl === 'webring.ayanali.net' || websiteUrl === 'https://webring.ayanali.net') {
-        console.log('Navigating from webring homepage, going to first member');
-        window.location.href = members[0].website;
+        console.log('Navigating from webring homepage');
+        if (navDirection === 'next') {
+            // Go to last member when clicking next
+            console.log('Going to last member');
+            window.location.href = members[members.length - 1].website;
+        } else {
+            // Go to first member when clicking prev
+            console.log('Going to first member');
+            window.location.href = members[0].website;
+        }
         return;
     }
     
