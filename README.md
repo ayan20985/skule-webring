@@ -1,4 +1,4 @@
-# The Unnamed Webring
+# SKULE Test Website Phone Book
 
 A webring for University of Toronto Engineering students and the broader UofT community. This webring connects personal websites, portfolios, and blogs of UofT students, faculty, and alumni.
 
