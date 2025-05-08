@@ -105,8 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 let canvas, gl, program;
 let quadBuffer;
 let startTime;
-let mousePosition = { x: 0, y: 0 };
-let mouseActive = false; // Always false now that we've removed mouse effects
 window.pixelArtParams = {
     pixelSize: 4,
     waveSpeed: 0.02,
@@ -132,9 +130,6 @@ uniform float time;
 uniform float waveSpeed;
 uniform vec3 waveColor;
 uniform float pixelSize;
-uniform vec2 mousePos;
-uniform float mouseRadius;
-uniform bool mouseActive;
 uniform float edgeFade;
 
 // Classic Perlin noise implementation
@@ -293,42 +288,6 @@ void main() {
     // Calculate pattern value
     float f = pattern(uv) * edgeFactor; // Apply edge factor
     
-    // Handle mouse interaction with improved fall-off effect
-    if (mouseActive) {
-        float dist = length(uv - mousePos);
-        
-        // Create an extended radius for the fall-off effect
-        float extendedRadius = mouseRadius * 1.5;
-        
-        if (dist < extendedRadius) {
-            // Inner core effect (stronger)
-            float innerEffect = 0.0;
-            if (dist < mouseRadius) {
-                // Create a cubic curve for more natural fall-off within the core radius
-                float t = dist / mouseRadius;
-                innerEffect = 1.0 - (t * t * (3.0 - 2.0 * t));
-                f -= innerEffect * 0.8;
-            }
-            
-            // Outer fall-off effect (weaker, gradual transition)
-            if (dist >= mouseRadius * 0.7 && dist < extendedRadius) {
-                // Normalized distance in the fall-off region
-                float fallOffT = (dist - mouseRadius * 0.7) / (extendedRadius - mouseRadius * 0.7);
-                
-                // Create smooth transition curve for fall-off
-                float fallOffEffect = exp(-fallOffT * 3.0) * 0.6; // Exponential fall-off
-                
-                // Ring highlight effect at the boundary
-                float ringEffect = smoothstep(mouseRadius * 0.8, mouseRadius, dist) * 
-                                  smoothstep(mouseRadius, mouseRadius * 0.8, dist);
-                
-                // Combine effects - apply fall-off and add ring
-                f -= fallOffEffect * (1.0 - fallOffT) * 0.6;
-                f += ringEffect * 0.3 * (1.0 - fallOffT);
-            }
-        }
-    }
-    
     // Apply dithering for retro look
     vec2 ditherCoord = floor(gl_FragCoord.xy / pixelSize);
     float dithered = dither8x8(ditherCoord, f);
@@ -367,9 +326,6 @@ function createProgram(gl, vertexShader, fragmentShader) {
     
     return program;
 }
-
-// ========== Mouse Handling ==========
-// Mouse handling functions removed - no longer needed
 
 // Initialize Pixel Art Background
 function initPixelArtBackground() {
@@ -420,8 +376,6 @@ function initPixelArtBackground() {
     window.addEventListener('resize', resizePixelArtBackground);
     resizePixelArtBackground();
     
-    // Mouse event listeners removed
-    
     // Start timer for animation
     startTime = Date.now();
     
@@ -454,8 +408,6 @@ function animatePixelArtBackground() {
         window.pixelArtParams.waveColor[2]);
     gl.uniform1f(gl.getUniformLocation(program, 'pixelSize'), window.pixelArtParams.pixelSize);
     gl.uniform1f(gl.getUniformLocation(program, 'edgeFade'), window.pixelArtParams.edgeFade);
-    
-    // Mouse parameters no longer passed to shader
     
     // Draw the quad
     gl.drawArrays(gl.TRIANGLES, 0, 6);
