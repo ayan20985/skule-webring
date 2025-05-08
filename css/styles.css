@@ -1,6 +1,7 @@
 :root {
     /* Light theme (default) */
     --bg-color: #ffffff;
+    --bg-color-rgb: 255, 255, 255;
     --text-color: #333333;
     --link-color: #3a7b6d;     /* Muted teal instead of blue */
     --link-hover-color: #2a5b4d; /* Darker teal for hover */
@@ -13,6 +14,7 @@
 [data-theme="dark"] {
     /* Dark theme */
     --bg-color: #1a1a1a;
+    --bg-color-rgb: 26, 26, 26;
     --text-color: #e0e0e0;
     --link-color: #8ba89b;     /* Muted sage green instead of blue */
     --link-hover-color: #a8c8bb; /* Lighter sage for hover */
@@ -37,8 +39,32 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.15; /* Subtle background */
-    pointer-events: none; /* Allow clicking through the canvas */
+    opacity: 0.35; /* Slightly reduced opacity for light mode */
+    pointer-events: auto; /* Allow interacting with the canvas */
+}
+
+[data-theme="dark"] #background-canvas {
+    opacity: 0.6; /* Increased opacity for dark mode */
+}
+
+/* Apply a mask to fade the background in the center where content is */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    /* Inverted radial gradient - transparent at edges, solid in center */
+    background: radial-gradient(
+        circle at center,
+        var(--bg-color) 0%,
+        rgba(var(--bg-color-rgb), 0.85) 40%,
+        rgba(var(--bg-color-rgb), 0.5) 70%,
+        rgba(var(--bg-color-rgb), 0) 100%
+    );
 }
 
 html {
