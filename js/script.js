@@ -8,17 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to update icon based on theme
     function updateIcon(theme) {
-        // Update the example widget in the page using its ID
+        // Add timestamp to prevent caching
+        const timestamp = new Date().getTime();
+        
+        // Set the appropriate icon based on theme
+        const iconPath = theme === 'dark' ? 'img/icon-dark.svg' : 'img/icon.svg';
+        
+        // Update the example widget in the page
         const widgetIconImg = document.getElementById('widget-demo-icon');
         if (widgetIconImg) {
-            // Add timestamp to prevent caching
-            const timestamp = new Date().getTime();
-            
-            // Set the appropriate icon based on theme
-            const iconPath = theme === 'dark' ? 'img/icon-dark.svg' : 'img/icon.svg';
             widgetIconImg.src = `${iconPath}?t=${timestamp}`;
-            console.log(`Theme changed to ${theme}, icon set to: ${widgetIconImg.src}`);
         }
+        
+        // Update the homepage navigation widget
+        const homepageWidgetIcon = document.getElementById('homepage-widget-icon');
+        if (homepageWidgetIcon) {
+            homepageWidgetIcon.src = `${iconPath}?t=${timestamp}`;
+            console.log(`Theme changed to ${theme}, icons updated to: ${iconPath}`);
+        }
+        
+        // Update all default badges
+        const defaultBadgePath = theme === 'dark' ? 'badges/default-badge-dark.svg' : 'badges/default-badge.svg';
+        const defaultBadges = document.querySelectorAll('.member-badge[src^="badges/default-badge"]');
+        defaultBadges.forEach(badge => {
+            badge.src = `${defaultBadgePath}?t=${timestamp}`;
+        });
     }
     
     // Apply theme based on saved preference or system preference
@@ -36,6 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', currentTheme);
         updateIcon(currentTheme);
     });
+    
+    // Handle report broken link button
+    const reportLinkBtn = document.getElementById('report-link');
+    if (reportLinkBtn) {
+        reportLinkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const issueUrl = "https://github.com/ayan20985/webring/issues/new";
+            const issueTitle = encodeURIComponent("Broken Link Report");
+            const issueBody = encodeURIComponent("## Broken Link Report\n\nPlease fill out the information below:\n\n* **Website URL**: [Enter the broken link here]\n* **Member Name**: [Enter member name if known]\n* **Issue Description**: [Describe the issue (e.g., site not loading, domain expired)]\n\nThank you for helping maintain the webring!");
+            window.open(`${issueUrl}?title=${issueTitle}&body=${issueBody}`, '_blank');
+        });
+    }
     
     // Initialize the webring
     initWebring();
@@ -55,30 +81,9 @@ function initWebring() {
     // Update the member count
     memberCountElement.textContent = members.length;
     
-    // Update the last updated date (this would typically come from API or backend)
-    // For demo purposes, we'll use a static date or the most recent member's addition date
-    if (members.length > 0) {
-        // Sort by year field to find the most recent
-        const sortedMembers = [...members].sort((a, b) => {
-            const yearA = a.year ? a.year.split('-')[1] : '0';
-            const yearB = b.year ? b.year.split('-')[1] : '0';
-            const monthA = a.year ? a.year.split('-')[0] : '0';
-            const monthB = b.year ? b.year.split('-')[0] : '0';
-            
-            // Compare years first, then months
-            if (yearA !== yearB) {
-                return yearB - yearA; // Most recent year first
-            }
-            return monthB - monthA; // Most recent month first
-        });
-        
-        const mostRecent = sortedMembers[0];
-        if (mostRecent.year) {
-            const [month, year] = mostRecent.year.split('-');
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            const formattedDate = `${months[parseInt(month) - 1]} 20${year}`;
-            lastUpdatedElement.textContent = formattedDate;
-        }
+    // Update the last updated date from the master variable in webring-data.js
+    if (lastUpdatedElement) {
+        lastUpdatedElement.textContent = lastUpdated;
     }
     
     // If there's a URL hash with a navigation parameter, handle the navigation
@@ -117,9 +122,10 @@ function initWebring() {
         } else {
             filteredMembers = members.filter(member => {
                 return (
-                    member.name.toLowerCase().includes(searchTerm) ||
-                    member.website.toLowerCase().includes(searchTerm) ||
-                    (member.faculty && member.faculty.toLowerCase().includes(searchTerm)) ||
+                    (member.name && member.name.toLowerCase().includes(searchTerm)) ||
+                    (member.website && member.website.toLowerCase().includes(searchTerm)) ||
+                    (member.program && member.program.toLowerCase().includes(searchTerm)) ||
+                    (member.faculty && member.faculty.toLowerCase().includes(searchTerm)) || // For backward compatibility
                     (member.designation && member.designation.toLowerCase().includes(searchTerm))
                 );
             });
@@ -148,25 +154,46 @@ function renderMembersList(container, membersArray, currentPage, membersPerPage)
     // If no members to display
     if (currentMembers.length === 0) {
         const row = document.createElement('tr');
-        row.innerHTML = `<td colspan="6">No matching members found.</td>`;
+        row.innerHTML = `<td colspan="7">No matching members found.</td>`;
         container.appendChild(row);
         return;
     }
+    
+    // Determine current theme for default badge
+    const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const defaultBadgePath = currentTheme === 'dark' ? 'badges/default-badge-dark.svg' : 'badges/default-badge.svg';
     
     // Add each member row
     currentMembers.forEach(member => {
         const row = document.createElement('tr');
         
         // Handle backward compatibility with old member format
-        const faculty = member.faculty || member.program || '';
+        const program = member.program || member.faculty || '';
         const designation = member.designation || '';
         const year = member.year || '';
-        const grad = member.grad || '';
+        const grad = formatGradYear(member.grad) || '';
+        
+        // Get badge HTML and ensure it's wrapped correctly
+        let badgeHTML;
+        if (member.badge) {
+            // Use member's badge if available
+            badgeHTML = `
+                <a href="${member.website}" target="_blank" rel="noopener noreferrer">
+                    <img src="${member.badge}" alt="${member.name} Badge" class="member-badge" />
+                </a>`;
+        } else {
+            // Use default badge as fallback
+            badgeHTML = `
+                <a href="${member.website}" target="_blank" rel="noopener noreferrer">
+                    <img src="${defaultBadgePath}" alt="Default Badge" class="member-badge" />
+                </a>`;
+        }
         
         row.innerHTML = `
-            <td>${member.name}</td>
+            <td>${badgeHTML}</td>
             <td><a href="${member.website}" target="_blank" rel="noopener noreferrer">${formatUrl(member.website)}</a></td>
-            <td>${faculty}</td>
+            <td>${member.name}</td>
+            <td>${program}</td>
             <td>${designation}</td>
             <td>${year}</td>
             <td>${grad}</td>
@@ -271,8 +298,9 @@ function renderPagination(container, totalItems, currentPage, itemsPerPage) {
         if (searchTerm !== '') {
             filteredMembers = members.filter(member => {
                 return (
-                    member.name.toLowerCase().includes(searchTerm) ||
-                    member.website.toLowerCase().includes(searchTerm) ||
+                    (member.name && member.name.toLowerCase().includes(searchTerm)) ||
+                    (member.website && member.website.toLowerCase().includes(searchTerm)) ||
+                    (member.program && member.program.toLowerCase().includes(searchTerm)) ||
                     (member.faculty && member.faculty.toLowerCase().includes(searchTerm)) ||
                     (member.designation && member.designation.toLowerCase().includes(searchTerm))
                 );
@@ -287,6 +315,27 @@ function renderPagination(container, totalItems, currentPage, itemsPerPage) {
 // Format URL for display (remove https:// and trailing slashes)
 function formatUrl(url) {
     return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+}
+
+// Format graduation year to support both standard and UofT formats
+function formatGradYear(grad) {
+    if (!grad) return 'N/A';
+    
+    // If it's already in UofT format (e.g., 2T5)
+    if (/^\d{1}T\d{1}$/i.test(grad)) {
+        return grad.toUpperCase();
+    }
+    
+    // If it's a standard year (e.g., 2025)
+    if (/^20\d{2}$/.test(grad)) {
+        const year = grad.substring(2); // Get the last two digits
+        const firstDigit = year.charAt(0);
+        const lastDigit = year.charAt(1);
+        return `${firstDigit}T${lastDigit}`;
+    }
+    
+    // If it's neither format, just return as is
+    return grad;
 }
 
 // Handle webring navigation (prev/next)

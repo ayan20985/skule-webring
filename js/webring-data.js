@@ -1,152 +1,47 @@
 // This file contains the data for all members of the webring
-// To add yourself to the webring, please add your entry at the BOTTOM of this array
+
+// To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
+
+const lastUpdated = "May 8th 2025"; // update this value when new members are added
 
 const members = [
     {
         name: "John Doe",
         website: "https://johndoe.example.com",
-        faculty: "Engineering",
+        program: "Engineering",
         designation: "Undergrad",
         year: "1-25",
-        grad: "2T5"
+        grad: "2T5",
+        badge: "https://webring.ayanali.net/badges/default-badge.svg"
     },
     {
         name: "Jane Smith",
         website: "https://janesmith.example.com",
-        faculty: "Arts & Science",
+        program: "Arts & Science",
         designation: "Graduate",
         year: "1-25",
-        grad: "2T3"
+        grad: "2T3",
+        badge: "https://webring.ayanali.net/badges/default-badge.svg"
     },
     {
         name: "Alex Johnson",
         website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
+        program: "Computer Science",
         designation: "Faculty",
         year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "John Doe",
-        website: "https://johndoe.example.com",
-        faculty: "Engineering",
-        designation: "Undergrad",
-        year: "1-25",
-        grad: "2T5"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-        {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
-    },
-    {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        faculty: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A"
+        grad: "N/A",
+        badge: "https://webring.ayanali.net/badges/default-badge.svg"
     }
 
-    // Add your entry BELOW this line in the following format:
+    // Add your entry below this line in the following format:
     // {
     //     "name": "Your Name",
     //     "website": "https://your-website.com",
-    //     "faculty": "Your Faculty (e.g., Engineering, Arts & Science, etc.)",
+    //     "program": "Your Program (e.g., ECE, EngSci, CS, Maths, etc.)",
     //     "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
     //     "year": "1-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
-    //     "grad": "2T5"    // Expected graduation year in UofT format (e.g., 2T5, 2T8)
+    //     "grad": "2T5",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
+    //     "badge": "https://your-website.com/badge.png"  // Optional: URL to your custom website badge
     // }
 ]; 
