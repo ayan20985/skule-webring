@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoe Winters | Art Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        :root {
+            --primary: #3a7b6d;
+            --secondary: #f6e1d3;
+            --text: #333;
+            --background: #faf7f2;
+            --card: #ffffff;
+        }
+        
+        /* Dark mode colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #8ba89b;
+                --secondary: #4a3e37;
+                --text: #e0e0e0;
+                --background: #1a1a1a;
+                --card: #2a2a2a;
+            }
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .gallery-item {
+            background-color: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-img span {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .gallery-text {
+            padding: 20px;
+        }
+        
+        .gallery-text h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .bio {
+            background-color: var(--card);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 50px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .bio h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-top: 1px solid var(--secondary);
+        }
+        
+        .webring-widget {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--card);
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid var(--secondary);
+            max-width: fit-content;
+            margin: 2rem auto;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .webring-widget a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+        }
+        
+        .webring-widget a:hover {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Zoe Winters</h1>
+            <p>Artist • Illustrator • UofT Alumni</p>
+        </header>
+
+        <div class="bio">
+            <h2>About the Artist</h2>
+            <p>Welcome to my portfolio! I'm a Toronto-based artist and University of Toronto Fine Arts graduate (2T0). My work explores themes of urban landscapes, nature, and the intersection between digital and traditional mediums.</p>
+            <p>This is a simple placeholder page created for The Unnamed Webring demonstration.</p>
+        </div>
+
+        <h2 style="font-family: 'Playfair Display', serif; text-align: center; margin: 40px 0;">Featured Works</h2>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <span>Urban Reflection Series</span>
+                </div>
+                <div class="gallery-text">
+                    <h3>City Lights</h3>
+                    <p>Mixed media on canvas, 24x36"</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <span>Digital Composition</span>
+                </div>
+                <div class="gallery-text">
+                    <h3>Fragmented Memory</h3>
+                    <p>Digital illustration, 2024</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <span>Nature Study</span>
+                </div>
+                <div class="gallery-text">
+                    <h3>Autumn Whispers</h3>
+                    <p>Watercolor on paper, 18x24"</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h2 style="font-family: 'Playfair Display', serif;">The Unnamed Webring</h2>
+            <p>I'm a proud member of The Unnamed Webring, connecting UofT students, faculty, and alumni.</p>
+            
+            <div class="webring-widget">
+                <a href="https://webring.ayanali.net/#https://zoewinters.art?nav=prev">←</a>
+                <a href="https://webring.ayanali.net/#https://zoewinters.art" target="_blank">
+                    <img src="https://webring.ayanali.net/img/icon.svg" alt="The Unnamed Webring" style="width: 32px; height: 32px;" id="widget-icon"/>
+                </a>
+                <a href="https://webring.ayanali.net/#https://zoewinters.art?nav=next">→</a>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 0.9rem;">© 2025 Zoe Winters. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple dark mode detection to switch icon
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.getElementById('widget-icon').src = 'https://webring.ayanali.net/img/icon-dark.svg';
+        }
+    </script>
+</body>
+</html> 

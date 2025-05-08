@@ -1,7 +1,7 @@
-// This file contains the data for all members of the webring
-// To add yourself to the webring, please add your entry at the BOTTOM of this array
-// and submit a pull request.
+const fs = require('fs');
+const path = require('path');
 
+// Members data directly included
 const members = [
     {
         name: "Sophia Lin",
@@ -187,14 +187,36 @@ const members = [
         year: "1-25",
         grad: "2T4"
     }
+];
 
-    // Add your entry BELOW this line in the following format:
-    // {
-    //     "name": "Your Name",
-    //     "website": "https://your-website.com",
-    //     "faculty": "Your Faculty (e.g., Engineering, Arts & Science, etc.)",
-    //     "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
-    //     "year": "1-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
-    //     "grad": "2T5"    // Expected graduation year in UofT format (e.g., 2T5, 2T8)
-    // }
-]; 
+// Read template HTML
+const templatePath = path.join(__dirname, 'template.html');
+const template = fs.readFileSync(templatePath, 'utf8');
+
+// Create directory for each member and generate their HTML
+members.forEach(member => {
+    // Extract domain for folder name (removing https:// and trailing slashes)
+    const domain = member.website.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    const folderName = domain.replace(/\./g, '-');
+    const folderPath = path.join(__dirname, folderName);
+    
+    // Create folder
+    if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+    }
+    
+    // Replace placeholders in template
+    let memberHTML = template
+        .replace(/{{NAME}}/g, member.name)
+        .replace(/{{FACULTY}}/g, member.faculty)
+        .replace(/{{DESIGNATION}}/g, member.designation)
+        .replace(/{{GRAD}}/g, member.grad)
+        .replace(/{{WEBSITE}}/g, member.website);
+    
+    // Write index.html file
+    fs.writeFileSync(path.join(folderPath, 'index.html'), memberHTML);
+    
+    console.log(`Created placeholder site for ${member.name} at ${folderPath}`);
+});
+
+console.log('All placeholder sites have been generated!'); 

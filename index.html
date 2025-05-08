@@ -11,7 +11,6 @@
     <meta name="description" content="A webring for University of Toronto Engineering students and the broader UofT community.">
 </head>
 <body>
-    <canvas id="background-canvas"></canvas>
     <header>
         <div class="theme-toggle">
             <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
@@ -23,6 +22,19 @@
     </header>
 
     <main>
+        <!-- Webring Widget for Navigation -->
+        <section class="webring-nav" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+            <div class="widget-container">
+                <a href="https://webring.ayanali.net/#https://webring.ayanali.net?nav=prev">←</a>
+                <a href="https://webring.ayanali.net/#https://webring.ayanali.net" target="_blank">
+                    <div class="widget-icon">
+                        <img src="img/icon.svg" alt="The Unnamed Webring" width="32" height="32" id="homepage-widget-icon"/>
+                    </div>
+                </a>
+                <a href="https://webring.ayanali.net/#https://webring.ayanali.net?nav=next">→</a>
+            </div>
+        </section>
+        
         <section class="about">
             <p>
                 This webring is an attempt to inspire students, faculty, and alumni of UofT to build their own websites and share traffic amongst each other.
@@ -32,7 +44,7 @@
             <div class="actions">
                 <a href="#members">Browse Members</a>
                 <a href="#join">Join the Ring</a>
-                <a href="https://github.com/ayan20985/webring" target="_blank">GitHub</a>
+                <a href="https://github.com/your-username/webring" target="_blank">GitHub</a>
                 <a href="#random" id="random-link">Random</a>
             </div>
         </section>
@@ -101,14 +113,14 @@
             <h3>Widget template</h3>
             <div class="widget-example">
                 <div class="widget-container">
-                    <a href="https://webring.ayanali.net/#your-site-here?nav=prev">←</a>
-                    <a href="https://webring.ayanali.net/#your-site-here" target="_blank">
+                    <a href="https://webring.ayanali.net/#https://sophialin.ca?nav=prev">←</a>
+                    <a href="https://webring.ayanali.net/#https://sophialin.ca" target="_blank">
                         <div class="widget-icon">
                             <!-- Set default icon, JavaScript will update based on theme -->
                             <img src="img/icon.svg" alt="The Unnamed Webring" width="32" height="32" id="widget-demo-icon"/>
                         </div>
                     </a>
-                    <a href="https://webring.ayanali.net/#your-site-here?nav=next">→</a>
+                    <a href="https://webring.ayanali.net/#https://sophialin.ca?nav=next">→</a>
                 </div>
             </div>
             
@@ -116,13 +128,13 @@
             
             <h4>HTML:</h4>
             <pre><code>&lt;div style="display: flex; align-items: center; gap: 15px; background-color: #f5f5f5; padding: 15px 25px; border-radius: 8px; border: 1px solid #ddd;"&gt;
-    &lt;a href="https://webring.ayanali.net/#your-site-here?nav=prev" style="color: #333; text-decoration: none; font-size: 1.5rem;"&gt;←&lt;/a&gt;
-    &lt;a href="https://webring.ayanali.net/#your-site-here" target="_blank"&gt;
+    &lt;a href="https://webring.ayanali.net/#https://your-website.com?nav=prev" style="color: #333; text-decoration: none; font-size: 1.5rem;"&gt;←&lt;/a&gt;
+    &lt;a href="https://webring.ayanali.net/#https://your-website.com" target="_blank"&gt;
         &lt;img src="https://webring.ayanali.net/img/icon.svg" alt="The Unnamed Webring" style="width: 32px; height: 32px;"/&gt;
     &lt;/a&gt;
-    &lt;a href="https://webring.ayanali.net/#your-site-here?nav=next" style="color: #333; text-decoration: none; font-size: 1.5rem;"&gt;→&lt;/a&gt;
+    &lt;a href="https://webring.ayanali.net/#https://your-website.com?nav=next" style="color: #333; text-decoration: none; font-size: 1.5rem;"&gt;→&lt;/a&gt;
 &lt;/div&gt;
-&lt;!-- Replace 'your-site-here' with your actual site URL. Use icon-dark.svg for dark-themed sites --&gt;</code></pre>
+&lt;!-- Replace 'your-website.com' with your actual website URL. Use icon-dark.svg for dark-themed sites --&gt;</code></pre>
             
             <h4>JSX:</h4>
             <pre><code>&lt;div style={{ 
@@ -134,13 +146,13 @@
   borderRadius: '8px',
   border: '1px solid #ddd'
 }}&gt;
-    &lt;a href='https://webring.ayanali.net/#your-site-here?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}&gt;←&lt;/a&gt;
-    &lt;a href='https://webring.ayanali.net/#your-site-here' target='_blank'&gt;
+    &lt;a href='https://webring.ayanali.net/#https://your-website.com?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}&gt;←&lt;/a&gt;
+    &lt;a href='https://webring.ayanali.net/#https://your-website.com' target='_blank'&gt;
         &lt;img src='https://webring.ayanali.net/img/icon.svg' alt='The Unnamed Webring' style={{ width: '32px', height: '32px' }}/&gt;
     &lt;/a&gt;
-    &lt;a href='https://webring.ayanali.net/#your-site-here?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}&gt;→&lt;/a&gt;
+    &lt;a href='https://webring.ayanali.net/#https://your-website.com?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}&gt;→&lt;/a&gt;
 &lt;/div&gt;
-// Replace 'your-site-here' with your actual site URL. Use icon-dark.svg for dark-themed sites</code></pre>
+// Replace 'your-website.com' with your actual website URL. Use icon-dark.svg for dark-themed sites</code></pre>
         </section>
 
         <section id="faq">
@@ -153,7 +165,7 @@
                 <dd>Absolutely! The webring welcomes websites about any topic.</dd>
                 
                 <dt>How do I report issues?</dt>
-                <dd>Please open an issue on <a href="https://github.com/your-username/webring/issues" target="_blank">our GitHub repository</a>.</dd>
+                <dd>Please open an issue on <a href="https://github.com/ayan20985/webring/issues" target="_blank">our GitHub repository</a>.</dd>
             </dl>
         </section>
     </main>

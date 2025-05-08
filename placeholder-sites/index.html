@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unnamed Webring - Placeholder Sites</title>
+    <style>
+        :root {
+            --bg-color: #f9f9fa;
+            --text-color: #2a2a2a;
+            --primary-color: #3a7b6d;
+            --secondary-color: #2a5b4d;
+            --accent-color: #f8f0e6;
+            --card-bg: #ffffff;
+            --border-color: #e1e1e1;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --primary-color: #8ba89b;
+                --secondary-color: #a8c8bb;
+                --accent-color: #2a2a2a;
+                --card-bg: #252525;
+                --border-color: #444444;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .explanation {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .member-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-info {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .webring-icon {
+            width: 32px;
+            height: 32px;
+            margin: 1rem auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Unnamed Webring - Placeholder Sites</h1>
+            <p>A collection of placeholder websites for UofT Webring members</p>
+        </header>
+
+        <div class="explanation">
+            <h2>What is this?</h2>
+            <p>This collection contains placeholder websites for members of "The Unnamed Webring" - a webring connecting University of Toronto students, faculty, and alumni websites.</p>
+            <p>Each of these sites is a simple demonstration page that includes the webring navigation widget, allowing you to test the webring's navigation functionality.</p>
+            <p>In a real deployment, these would be actual personal websites of UofT community members. For this demonstration, we've created placeholder pages with various designs to showcase how the webring connects diverse sites.</p>
+            <p><strong>Key Feature:</strong> Each site includes the webring widget at the bottom, which allows you to navigate to the previous or next member site in the ring.</p>
+        </div>
+
+        <h2>Browse Member Sites</h2>
+        <p>Click on any site to visit and test the webring navigation:</p>
+
+        <div class="members-grid">
+            <div class="member-card">
+                <h3>Sophia Lin</h3>
+                <div class="member-info">Engineering | Undergrad | 2T6</div>
+                <a href="sophialin-ca.html" target="_blank">Visit Site →</a>
+            </div>
+            
+            <div class="member-card">
+                <h3>Michael Rodriguez</h3>
+                <div class="member-info">Computer Science | Graduate | 2T4</div>
+                <a href="mikecodes-dev.html" target="_blank">Visit Site →</a>
+            </div>
+            
+            <div class="member-card">
+                <h3>Dr. Priya Sharma</h3>
+                <div class="member-info">Medicine | Faculty | N/A</div>
+                <a href="priyasharma-research-ca.html" target="_blank">Visit Site →</a>
+            </div>
+            
+            <div class="member-card">
+                <h3>Zoe Winters</h3>
+                <div class="member-info">Fine Arts | Alumni | 2T0</div>
+                <a href="zoewinters-art.html" target="_blank">Visit Site →</a>
+            </div>
+            
+            <div class="member-card">
+                <h3>Min-Ji Park</h3>
+                <div class="member-info">Computer Science | Alumni | 2T1</div>
+                <a href="minji-dev.html" target="_blank">Visit Site →</a>
+            </div>
+        </div>
+
+        <footer>
+            <img src="https://webring.ayanali.net/img/icon.svg" alt="The Unnamed Webring" class="webring-icon" id="widget-icon">
+            <p>These placeholder sites were created for demonstration purposes only.</p>
+            <p>© 2025 The Unnamed Webring</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple dark mode detection to switch icon
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.getElementById('widget-icon').src = 'https://webring.ayanali.net/img/icon-dark.svg';
+        }
+    </script>
+</body>
+</html> 
