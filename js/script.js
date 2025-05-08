@@ -390,6 +390,13 @@ function handleNavigation(hashString) {
     console.log('Navigation direction:', navDirection);
     console.log('Website URL:', websiteUrl);
     
+    // Special case: If navigating from the webring homepage, go to the first member
+    if (websiteUrl === 'webring.ayanali.net' || websiteUrl === 'https://webring.ayanali.net') {
+        console.log('Navigating from webring homepage, going to first member');
+        window.location.href = members[0].website;
+        return;
+    }
+    
     if (navDirection === 'prev' || navDirection === 'next') {
         // Find the current website in the members array
         const currentIndex = members.findIndex(member => 
@@ -417,7 +424,9 @@ function handleNavigation(hashString) {
             // Navigate to the target website
             window.location.href = members[targetIndex].website;
         } else {
-            console.log('Website not found in members array');
+            // If website not found in members array, go to first member
+            console.log('Website not found in members array, going to first member');
+            window.location.href = members[0].website;
         }
     } else {
         // Just a hash without navigation, possibly for embedding the webring
