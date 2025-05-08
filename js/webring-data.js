@@ -13,7 +13,7 @@ const members = [
         designation: "Undergrad",
         year: "1-25",
         grad: "2T5",
-        badge: "https://webring.ayanali.net/badges/default-badge.svg"
+        badge: "https://webring.ayanali.net/badges/default-badge.png"
     },
     {
         name: "Jane Smith",
@@ -22,7 +22,7 @@ const members = [
         designation: "Graduate",
         year: "1-25",
         grad: "2T3",
-        badge: "https://webring.ayanali.net/badges/default-badge.svg"
+        badge: "https://webring.ayanali.net/badges/default-badge.png"
     },
     {
         name: "Alex Johnson",
@@ -31,7 +31,7 @@ const members = [
         designation: "Faculty",
         year: "1-25",
         grad: "N/A",
-        badge: "https://webring.ayanali.net/badges/default-badge.svg"
+        badge: "https://webring.ayanali.net/badges/default-badge.png"
     }
 
     // Add your entry below this line in the following format:

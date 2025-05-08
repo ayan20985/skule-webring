@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Update all default badges
-        const defaultBadgePath = theme === 'dark' ? 'badges/default-badge-dark.svg' : 'badges/default-badge.svg';
+        const defaultBadgePath = theme === 'dark' ? 'badges/default-badge-dark.png' : 'badges/default-badge.png';
         const defaultBadges = document.querySelectorAll('.member-badge[src^="badges/default-badge"]');
         defaultBadges.forEach(badge => {
             badge.src = `${defaultBadgePath}?t=${timestamp}`;
@@ -50,6 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', currentTheme);
         updateIcon(currentTheme);
     });
+    
+    // Preload badge images to ensure they're in the browser cache
+    function preloadBadgeImages() {
+        // Preload both light and dark default badges
+        const defaultBadges = ['badges/default-badge.png', 'badges/default-badge-dark.png'];
+        
+        // Preload all member badges
+        const memberBadges = members.map(member => member.badge).filter(badge => badge);
+        
+        // Combine both arrays and remove duplicates
+        const allBadges = [...new Set([...defaultBadges, ...memberBadges])];
+        
+        // Create image objects to preload
+        allBadges.forEach(badgeSrc => {
+            const img = new Image();
+            img.src = badgeSrc;
+        });
+    }
+    
+    // Preload badges on page load
+    preloadBadgeImages();
     
     // Handle report broken link button
     const reportLinkBtn = document.getElementById('report-link');
@@ -161,7 +182,7 @@ function renderMembersList(container, membersArray, currentPage, membersPerPage)
     
     // Determine current theme for default badge
     const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    const defaultBadgePath = currentTheme === 'dark' ? 'badges/default-badge-dark.svg' : 'badges/default-badge.svg';
+    const defaultBadgePath = currentTheme === 'dark' ? 'badges/default-badge-dark.png' : 'badges/default-badge.png';
     
     // Add each member row
     currentMembers.forEach(member => {
@@ -173,24 +194,34 @@ function renderMembersList(container, membersArray, currentPage, membersPerPage)
         const year = member.year || '';
         const grad = formatGradYear(member.grad) || '';
         
-        // Get badge HTML and ensure it's wrapped correctly
-        let badgeHTML;
-        if (member.badge) {
-            // Use member's badge if available
-            badgeHTML = `
-                <a href="${member.website}" target="_blank" rel="noopener noreferrer">
-                    <img src="${member.badge}" alt="${member.name} Badge" class="member-badge" />
-                </a>`;
-        } else {
-            // Use default badge as fallback
-            badgeHTML = `
-                <a href="${member.website}" target="_blank" rel="noopener noreferrer">
-                    <img src="${defaultBadgePath}" alt="Default Badge" class="member-badge" />
-                </a>`;
-        }
+        // Create badge cell with image and link separately to ensure proper rendering
+        const badgeCell = document.createElement('td');
+        const badgeLink = document.createElement('a');
+        badgeLink.href = member.website;
+        badgeLink.target = '_blank';
+        badgeLink.rel = 'noopener noreferrer';
         
-        row.innerHTML = `
-            <td>${badgeHTML}</td>
+        const badgeImg = document.createElement('img');
+        badgeImg.className = 'member-badge';
+        badgeImg.alt = member.name ? `${member.name} Badge` : 'Member Badge';
+        
+        // Use member badge if available, otherwise use default badge
+        badgeImg.src = member.badge || defaultBadgePath;
+        
+        // Add error handling for badge image
+        badgeImg.onerror = function() {
+            // If badge fails to load, try the default badge instead
+            this.src = defaultBadgePath;
+            console.log(`Badge for ${member.name} could not be loaded, using default badge`);
+        };
+        
+        badgeLink.appendChild(badgeImg);
+        badgeCell.appendChild(badgeLink);
+        
+        row.appendChild(badgeCell);
+        
+        // Add the rest of the row content
+        row.innerHTML += `
             <td><a href="${member.website}" target="_blank" rel="noopener noreferrer">${formatUrl(member.website)}</a></td>
             <td>${member.name}</td>
             <td>${program}</td>

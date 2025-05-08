@@ -119,10 +119,12 @@ You can create a custom badge for your website to display in the members table. 
 
 ### Creating Your Badge
 
-1. Create a PNG or GIF image for your website badge
+1. Create a PNG, GIF, or SVG image for your website badge
 2. Recommended dimensions: 88px × 31px (standard badge size)
-3. Upload the badge to your website
-4. Include the URL to your badge in your member entry in the `badge` field
+3. Upload the badge to your website or include it in a PR
+4. Include the path to your badge in your member entry in the `badge` field
+   - For badges hosted on your website: use the full URL (e.g., `https://your-website.com/badge.png`)
+   - For badges included in a PR: use a relative path (e.g., `badges/your-custom-badge.svg`)
 
 ### Badge Examples
 

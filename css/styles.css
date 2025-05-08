@@ -359,7 +359,17 @@ footer {
 .member-badge {
     max-width: 88px;
     max-height: 31px;
+    width: auto;
+    height: auto;
     border-radius: 4px;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
+    background-color: transparent;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.member-badge:hover {
+    transform: scale(1.05);
 } 
