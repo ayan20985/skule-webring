@@ -7,33 +7,41 @@ const lastUpdated = "May 8th 2025"; // update this value when new members are ad
 
 const members = [
     {
-        name: "John Doe",
-        website: "https://johndoe.example.com",
-        program: "Engineering",
-        designation: "Undergrad",
-        year: "1-25",
-        grad: "2T5",
+        name: "Ayan Ali",
+        website: "https://ayanali.net",
+        program: "ECE",
+        designation: "BASc",
+        year: "5-25",
+        grad: "2T8",
+        badge: "https://ayanali.net/badge.png"
+    },
+    {
+        name: "Banana",
+        website: "https://en.wikipedia.org/wiki/Banana",
+        program: "Tomfoolery",
+        designation: "PhD",
+        year: "5-25",
+        grad: "2029",
         badge: "https://webring.ayanali.net/badges/default-badge.png"
     },
     {
-        name: "Jane Smith",
-        website: "https://janesmith.example.com",
-        program: "Arts & Science",
-        designation: "Graduate",
-        year: "1-25",
-        grad: "2T3",
+        name: "Apple",
+        website: "https://en.wikipedia.org/wiki/Apple",
+        program: "Buffoonery",
+        designation: "PhD",
+        year: "5-25",
+        grad: "2028",
         badge: "https://webring.ayanali.net/badges/default-badge.png"
     },
     {
-        name: "Alex Johnson",
-        website: "https://alexjohnson.example.com",
-        program: "Computer Science",
-        designation: "Faculty",
-        year: "1-25",
-        grad: "N/A",
+        name: "Orange",
+        website: "https://en.wikipedia.org/wiki/Orange",
+        program: "Rotting",
+        designation: "PhD",
+        year: "5-25",
+        grad: "2069",
         badge: "https://webring.ayanali.net/badges/default-badge.png"
     }
-
     // Add your entry below this line in the following format:
     // {
     //     "name": "Your Name",
