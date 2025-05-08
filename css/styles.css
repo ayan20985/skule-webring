@@ -29,6 +29,18 @@
     box-sizing: border-box;
 }
 
+/* Background Canvas */
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15; /* Subtle background */
+    pointer-events: none; /* Allow clicking through the canvas */
+}
+
 html {
     scroll-behavior: smooth;
 }

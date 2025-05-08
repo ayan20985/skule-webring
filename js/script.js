@@ -8,23 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to update icon based on theme
     function updateIcon(theme) {
-        // Add timestamp to prevent caching
-        const timestamp = new Date().getTime();
-        
-        // Set the appropriate icon based on theme
-        const iconPath = theme === 'dark' ? 'img/icon-dark.svg' : 'img/icon.svg';
-        
-        // Update the example widget in the page
+        // Update the example widget in the page using its ID
         const widgetIconImg = document.getElementById('widget-demo-icon');
         if (widgetIconImg) {
+            // Add timestamp to prevent caching
+            const timestamp = new Date().getTime();
+            
+            // Set the appropriate icon based on theme
+            const iconPath = theme === 'dark' ? 'img/icon-dark.svg' : 'img/icon.svg';
             widgetIconImg.src = `${iconPath}?t=${timestamp}`;
-        }
-        
-        // Update the homepage navigation widget
-        const homepageWidgetIcon = document.getElementById('homepage-widget-icon');
-        if (homepageWidgetIcon) {
-            homepageWidgetIcon.src = `${iconPath}?t=${timestamp}`;
-            console.log(`Theme changed to ${theme}, icons updated to: ${iconPath}`);
+            console.log(`Theme changed to ${theme}, icon set to: ${widgetIconImg.src}`);
         }
     }
     

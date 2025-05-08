@@ -31,13 +31,13 @@ Since every website is unique, we suggest you add your own flair to the icon. He
 ### HTML:
 ```html
 <div style="display: flex; align-items: center; gap: 15px; background-color: #f5f5f5; padding: 15px 25px; border-radius: 8px; border: 1px solid #ddd;">
-    <a href="https://webring.ayanali.net/#https://your-website.com?nav=prev" style="color: #333; text-decoration: none; font-size: 1.5rem;">←</a>
-    <a href="https://webring.ayanali.net/#https://your-website.com" target="_blank">
+    <a href="https://webring.ayanali.net/#your-site-here?nav=prev" style="color: #333; text-decoration: none; font-size: 1.5rem;">←</a>
+    <a href="https://webring.ayanali.net/#your-site-here" target="_blank">
         <img src="https://webring.ayanali.net/img/icon.svg" alt="The Unnamed Webring" style="width: 32px; height: 32px;"/>
     </a>
-    <a href="https://webring.ayanali.net/#https://your-website.com?nav=next" style="color: #333; text-decoration: none; font-size: 1.5rem;">→</a>
+    <a href="https://webring.ayanali.net/#your-site-here?nav=next" style="color: #333; text-decoration: none; font-size: 1.5rem;">→</a>
 </div>
-<!-- Replace 'your-website.com' with your actual website URL. Use icon-dark.svg for dark-themed sites -->
+<!-- Replace 'your-site-here' with your actual site URL. Use icon-dark.svg for dark-themed sites -->
 ```
 
 ### JSX:
@@ -51,13 +51,13 @@ Since every website is unique, we suggest you add your own flair to the icon. He
   borderRadius: '8px',
   border: '1px solid #ddd'
 }}>
-    <a href='https://webring.ayanali.net/#https://your-website.com?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
-    <a href='https://webring.ayanali.net/#https://your-website.com' target='_blank'>
+    <a href='https://webring.ayanali.net/#your-site-here?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
+    <a href='https://webring.ayanali.net/#your-site-here' target='_blank'>
         <img src='https://webring.ayanali.net/img/icon.svg' alt='The Unnamed Webring' style={{ width: '32px', height: '32px' }}/>
     </a>
-    <a href='https://webring.ayanali.net/#https://your-website.com?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
+    <a href='https://webring.ayanali.net/#your-site-here?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
 </div>
-// Replace 'your-website.com' with your actual website URL. Use icon-dark.svg for dark-themed sites
+// Replace 'your-site-here' with your actual site URL. Use icon-dark.svg for dark-themed sites
 ```
 
 ## Questions?
