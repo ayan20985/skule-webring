@@ -126,7 +126,8 @@ You can create a custom badge for your website to display in the members table. 
    - For badges hosted on your website: use the full URL (e.g., `https://your-website.com/badge.png`)
    - For badges included in a PR: use a relative path (e.g., `badges/your-custom-badge.svg`)
 
-### Badge Examples
+### Badge Examples and Formatting
+Badges must be 88x31 pixels or some multiple of this, they can png, .gif, or .svg file types.
 [Here](https://cyber.dabamos.de/88x31/index2.html) are some example badge styles you might consider.
 
 ### HTML for Linking Your Badge
