@@ -16,30 +16,12 @@ const members = [
         badge: "https://ayanali.net/badge.gif"
     },
     {
-        name: "Banana",
-        website: "https://en.wikipedia.org/wiki/Banana",
-        program: "Tomfoolery",
-        designation: "PhD",
+        name: "Luke Payant",
+        website: "https://lukepayant.com",
+        program: "Engineering Science",
+        designation: "BASc",
         year: "5-25",
-        grad: "2029",
-        badge: "https://webring.ayanali.net/badges/default-badge.png"
-    },
-    {
-        name: "Apple",
-        website: "https://en.wikipedia.org/wiki/Apple",
-        program: "Buffoonery",
-        designation: "PhD",
-        year: "5-25",
-        grad: "2028",
-        badge: "https://webring.ayanali.net/badges/default-badge.png"
-    },
-    {
-        name: "Orange",
-        website: "https://en.wikipedia.org/wiki/Orange",
-        program: "Rotting",
-        designation: "PhD",
-        year: "5-25",
-        grad: "2069",
+        grad: "2T8",
         badge: "https://webring.ayanali.net/badges/default-badge.png"
     }
     // Add your entry below this line in the following format:
