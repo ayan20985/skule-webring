@@ -41,6 +41,9 @@
   z-index: -1;
   opacity: 0.35; /* Slightly reduced opacity for light mode */
   pointer-events: auto; /* Allow interacting with the canvas */
+  will-change: transform; /* Force hardware acceleration */
+  transform: translateZ(0); /* Force GPU rendering */
+  backface-visibility: hidden; /* Helps with rendering on mobile devices */
 }
 
 [data-theme="dark"] #background-canvas {
@@ -65,6 +68,9 @@ body::after {
     rgba(var(--bg-color-rgb), 0.5) 70%,
     rgba(var(--bg-color-rgb), 0) 100%
   );
+  will-change: opacity; /* Force hardware acceleration */
+  transform: translateZ(0); /* Force GPU rendering */
+  backface-visibility: hidden; /* Helps with rendering */
 }
 
 html {

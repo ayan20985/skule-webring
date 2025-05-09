@@ -364,6 +364,41 @@ function createProgram(gl, vertexShader, fragmentShader) {
     return program;
 }
 
+// Canvas resize function
+function resizePixelArtBackground() {
+    if (!canvas || !gl) return;
+    
+    // Store current dimensions
+    const prevWidth = canvas.width;
+    const prevHeight = canvas.height;
+    
+    // Calculate new dimensions - use device pixel ratio for better rendering on high-DPI displays
+    const dpr = window.devicePixelRatio || 1;
+    const displayWidth = Math.floor(window.innerWidth * dpr);
+    const displayHeight = Math.floor(window.innerHeight * dpr);
+    
+    // Only resize if dimensions actually changed
+    if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+        // Update canvas size
+        canvas.width = displayWidth;
+        canvas.height = displayHeight;
+        
+        // Update CSS size
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        
+        // Update WebGL viewport
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        
+        // Force a full redraw
+        if (gl && program) {
+            // Clear and redraw immediately
+            gl.clearColor(0.0, 0.0, 0.0, 0.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+    }
+}
+
 // Initialize Pixel Art Background
 function initPixelArtBackground() {
     // Get canvas and setup WebGL
@@ -376,7 +411,17 @@ function initPixelArtBackground() {
         return;
     }
     
-    gl = canvas.getContext('webgl', { alpha: true }) || canvas.getContext('experimental-webgl', { alpha: true });
+    gl = canvas.getContext('webgl', { 
+        alpha: true,
+        antialias: true,
+        premultipliedAlpha: false,
+        preserveDrawingBuffer: true
+    }) || canvas.getContext('experimental-webgl', { 
+        alpha: true,
+        antialias: true,
+        premultipliedAlpha: false,
+        preserveDrawingBuffer: true
+    });
     
     if (!gl) {
         console.error('WebGL not supported by your browser');
@@ -417,6 +462,21 @@ function initPixelArtBackground() {
     
     // Handle canvas resizing
     window.addEventListener('resize', resizePixelArtBackground);
+    
+    // Special handler for iPad Safari issues - force redraw on orientation change
+    window.addEventListener('orientationchange', function() {
+        // Small delay to ensure the browser has updated orientation values
+        setTimeout(function() {
+            resizePixelArtBackground();
+            // Force redraw
+            if (gl && program) {
+                gl.clearColor(0.0, 0.0, 0.0, 0.0);
+                gl.clear(gl.COLOR_BUFFER_BIT);
+            }
+        }, 200);
+    });
+    
+    // Initial sizing
     resizePixelArtBackground();
     
     // Start timer for animation
@@ -424,6 +484,13 @@ function initPixelArtBackground() {
     
     // Start rendering
     animatePixelArtBackground();
+    
+    // iOS/iPadOS Safari-specific fix - force a redraw after a short delay
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+        setTimeout(function() {
+            resizePixelArtBackground();
+        }, 500);
+    }
 }
 
 // Animation loop with visibility check
@@ -464,17 +531,6 @@ function animatePixelArtBackground() {
     
     // Request next frame
     requestAnimationFrame(animatePixelArtBackground);
-}
-
-// Canvas resize function
-function resizePixelArtBackground() {
-    if (!canvas || !gl) return;
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    // Update WebGL viewport
-    gl.viewport(0, 0, canvas.width, canvas.height);
 }
 
 // Initialize the Webring
