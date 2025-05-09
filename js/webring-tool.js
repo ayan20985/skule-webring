@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Check if theme toggle and background toggle are working
+  console.log("Webring Tool JS loaded")
+
+  // Get the current theme from body attribute
+  const currentTheme = document.body.getAttribute("data-theme") || "light"
+
+  // Set the initial preview container theme to match the page theme
+  const previewContainer = document.getElementById("preview-container")
+  if (previewContainer) {
+    previewContainer.setAttribute("data-theme", currentTheme)
+  }
+})
+
+
+document.addEventListener("DOMContentLoaded", () => {
   // Theme Toggle Functionality (from original code)
   const themeToggleBtn = document.getElementById("theme-toggle-btn")
   const bgToggleBtn = document.getElementById("bg-toggle-btn")
