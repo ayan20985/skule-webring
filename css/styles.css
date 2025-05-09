@@ -133,6 +133,29 @@ header {
   margin-top: 0.5rem;
 }
 
+/* Caution Box */
+.caution-box {
+  background-color: #ffebee;
+  border: 1px solid #f44336;
+  color: #c62828;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Dark theme version of the caution box */
+[data-theme="dark"] .caution-box {
+  background-color: rgba(136, 14, 10, 0.2); /* Darker, more transparent red */
+  border: 1px solid #ff5252; /* Brighter red border for contrast */
+  color: #ff8a80; /* Lighter red text for better readability */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
 .theme-toggle {
   position: absolute;
   top: 0;
