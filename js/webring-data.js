@@ -25,13 +25,13 @@ const members = [
         badge: "https://webring.ayanali.net/badges/default-badge.png"
     },
     {
-  "name": "Hayson Cheyng",
-  "website": "https://hayson.me",
-  "program": "Engineering Science",
-  "designation": "BASc"
-  "year": "5-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
-  "grad": "2T8",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
-  "badge": "https://hayson.me/My_Webiste/badge.png"  // URL to your custom website badge (required)
+        name: "Hayson Cheyng",
+        website: "https://hayson.me",
+        program: "Engineering Science",
+        designation: "BASc",
+        year: "5-25",
+        grad: "2T8",
+        badge: "https://webring.ayanali.net/badges/default-badge.png"
     }
     // Add your entry below this line in the following format:
     // {
