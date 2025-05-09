@@ -1,10 +1,15 @@
 // Theme Toggle Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const bgToggleBtn = document.getElementById('bg-toggle-btn');
     
     // Check for saved theme preference or prefer-color-scheme
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Check for saved background preference, default to off
+    const savedBgState = localStorage.getItem('bgEnabled');
+    const bgEnabled = savedBgState ? savedBgState === 'true' : false; // Default to off
     
     // Function to update icon based on theme
     function updateIcon(theme) {
@@ -44,6 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // Function to update background visibility
+    function updateBackgroundVisibility(enabled) {
+        const canvas = document.getElementById('background-canvas');
+        if (canvas) {
+            canvas.style.display = enabled ? 'block' : 'none';
+            
+            // Initialize the background if it's being enabled and hasn't been initialized
+            if (enabled && (!gl || !program)) {
+                initPixelArtBackground();
+            }
+        }
+        
+        // Update button appearance
+        if (bgToggleBtn) {
+            bgToggleBtn.className = enabled ? 'bg-toggle-on' : 'bg-toggle-off';
+        }
+        
+        // Save preference
+        localStorage.setItem('bgEnabled', enabled);
+    }
+    
     // Apply theme based on saved preference or system preference
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         document.body.setAttribute('data-theme', 'dark');
@@ -52,12 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
         updateIcon('light');
     }
     
+    // Apply background state based on saved preference
+    updateBackgroundVisibility(bgEnabled);
+    
     // Toggle theme on button click
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         document.body.setAttribute('data-theme', currentTheme);
         localStorage.setItem('theme', currentTheme);
         updateIcon(currentTheme);
+    });
+    
+    // Toggle background on button click
+    bgToggleBtn.addEventListener('click', () => {
+        const isEnabled = bgToggleBtn.className === 'bg-toggle-on';
+        updateBackgroundVisibility(!isEnabled);
     });
     
     // Preload badge images to ensure they're in the browser cache
@@ -93,8 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Initialize the pixel art background
-    initPixelArtBackground();
+    // Initialize the pixel art background if enabled
+    if (bgEnabled) {
+        initPixelArtBackground();
+    }
     
     // Initialize the webring
     initWebring();
@@ -333,6 +370,12 @@ function initPixelArtBackground() {
     canvas = document.getElementById('background-canvas');
     if (!canvas) return;
     
+    // Skip initialization if already done before
+    if (gl && program) {
+        // Just update visibility
+        return;
+    }
+    
     gl = canvas.getContext('webgl', { alpha: true }) || canvas.getContext('experimental-webgl', { alpha: true });
     
     if (!gl) {
@@ -383,9 +426,16 @@ function initPixelArtBackground() {
     animatePixelArtBackground();
 }
 
-// Animation loop
+// Animation loop with visibility check
 function animatePixelArtBackground() {
     if (!gl || !canvas) return;
+    
+    // Check if canvas is hidden
+    if (canvas.style.display === 'none') {
+        // If hidden, continue checking but don't render
+        requestAnimationFrame(animatePixelArtBackground);
+        return;
+    }
     
     // Calculate elapsed time
     const currentTime = Date.now();

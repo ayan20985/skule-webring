@@ -131,6 +131,8 @@ header {
     position: absolute;
     top: 0;
     right: 0;
+    display: flex;
+    gap: 10px;
 }
 
 .theme-toggle button {
@@ -139,6 +141,15 @@ header {
     cursor: pointer;
     font-size: 1.5rem;
     color: var(--text-color);
+}
+
+/* Background toggle specific styles */
+.bg-toggle-off .bg-icon {
+    opacity: 0.5;
+}
+
+.bg-toggle-on .bg-icon {
+    opacity: 1;
 }
 
 /* Main Content */
