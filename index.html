@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webring Element Generator | SKULE Website Phone Book</title>
+    <title>SKULE Website Phone Book</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/webring-tool.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <meta name="description" content="A tool to generate webring elements for the SKULE Website Phone Book.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="A webring for University of Toronto Engineering students and the broader UofT community.">
 </head>
 <body>
     <canvas id="background-canvas"></canvas>
@@ -23,253 +21,92 @@
                 <span class="bg-icon">◱</span>
             </button>
         </div>
-        <h1>Webring Element Generator</h1>
-        <p class="subtitle">Create customized webring elements for your SKULE Website Phone Book</p>
+        <h1>SKULE Website Phone Book</h1>
+        <p class="subtitle">A webring for University of Toronto Engineering students and the broader UofT community.</p>
     </header>
 
     <main>
-        <section class="about">
-            <p>
-                This tool helps you generate webring elements for the <strong>SKULE Website Phone Book</strong>.
-                Customize your webring element and get the code in HTML, JSX, or TSX format to add to your website.
-            </p>
-        </section>
-
-        <section class="instructions">
-            <h2>How to Use This Tool</h2>
-            <ol>
-                <li><strong>Customize your webring element</strong> using the options on the left</li>
-                <li><strong>Generate the code</strong> by clicking the "Generate Code" button</li>
-                <li><strong>Copy the code</strong> from the code editor</li>
-                <li><strong>Add the code to your website</strong> in your footer, sidebar, or another visible location</li>
-                <li><strong>Replace 'your-website.com'</strong> in the code with your actual website URL</li>
-                <li><strong>Join the webring</strong> by following the <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank">instructions on GitHub</a></li>
-            </ol>
-            <div class="note">
-                <strong>Note:</strong> Your website must include the webring element to be eligible for joining the SKULE Website Phone Book.
+        <!-- Webring Widget for Navigation -->
+        <section class="webring-nav" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+            <div class="widget-container">
+                <a href="#webring.ayanali.net?nav=prev">←</a>
+                <a href="https://webring.ayanali.net">
+                    <div class="widget-icon">
+                        <img src="img/icon.svg" alt="The Unnamed Webring" width="32" height="32" id="homepage-widget-icon"/>
+                    </div>
+                </a>
+                <a href="#webring.ayanali.net?nav=next">→</a>
             </div>
         </section>
 
-        <div class="tool-container">
-            <section class="customization-panel">
-                <h2>Customize Your Webring Element</h2>
+        <section class="about">
+            <p>
+                This webring is an attempt to inspire students, faculty, and alumni of UofT to build their own websites and share traffic amongst each other.
+                The ring welcomes <strong>websites made with hands</strong>.
+            </p>
+        </section>
 
-                <div class="option-group">
-                    <h3>Format</h3>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="format" value="html" checked>
-                            HTML
-                        </label>
-                        <label>
-                            <input type="radio" name="format" value="jsx">
-                            JSX (React)
-                        </label>
-                        <label>
-                            <input type="radio" name="format" value="tsx">
-                            TSX (React TypeScript)
-                        </label>
-                    </div>
-                </div>
+        <section id="search" class="search-container">
+            <div class="search-bar">
+                <input type="text" id="member-search" placeholder="Search members by name, website, or program...">
+                <button id="search-button">Search</button>
+            </div>
+        </section>
 
-                <div class="option-group">
-                    <h3>Theme</h3>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="theme" value="light" checked>
-                            Light
-                        </label>
-                        <label>
-                            <input type="radio" name="theme" value="dark">
-                            Dark
-                        </label>
-                        <label>
-                            <input type="radio" name="theme" value="auto">
-                            Auto (System Preference)
-                        </label>
-                        <label>
-                            <input type="radio" name="theme" value="custom">
-                            Custom
-                        </label>
-                    </div>
-                    <div id="custom-colors" class="hidden">
-                        <div class="color-picker">
-                            <label for="bg-color">Background:</label>
-                            <input type="color" id="bg-color" value="#f5f5f5">
-                        </div>
-                        <div class="color-picker">
-                            <label for="text-color">Text:</label>
-                            <input type="color" id="text-color" value="#333333">
-                        </div>
-                        <div class="color-picker">
-                            <label for="border-color">Border:</label>
-                            <input type="color" id="border-color" value="#dddddd">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Arrow Style</h3>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="arrow-style" value="simple" checked>
-                            Simple (←→)
-                        </label>
-                        <label>
-                            <input type="radio" name="arrow-style" value="double">
-                            Double (⟸⟹)
-                        </label>
-                        <label>
-                            <input type="radio" name="arrow-style" value="triangle">
-                            Triangle (◀▶)
-                        </label>
-                        <label>
-                            <input type="radio" name="arrow-style" value="chevron">
-                            Chevron (《》)
-                        </label>
-                        <label>
-                            <input type="radio" name="arrow-style" value="angle">
-                            Angle (⟨⟩)
-                        </label>
-                        <label>
-                            <input type="radio" name="arrow-style" value="custom">
-                            Custom
-                        </label>
-                    </div>
-                    <div id="custom-arrows" class="hidden">
-                        <div class="custom-arrow-input">
-                            <label for="prev-arrow">Previous:</label>
-                            <input type="text" id="prev-arrow" value="←" maxlength="2">
-                        </div>
-                        <div class="custom-arrow-input">
-                            <label for="next-arrow">Next:</label>
-                            <input type="text" id="next-arrow" value="→" maxlength="2">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Visual Effects</h3>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" id="spinning-icon">
-                            Spinning Icon on Hover
-                        </label>
-                        <label>
-                            <input type="checkbox" id="glowing-effect">
-                            Glowing Effect
-                        </label>
-                        <label>
-                            <input type="checkbox" id="text-wrap">
-                            Text Wrapping (Vertical Layout)
-                        </label>
-                        <label>
-                            <input type="checkbox" id="hover-scale">
-                            Scale on Hover
-                        </label>
-                        <label>
-                            <input type="checkbox" id="rounded">
-                            Rounded Style
-                        </label>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Badge Options</h3>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" id="show-badge">
-                            Show Badge (88×31px)
-                        </label>
-                    </div>
-                    <div id="badge-options" class="hidden">
-                        <div class="radio-group">
-                            <label>
-                                <input type="radio" name="badge-type" value="default" checked>
-                                Default Badge
-                            </label>
-                            <label>
-                                <input type="radio" name="badge-type" value="custom">
-                                Custom Badge URL
-                            </label>
-                        </div>
-                        <div id="custom-badge-url" class="hidden">
-                            <input type="text" id="badge-url" placeholder="https://your-website.com/badge.png">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Your Website URL</h3>
-                    <input type="text" id="website-url" placeholder="https://your-website.com" value="https://your-website.com">
-                    <p class="help-text">Replace with your actual website URL</p>
-                </div>
-
-                <div class="option-group">
-                    <h3>Element Name</h3>
-                    <input type="text" id="element-name" placeholder="Enter element name" value="default">
-                    <p class="help-text">Used for CSS class naming: webring-skuleayan-[name]</p>
-                </div>
-
-                <button id="generate-btn" class="action-button">Generate Code</button>
-            </section>
-
-            <section class="preview-panel">
-                <h2>Preview</h2>
-                <div class="preview-container" id="preview-container">
-                    <!-- Preview will be rendered here -->
-                </div>
-                <div class="preview-controls">
-                    <button id="toggle-preview-theme" class="secondary-button">Toggle Preview Theme</button>
-                </div>
-            </section>
-
-            <section class="code-panel">
-                <h2>Generated Code</h2>
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="html-code">HTML</button>
-                    <button class="tab-btn" data-tab="css-code">CSS</button>
-                    <button class="tab-btn" data-tab="combined-code">Combined</button>
-                    <button class="tab-btn" data-tab="badge-code">Badge Code</button>
-                </div>
-                <div class="tab-content active" id="html-code">
-                    <textarea id="html-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="html-editor">Copy HTML</button>
-                </div>
-                <div class="tab-content" id="css-code">
-                    <textarea id="css-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="css-editor">Copy CSS</button>
-                </div>
-                <div class="tab-content" id="combined-code">
-                    <textarea id="combined-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="combined-editor">Copy Combined</button>
-                </div>
-                <div class="tab-content" id="badge-code">
-                    <textarea id="badge-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="badge-editor">Copy Badge Code</button>
-                </div>
-                <button id="update-preview-btn" class="action-button">Update Preview</button>
-                <button id="download-btn" class="secondary-button">Download Files</button>
-            </section>
+        <div class="action-buttons">
+            <a href="#" id="report-link" class="action-button">Report Broken Link</a>
+            <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank" class="action-button">Join the Ring</a>
+            <a href="#random" id="random-link" class="action-button">Random</a>
+            <a href="https://github.com/ayan20985/webring" target="_blank" class="action-button">GitHub</a>
         </div>
 
-        <section class="joining-info">
-            <h2>Joining the SKULE Website Phone Book</h2>
-            <p>After adding the webring element to your website, follow these steps to join:</p>
-            <ol>
-                <li>Fork the <a href="https://github.com/ayan20985/webring" target="_blank">GitHub repository</a></li>
-                <li>Add your information to the <code>members</code> array in <code>js/webring-data.js</code></li>
-                <li>Create a badge for your website (88×31px recommended)</li>
-                <li>Submit a Pull Request</li>
-            </ol>
-            <p>For complete instructions, visit the <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank">GitHub repository</a>.</p>
+        <section id="members">
+            <h2>Members</h2>
+            <p>This webring currently has <span id="member-count">0</span> members. Last updated <span id="last-updated">January 2025</span>.</p>
+            <table id="members-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Website</th>
+                        <th>Name</th>
+                        <th>Program</th>
+                        <th>Designation</th>
+                        <th>Year</th>
+                        <th>Grad</th>
+                    </tr>
+                </thead>
+                <tbody id="members-list">
+                    <!-- Members will be populated by JavaScript -->
+                    <tr><td colspan="7">Loading members...</td></tr>
+                </tbody>
+            </table>
+            <div class="pagination" id="members-pagination">
+                <!-- Pagination will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="what">
+            <h2>What is a Webring?</h2>
+            <p>
+                A webring is a collection of websites linked together in a circular structure.
+                In the early days of the web, webrings were a popular way to discover related websites.
+                Each site in the ring includes a navigation widget that lets visitors travel to the next or previous site in the ring.
+            </p>
+            <p>
+                The SKULE Website Phone Book  revives this tradition for the UofT community, creating a network
+                of personal websites by students, faculty, and alumni.
+            </p>
+            <p>
+                The current UofT community and Alumni network is thousands-strong—why not harness this immense network?
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>Tool created by <a href="https://hayson.me" target="_blank">Hayson Cheung 2T8</a> for the SKULE Website Phone Book.</p>
+        <p>Created for the SKULE and the wider UofT community. Built on what was Canada Dry, a most interesting beverage.</p>
     </footer>
 
-    <script src="js/webring-tool.js"></script>
+    <script src="js/webring-data.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

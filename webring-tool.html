@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webring Element Generator | SKULE Website Phone Book</title>
+    <title>SKULE Website Phone Book</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/webring-tool.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <meta name="description" content="A tool to generate webring elements for the SKULE Website Phone Book.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="A webring for University of Toronto Engineering students and the broader UofT community.">
 </head>
 <body>
     <canvas id="background-canvas"></canvas>
@@ -23,314 +21,92 @@
                 <span class="bg-icon">◱</span>
             </button>
         </div>
-        <h1>Webring Element Generator</h1>
-        <p class="subtitle">Create customized webring elements for your SKULE Website Phone Book</p>
+        <h1>SKULE Website Phone Book</h1>
+        <p class="subtitle">A webring for University of Toronto Engineering students and the broader UofT community.</p>
     </header>
 
     <main>
-        <section class="about">
-            <p>
-                This tool helps you generate webring elements for the <strong>SKULE Website Phone Book</strong>.
-                Customize your webring element and get the code in HTML, JSX, TSX, or PHP format to add to your website.
-            </p>
-        </section>
-
-        <section class="instructions">
-            <h2>How to Use This Tool</h2>
-            <ol>
-                <li><strong>Customize your webring element</strong> using the options on the left</li>
-                <li><strong>Generate the code</strong> by clicking the "Generate Code" button</li>
-                <li><strong>Copy the code</strong> from the code editor</li>
-                <li><strong>Add the code to your website</strong> in your footer, sidebar, or another visible location</li>
-                <li><strong>Replace 'your-website.com'</strong> in the code with your actual website URL</li>
-                <li><strong>Join the webring</strong> by following the <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank">instructions on GitHub</a></li>
-            </ol>
-            <div class="note">
-                <strong>Note:</strong> Your website must include the webring element to be eligible for joining the SKULE Website Phone Book.
+        <!-- Webring Widget for Navigation -->
+        <section class="webring-nav" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+            <div class="widget-container">
+                <a href="#webring.ayanali.net?nav=prev">←</a>
+                <a href="https://webring.ayanali.net">
+                    <div class="widget-icon">
+                        <img src="img/icon.svg" alt="The Unnamed Webring" width="32" height="32" id="homepage-widget-icon"/>
+                    </div>
+                </a>
+                <a href="#webring.ayanali.net?nav=next">→</a>
             </div>
         </section>
 
-        <div class="tool-container">
-            <section class="customization-panel">
-                <h2>Customize Your Webring Element</h2>
+        <section class="about">
+            <p>
+                This webring is an attempt to inspire students, faculty, and alumni of UofT to build their own websites and share traffic amongst each other.
+                The ring welcomes <strong>websites made with hands</strong>.
+            </p>
+        </section>
 
-                <div class="option-group">
-                    <h3>Format</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="format-html" name="format" value="html" checked>
-                        <label for="format-html">HTML</label>
+        <section id="search" class="search-container">
+            <div class="search-bar">
+                <input type="text" id="member-search" placeholder="Search members by name, website, or program...">
+                <button id="search-button">Search</button>
+            </div>
+        </section>
 
-                        <input type="radio" id="format-jsx" name="format" value="jsx">
-                        <label for="format-jsx">JSX (React)</label>
-
-                        <input type="radio" id="format-tsx" name="format" value="tsx">
-                        <label for="format-tsx">TSX (React TypeScript)</label>
-
-                        <input type="radio" id="format-php" name="format" value="php">
-                        <label for="format-php">PHP (Beta)</label>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Theme</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="theme-light" name="theme" value="light" checked>
-                        <label for="theme-light">Light</label>
-
-                        <input type="radio" id="theme-dark" name="theme" value="dark">
-                        <label for="theme-dark">Dark</label>
-
-                        <input type="radio" id="theme-auto" name="theme" value="auto">
-                        <label for="theme-auto">Auto (System Preference)</label>
-
-                        <input type="radio" id="theme-custom" name="theme" value="custom">
-                        <label for="theme-custom">Custom</label>
-                    </div>
-                    <div id="custom-colors" class="hidden">
-                        <div class="color-picker">
-                            <label for="bg-color">Background:</label>
-                            <input type="color" id="bg-color" value="#f5f5f5">
-                        </div>
-                        <div class="color-picker">
-                            <label for="text-color">Text:</label>
-                            <input type="color" id="text-color" value="#333333">
-                        </div>
-                        <div class="color-picker">
-                            <label for="border-color">Border:</label>
-                            <input type="color" id="border-color" value="#dddddd">
-                        </div>
-                        <div class="radio-group" style="margin-top: 10px;">
-                            <h4 style="font-size: 0.9rem; margin-bottom: 5px;">Icon Theme:</h4>
-                            <input type="radio" id="icon-theme-light" name="icon-theme" value="light" checked>
-                            <label for="icon-theme-light">Light Icon</label>
-
-                            <input type="radio" id="icon-theme-dark" name="icon-theme" value="dark">
-                            <label for="icon-theme-dark">Dark Icon</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Arrow Style</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="arrow-simple" name="arrow-style" value="simple" checked>
-                        <label for="arrow-simple">Simple (←→)</label>
-
-                        <input type="radio" id="arrow-double" name="arrow-style" value="double">
-                        <label for="arrow-double">Double (⟸⟹)</label>
-
-                        <input type="radio" id="arrow-triangle" name="arrow-style" value="triangle">
-                        <label for="arrow-triangle">Triangle (◀▶)</label>
-
-                        <input type="radio" id="arrow-chevron" name="arrow-style" value="chevron">
-                        <label for="arrow-chevron">Chevron (《》)</label>
-
-                        <input type="radio" id="arrow-angle" name="arrow-style" value="angle">
-                        <label for="arrow-angle">Angle (⟨⟩)</label>
-
-                        <input type="radio" id="arrow-custom" name="arrow-style" value="custom">
-                        <label for="arrow-custom">Custom</label>
-                    </div>
-                    <div id="custom-arrows" class="hidden">
-                        <div class="custom-arrow-input">
-                            <label for="prev-arrow">Previous:</label>
-                            <input type="text" id="prev-arrow" value="←" maxlength="2">
-                        </div>
-                        <div class="custom-arrow-input">
-                            <label for="next-arrow">Next:</label>
-                            <input type="text" id="next-arrow" value="→" maxlength="2">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Visual Effects</h3>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="spinning-icon">
-                        <label for="spinning-icon">Spinning Icon on Hover</label>
-
-                        <input type="checkbox" id="glowing-effect">
-                        <label for="glowing-effect">Glowing Effect</label>
-
-                        <input type="checkbox" id="text-wrap">
-                        <label for="text-wrap">Text Wrapping (Vertical Layout)</label>
-
-                        <input type="checkbox" id="hover-scale">
-                        <label for="hover-scale">Scale on Hover</label>
-
-                        <input type="checkbox" id="rounded">
-                        <label for="rounded">Rounded Style</label>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Badge Options</h3>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="show-badge">
-                        <label for="show-badge">Show Badge (88×31px)</label>
-                    </div>
-                    <div id="badge-options" class="hidden">
-                        <div class="radio-group">
-                            <input type="radio" id="badge-default" name="badge-type" value="default" checked>
-                            <label for="badge-default">Default Badge</label>
-
-                            <input type="radio" id="badge-custom" name="badge-type" value="custom">
-                            <label for="badge-custom">Custom Badge URL</label>
-                        </div>
-                        <div id="custom-badge-url" class="hidden">
-                            <input type="text" id="badge-url" placeholder="https://your-website.com/badge.png">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="option-group">
-                    <h3>Your Website URL</h3>
-                    <input type="text" id="website-url" placeholder="https://your-website.com" value="https://your-website.com">
-                    <p class="help-text">Replace with your actual website URL</p>
-                </div>
-
-                <div class="option-group">
-                    <h3>Element Name</h3>
-                    <input type="text" id="element-name" placeholder="Enter element name" value="default">
-                    <p class="help-text">Used for CSS class naming: webring-skuleayan-[name]</p>
-                </div>
-
-                <button id="generate-btn" class="action-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3v18"></path>
-                        <path d="M17 8l-5-5-5 5"></path>
-                    </svg>
-                    Generate Code
-                </button>
-            </section>
-
-            <section class="preview-panel">
-                <h2>Preview</h2>
-                <div class="preview-container" id="preview-container">
-                    <!-- Preview will be rendered here -->
-                </div>
-                <div class="preview-controls">
-                    <button id="toggle-preview-theme" class="secondary-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <path d="M12 1v2"></path>
-                            <path d="M12 21v2"></path>
-                            <path d="M4.22 4.22l1.42 1.42"></path>
-                            <path d="M18.36 18.36l1.42 1.42"></path>
-                            <path d="M1 12h2"></path>
-                            <path d="M21 12h2"></path>
-                            <path d="M4.22 19.78l1.42-1.42"></path>
-                            <path d="M18.36 5.64l1.42-1.42"></path>
-                        </svg>
-                        Toggle Preview Theme
-                    </button>
-                </div>
-            </section>
-
-            <section class="code-panel">
-                <h2>Generated Code</h2>
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="html-code">HTML</button>
-                    <button class="tab-btn" data-tab="css-code">CSS</button>
-                    <button class="tab-btn" data-tab="combined-code">Combined</button>
-                    <button class="tab-btn" data-tab="badge-code">Badge Code</button>
-                    <button class="tab-btn" data-tab="php-code">PHP</button>
-                </div>
-                <div class="tab-content active" id="html-code">
-                    <textarea id="html-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="html-editor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy
-                    </button>
-                </div>
-                <div class="tab-content" id="css-code">
-                    <textarea id="css-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="css-editor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy
-                    </button>
-                </div>
-                <div class="tab-content" id="combined-code">
-                    <textarea id="combined-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="combined-editor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy
-                    </button>
-                </div>
-                <div class="tab-content" id="badge-code">
-                    <textarea id="badge-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="badge-editor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy
-                    </button>
-                </div>
-                <div class="tab-content" id="php-code">
-                    <textarea id="php-editor" class="code-editor" spellcheck="false"></textarea>
-                    <button class="copy-btn" data-target="php-editor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy
-                    </button>
-                </div>
-                <button id="update-preview-btn" class="action-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 2v6h-6"></path>
-                        <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
-                        <path d="M3 22v-6h6"></path>
-                        <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
-                    </svg>
-                    Update Preview
-                </button>
-                <button id="download-btn" class="secondary-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Download Files
-                </button>
-            </section>
+        <div class="action-buttons">
+            <a href="#" id="report-link" class="action-button">Report Broken Link</a>
+            <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank" class="action-button">Join the Ring</a>
+            <a href="#random" id="random-link" class="action-button">Random</a>
+            <a href="https://github.com/ayan20985/webring" target="_blank" class="action-button">GitHub</a>
         </div>
 
-        <section class="joining-info">
-            <h2>Joining the SKULE Website Phone Book</h2>
-            <p>After adding the webring element to your website, follow these steps to join:</p>
-            <ol>
-                <li>Fork the <a href="https://github.com/ayan20985/webring" target="_blank">GitHub repository</a></li>
-                <li>Add your information to the <code>members</code> array in <code>js/webring-data.js</code></li>
-                <li>Create a badge for your website (88×31px recommended)</li>
-                <li>Submit a Pull Request</li>
-            </ol>
-            <p>For complete instructions, visit the <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank">GitHub repository</a>.</p>
+        <section id="members">
+            <h2>Members</h2>
+            <p>This webring currently has <span id="member-count">0</span> members. Last updated <span id="last-updated">January 2025</span>.</p>
+            <table id="members-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Website</th>
+                        <th>Name</th>
+                        <th>Program</th>
+                        <th>Designation</th>
+                        <th>Year</th>
+                        <th>Grad</th>
+                    </tr>
+                </thead>
+                <tbody id="members-list">
+                    <!-- Members will be populated by JavaScript -->
+                    <tr><td colspan="7">Loading members...</td></tr>
+                </tbody>
+            </table>
+            <div class="pagination" id="members-pagination">
+                <!-- Pagination will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="what">
+            <h2>What is a Webring?</h2>
+            <p>
+                A webring is a collection of websites linked together in a circular structure.
+                In the early days of the web, webrings were a popular way to discover related websites.
+                Each site in the ring includes a navigation widget that lets visitors travel to the next or previous site in the ring.
+            </p>
+            <p>
+                The SKULE Website Phone Book  revives this tradition for the UofT community, creating a network
+                of personal websites by students, faculty, and alumni.
+            </p>
+            <p>
+                The current UofT community and Alumni network is thousands-strong—why not harness this immense network?
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>Tool created by <a href="https://hayson.me" target="_blank">Hayson Cheung 2T8</a> for the SKULE Website Phone Book.</p>
+        <p>Created for the SKULE and the wider UofT community. Built on what was Canada Dry, a most interesting beverage.</p>
     </footer>
 
-    <!-- Toast notification -->
-    <div id="toast" class="toast">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-        <span id="toast-message">Copied to clipboard!</span>
-    </div>
-
-    <script src="js/webring-tool.js"></script>
+    <script src="js/webring-data.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
