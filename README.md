@@ -47,6 +47,7 @@ Websites may be removed from the webring if they become defunct (e.g., domain ex
 
 Since every website is unique, we suggest you add your own flair to the icon. Here are some examples to get you started:
 
+**Use the tool: [https://webring.ayanali.net/webring-tool/](https://webring.ayanali.net/webring-tool/) to generate a custom widget for your website. Or, you can use the following templates to create your own widget:**
 ### Light Mode Widget:
 ```html
 <div style="display: flex; align-items: center; gap: 15px; background-color: #f5f5f5; padding: 15px 25px; border-radius: 8px; border: 1px solid #ddd;">
