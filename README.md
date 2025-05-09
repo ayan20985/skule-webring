@@ -8,7 +8,7 @@ A webring for University of Toronto Engineering students and the broader UofT co
 
 The Unnamed Webring is a community-driven project that connects websites of UofT community members through a retro-inspired webring. It's a way to discover interesting sites, share your work, and build connections within the UofT tech community.
 
-The webring features a deliberately minimalist design, inspired by classic webrings like [XXIIVV](https://webring.xxiivv.com/) and [Fediring](https://fediring.net/), focusing on content and community rather than visual complexity.
+The webring features a deliberately minimalist design, inspired by classic webrings like [XXIIVV](https://webring.xxiivv.com/), focusing on content and community rather than visual complexity.
 
 ## Joining the Webring
 
@@ -151,4 +151,4 @@ If you want to link your badge on your own site:
 
 ## Credits
 
-Inspired by the [XXIIVV Webring](https://webring.xxiivv.com/), [Fediring](https://fediring.net/), and the early web's interconnected spirit.
+Inspired by the [XXIIVV Webring](https://webring.xxiivv.com/) and the early web's interconnected spirit.
