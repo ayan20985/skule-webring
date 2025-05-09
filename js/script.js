@@ -515,7 +515,7 @@ function initWebring() {
     
     // Set up pagination state
     let currentPage = 1;
-    const membersPerPage = 10;
+    const membersPerPage = 30;
     let filteredMembers = [...members];
     
     // Set up search functionality

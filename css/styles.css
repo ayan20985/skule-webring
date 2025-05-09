@@ -112,6 +112,11 @@ dl {
   text-align: justify;
 }
 
+/* Reduced line spacing for paragraphs */
+p {
+  line-height: 1.4; /* Reduced from the body's 1.6 */
+}
+
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -278,7 +283,7 @@ table {
 
 th,
 td {
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem; /* Reduced vertical padding while keeping horizontal padding */
   text-align: left;
   border-bottom: 1px solid var(--table-border);
 }
