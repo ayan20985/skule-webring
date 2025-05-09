@@ -373,6 +373,145 @@
         </svg>
         <span id="toast-message">Copied to clipboard!</span>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const bgToggleBtn = document.getElementById('bg-toggle-btn');
+
+    // Check for saved theme preference or prefer-color-scheme
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Check for saved background preference, default to off
+    const savedBgState = localStorage.getItem('bgEnabled');
+    const bgEnabled = savedBgState ? savedBgState === 'true' : false; // Default to off
+
+    // Function to update icon based on theme
+    function updateIcon(theme) {
+        // Add timestamp to prevent caching
+        const timestamp = new Date().getTime();
+
+        // Set the appropriate icon based on theme
+        const iconPath = theme === 'dark' ? 'img/icon-dark.svg' : 'img/icon.svg';
+
+        // Update the example widget in the page
+        const widgetIconImg = document.getElementById('widget-demo-icon');
+        if (widgetIconImg) {
+            widgetIconImg.src = `${iconPath}?t=${timestamp}`;
+        }
+
+        // Update the homepage navigation widget
+        const homepageWidgetIcon = document.getElementById('homepage-widget-icon');
+        if (homepageWidgetIcon) {
+            homepageWidgetIcon.src = `${iconPath}?t=${timestamp}`;
+            console.log(`Theme changed to ${theme}, icons updated to: ${iconPath}`);
+        }
+
+        // Update all default badges
+        const defaultBadgePath = theme === 'dark' ? 'badges/default-badge-dark.png' : 'badges/default-badge.png';
+        const defaultBadges = document.querySelectorAll('.member-badge[src^="badges/default-badge"]');
+        defaultBadges.forEach(badge => {
+            badge.src = `${defaultBadgePath}?t=${timestamp}`;
+        });
+
+        // Update pixel art background colors based on theme
+        if (window.pixelArtParams) {
+            if (theme === 'dark') {
+                window.pixelArtParams.waveColor = [0.35, 0.35, 0.35]; // Brighter gray for dark theme
+            } else {
+                window.pixelArtParams.waveColor = [0.85, 0.85, 0.85]; // Softer gray for light theme
+            }
+        }
+    }
+
+    // Function to update background visibility
+    function updateBackgroundVisibility(enabled) {
+        const canvas = document.getElementById('background-canvas');
+        if (canvas) {
+            canvas.style.display = enabled ? 'block' : 'none';
+
+            // Initialize the background if it's being enabled and hasn't been initialized
+            if (enabled && (!gl || !program)) {
+                initPixelArtBackground();
+            }
+        }
+
+        // Update button appearance
+        if (bgToggleBtn) {
+            bgToggleBtn.className = enabled ? 'bg-toggle-on' : 'bg-toggle-off';
+        }
+
+        // Save preference
+        localStorage.setItem('bgEnabled', enabled);
+    }
+
+    // Apply theme based on saved preference or system preference
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.body.setAttribute('data-theme', 'dark');
+        updateIcon('dark');
+    } else {
+        updateIcon('light');
+    }
+
+    // Apply background state based on saved preference
+    updateBackgroundVisibility(bgEnabled);
+
+    // Toggle theme on button click
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.body.setAttribute('data-theme', currentTheme);
+        localStorage.setItem('theme', currentTheme);
+        updateIcon(currentTheme);
+    });
+
+    // Toggle background on button click
+    bgToggleBtn.addEventListener('click', () => {
+        const isEnabled = bgToggleBtn.className === 'bg-toggle-on';
+        updateBackgroundVisibility(!isEnabled);
+    });
+
+    // Preload badge images to ensure they're in the browser cache
+    function preloadBadgeImages() {
+        // Preload both light and dark default badges
+        const defaultBadges = ['badges/default-badge.png', 'badges/default-badge-dark.png'];
+
+        // Preload all member badges
+        const memberBadges = members.map(member => member.badge).filter(badge => badge);
+
+        // Combine both arrays and remove duplicates
+        const allBadges = [...new Set([...defaultBadges, ...memberBadges])];
+
+        // Create image objects to preload
+        allBadges.forEach(badgeSrc => {
+            const img = new Image();
+            img.src = badgeSrc;
+        });
+    }
+
+    // Preload badges on page load
+    preloadBadgeImages();
+
+    // Handle report broken link button
+    const reportLinkBtn = document.getElementById('report-link');
+    if (reportLinkBtn) {
+        reportLinkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const issueUrl = "https://github.com/ayan20985/webring/issues/new";
+            const issueTitle = encodeURIComponent("Broken Link Report");
+            const issueBody = encodeURIComponent("## Broken Link Report\n\nPlease fill out the information below:\n\n* **Website URL**: [Enter the broken link here]\n* **Member Name**: [Enter member name if known]\n* **Issue Description**: [Describe the issue (e.g., site not loading, domain expired)]\n\nThank you for helping maintain the webring!");
+            window.open(`${issueUrl}?title=${issueTitle}&body=${issueBody}`, '_blank');
+        });
+    }
+
+    // Initialize the pixel art background if enabled
+    if (bgEnabled) {
+        initPixelArtBackground();
+    }
+
+    // Initialize the webring
+    initWebring();
+});
+    </script>
     <script src="../js/webring-data.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/webring-tool.js"></script>
