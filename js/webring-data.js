@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "May 8th 2025"; // update this value when new members are added
+const lastUpdated = "May 9th 2025"; // update this value when new members are added
 
 const members = [
     {
