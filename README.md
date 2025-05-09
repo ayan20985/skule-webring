@@ -124,24 +124,14 @@ You can create a custom badge for your website to display in the members table. 
 
 1. Create a PNG, GIF, or SVG image for your website badge
 2. Recommended dimensions: 88px × 31px (standard badge size)
-3. Upload the badge to your website or include it in a PR
+3. Upload the badge to your website ~~or include it in a PR~~
 4. Include the path to your badge in your member entry in the `badge` field
    - For badges hosted on your website: use the full URL (e.g., `https://your-website.com/badge.png`)
-   - For badges included in a PR: use a relative path (e.g., `badges/your-custom-badge.svg`)
+   - ~~For badges included in a PR: use a relative path (e.g., `badges/your-custom-badge.svg`)~~
 
 ### Badge Examples and Formatting
 Badges must be 88x31 pixels or some multiple of this, they can png, .gif, or .svg file types.
 [Here](https://cyber.dabamos.de/88x31/index2.html) are some example badge styles you might consider.
-
-### HTML for Linking Your Badge
-
-If you want to link your badge on your own site:
-
-```html
-<a href="https://webring.ayanali.net/#https://your-website.com">
-  <img src="path/to/your/badge.png" alt="Member of The Unnamed Webring" width="88" height="31" />
-</a>
-```
 
 ## Questions?
 
