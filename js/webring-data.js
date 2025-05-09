@@ -40,7 +40,7 @@ const members = [
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
-        badge: "https://webring.ayanali.net/badges/Eric%20Badge.png"
+        badge: "https://webring.ayanali.net/badges/default-badge.png"
     }
     // Add your entry below this line in the following format:
     // {
