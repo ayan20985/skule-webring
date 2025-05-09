@@ -25,13 +25,13 @@ const members = [
         badge: "https://webring.ayanali.net/badges/default-badge.png"
     },
     {
-        name: "Hayson Cheyng",
+        name: "Hayson Cheung",
         website: "https://hayson.me",
         program: "Engineering Science",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
-        badge: "https://webring.ayanali.net/badges/default-badge.png"
+        badge: "https://hayson.me/My_Website/badge-ring.gif"
     }
     // Add your entry below this line in the following format:
     // {
