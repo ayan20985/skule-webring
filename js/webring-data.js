@@ -22,7 +22,7 @@ const members = [
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
-        badge: "https://webring.ayanali.net/badges/default-badge.png"
+        badge: "https://lukepayant.com/badge.gif"
     },
     {
         name: "Hayson Cheung",
