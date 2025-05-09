@@ -334,31 +334,6 @@
         <span id="toast-message">Copied to clipboard!</span>
     </div>
     <script>
-
-        // Check for saved theme preference or prefer-color-scheme
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Check for saved background preference, default to off
-        const savedBgState = localStorage.getItem('bgEnabled');
-        const bgEnabled = savedBgState ? savedBgState === 'true' : false; // Default to off
-
-        // clear local storage
-        localStorage.clear();
-
-        // Set initial theme and background
-        if (savedTheme) {
-            document.body.classList.add(savedTheme);
-        } else if (prefersDark) {
-            document.body.classList.add('dark');
-        } else {
-            document.body.classList.add('light');
-        }
-        if (bgEnabled) {
-            document.body.classList.add('bg-enabled');
-        } else {
-            document.body.classList.remove('bg-enabled');
-        }
         document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const bgToggleBtn = document.getElementById('bg-toggle-btn');
@@ -496,7 +471,6 @@
     // Initialize the webring
     initWebring();
 });
-
     </script>
     <script src="../js/script.js"></script>
 
