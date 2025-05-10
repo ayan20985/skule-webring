@@ -26,7 +26,7 @@ const members = [
     },
     {
         name: "Hayson Cheung",
-        website: "https://hayson.me/My_Website/",
+        website: "https://hayson.me/My_Website",
         program: "Engineering Science",
         designation: "BASc",
         year: "5-25",
