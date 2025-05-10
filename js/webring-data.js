@@ -9,7 +9,7 @@ const members = [
     {
         name: "Ayan Ali",
         website: "https://ayanali.net",
-        program: "ECE",
+        program: "ECE, EE",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
@@ -51,6 +51,16 @@ const members = [
         grad: "2T8",
         badge: "https://jetchiang.co/img/badge.png"
     }
+    {
+        name: "Ketevan Gallagher",
+        website: "https://ketevangallagher.com",
+        program: "ECE, CE",
+        designation: "BASc",
+        year: "5-25",
+        grad: "2T8",
+        badge: "https://ketevangallagher.com/webringBadge.gif"
+    }
+    
     // Add your entry below this line in the following format:
     // {
     //     "name": "Your Name",
