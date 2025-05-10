@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "May 9th 2025"; // update this value when new members are added
+const lastUpdated = "May 10th 2025"; // update this value when new members are added
 
 const members = [
     {
@@ -41,6 +41,15 @@ const members = [
         year: "5-25",
         grad: "2T8",
         badge: "https://epiceric.tech/webring-badge.png"
+    },
+    {
+        name: "Jet Chiang",
+        website: "https://jetchiang.co",
+        program: "Engineering Science",
+        designation: "BASc",
+        year: "5-25",
+        grad: "2T8",
+        badge: "https://jetchiang.co/img/badge.png"
     }
     // Add your entry below this line in the following format:
     // {
