@@ -795,7 +795,14 @@ function renderPagination(container, totalItems, currentPage, itemsPerPage) {
 
 // Format URL for display (remove https:// and trailing slashes)
 function formatUrl(url) {
-    return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    // First remove protocol (http:// or https://)
+    let formattedUrl = url.replace(/^https?:\/\//, '');
+    
+    // Then extract just the domain name by removing everything after the first slash
+    formattedUrl = formattedUrl.split('/')[0];
+    
+    // Remove trailing slash if any
+    return formattedUrl.replace(/\/$/, '');
 }
 
 // Format graduation year to support both standard and UofT formats
