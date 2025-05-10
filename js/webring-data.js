@@ -50,7 +50,7 @@ const members = [
         year: "5-25",
         grad: "2T8",
         badge: "https://jetchiang.co/img/badge.png"
-    }
+    },
     {
         name: "Ketevan Gallagher",
         website: "https://ketevangallagher.com",
