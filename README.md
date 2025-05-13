@@ -65,7 +65,7 @@ Since every website is unique, we suggest you add your own flair to the icon. He
 <div style="display: flex; align-items: center; gap: 15px; background-color: #2a2a2a; padding: 15px 25px; border-radius: 8px; border: 1px solid #444;">
     <a href="https://webring.ayanali.net/#https://your-website.com?nav=prev" style="color: #e0e0e0; text-decoration: none; font-size: 1.5rem;">←</a>
     <a href="https://webring.ayanali.net/#https://your-website.com" target="_blank">
-        <img src="https://webring.ayanali.net/img/icon-dark.svg" alt="The Unnamed Webring" style="width: 32px; height: 32px;"/>
+        <img src="https://webring.ayanali.net/img/icon-dark.svg" alt="SKULE Webring" style="width: 32px; height: 32px;"/>
     </a>
     <a href="https://webring.ayanali.net/#https://your-website.com?nav=next" style="color: #e0e0e0; text-decoration: none; font-size: 1.5rem;">→</a>
 </div>
@@ -85,7 +85,7 @@ Since every website is unique, we suggest you add your own flair to the icon. He
 }}>
     <a href='https://webring.ayanali.net/#https://your-website.com?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
     <a href='https://webring.ayanali.net/#https://your-website.com' target='_blank'>
-        <img src='https://webring.ayanali.net/img/icon.svg' alt='The Unnamed Webring' style={{ width: '32px', height: '32px' }}/>
+        <img src='https://webring.ayanali.net/img/icon.svg' alt='SKULE Webring' style={{ width: '32px', height: '32px' }}/>
     </a>
     <a href='https://webring.ayanali.net/#https://your-website.com?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
 </div>
@@ -105,7 +105,7 @@ Since every website is unique, we suggest you add your own flair to the icon. He
 }}>
     <a href='https://webring.ayanali.net/#https://your-website.com?nav=prev' style={{ color: '#e0e0e0', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
     <a href='https://webring.ayanali.net/#https://your-website.com' target='_blank'>
-        <img src='https://webring.ayanali.net/img/icon-dark.svg' alt='The Unnamed Webring' style={{ width: '32px', height: '32px' }}/>
+        <img src='https://webring.ayanali.net/img/icon-dark.svg' alt='SKULE Webring' style={{ width: '32px', height: '32px' }}/>
     </a>
     <a href='https://webring.ayanali.net/#https://your-website.com?nav=next' style={{ color: '#e0e0e0', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
 </div>
