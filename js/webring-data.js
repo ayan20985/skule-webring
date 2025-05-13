@@ -59,7 +59,7 @@ const members = [
         year: "5-25",
         grad: "2T8",
         badge: "https://ketevangallagher.com/webringBadge.gif"
-    }
+    },
     {
       "name": "Jacky Li",
       "website": "jakkii.ca",
@@ -67,7 +67,7 @@ const members = [
       "designation": "BASc",
       "year": "5-25",  
       "grad": "2T8",   
-      "badge": "https://www.jakkii.ca/images/logo.png"  
+      "badge": "https://www.jakkii.ca/images/webring.png"  
     }
     
     // Add your entry below this line in the following format:
