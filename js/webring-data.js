@@ -68,7 +68,17 @@ const members = [
         year: "5-25",  
         grad: "2T8",   
         badge: "https://www.jakkii.ca/images/webring.png"  
-    }
+    },
+
+    {
+        "name": "Yang Yang Zhang",
+        "website": "https://engineering-design-portfolio.vercel.app/",
+        "program": "Engineering Science",
+        "designation": "BASc",
+        "year": "5-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
+        "grad": "2T8",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
+        "badge": "https://engineering-design-portfolio.vercel.app/images/badge.png"  // URL to your custom website badge (required)
+      }
     
     // Add your entry below this line in the following format:
     // {
