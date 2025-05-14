@@ -8,12 +8,12 @@ const lastUpdated = "May 10th 2025"; // update this value when new members are a
 const members = [
     {
         name: "Ayan Ali",
-        website: "https://ayanali.net",
+        website: "https://new.ayanali.net",
         program: "ECE, EE",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
-        badge: "https://ayanali.net/badge.gif"
+        badge: "https://new.ayanali.net/badge.gif"
     },
     {
         name: "Luke Payant",
