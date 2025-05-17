@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "May 10th 2025"; // update this value when new members are added
+const lastUpdated = "May 13th 2025"; // update this value when new members are added
 
 const members = [
     {
@@ -68,7 +68,16 @@ const members = [
         year: "5-25",  
         grad: "2T8",   
         badge: "https://www.jakkii.ca/images/webring.png"  
-    }
+    },
+    {
+        name: "Sadman Hossain",
+        website: "https://sadman.ca",
+        program: "ECE, CE",
+        designation: "BASc",
+        year: "5-25",
+        grad: "2T5",   
+        badge: "https://sadman.ca/badge.gif"  
+    }    
     
     // Add your entry below this line in the following format:
     // {
