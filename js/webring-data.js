@@ -76,7 +76,7 @@ const members = [
         designation: "BASc",
         year: "5-25",
         grad: "2T5",   
-        badge: "https://www.sadman.ca/badge.gif"  
+        badge: "https://sadman.ca/badge.gif"  
     }    
     
     // Add your entry below this line in the following format:
