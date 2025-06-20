@@ -77,7 +77,16 @@ const members = [
         year: "5-25",
         grad: "2T5",   
         badge: "https://sadman.ca/badge.gif"  
-    }    
+    },
+    {
+        name: "James Huynh",
+        website: "https://jamesh.skule.ca",
+        program: "ECE, EE",
+        designation: "BASc",
+        year: "6-25",
+        grad: "2T8",   
+        badge: "https://jamesh.skule.ca/assets/badge.png"  
+    }
     
     // Add your entry below this line in the following format:
     // {
