@@ -18,7 +18,7 @@ const members = [
     {
         name: "Luke Payant",
         website: "https://lukepayant.com",
-        program: "Engineering Science",
+        program: "EngSci, General",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
@@ -27,7 +27,7 @@ const members = [
     {
         name: "Hayson Cheung",
         website: "https://hayson.me/My_Website",
-        program: "Engineering Science",
+        program: "EngSci, General",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
@@ -36,7 +36,7 @@ const members = [
     {
         name: "Eric Xie",
         website: "https://epiceric.tech",
-        program: "Engineering Science",
+        program: "EngSci, General",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
@@ -45,7 +45,7 @@ const members = [
     {
         name: "Jet Chiang",
         website: "https://jetchiang.co",
-        program: "Engineering Science",
+        program: "EngSci, General",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
@@ -63,7 +63,7 @@ const members = [
     {
         name: "Jacky Li",
         website: "https://jakkii.ca",
-        program: "Engineering Science",
+        program: "EngSci, General",
         designation: "BASc",
         year: "5-25",  
         grad: "2T8",   
