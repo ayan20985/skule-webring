@@ -834,9 +834,19 @@ function handleNavigation(hashString) {
     
     console.log('Handling navigation for hash:', hashString);
     
+    // Ensure members array is loaded before processing navigation
+    if (!members || members.length === 0) {
+        console.error('Members array not loaded, retrying navigation in 100ms');
+        setTimeout(() => handleNavigation(hashString), 100);
+        return;
+    }
+    
     const [websiteUrl, navQuery] = hashString.substring(1).split('?');
     
-    if (!websiteUrl) return;
+    if (!websiteUrl) {
+        console.error('No website URL found in hash string');
+        return;
+    }
     
     const navDirection = navQuery ? navQuery.split('=')[1] : null;
     console.log('Navigation direction:', navDirection);
@@ -849,10 +859,12 @@ function handleNavigation(hashString) {
             // Go to first member when clicking next
             console.log('Going to first member');
             window.location.href = members[0].website;
-        } else {
+        } else if (navDirection === 'prev') {
             // Go to last member when clicking prev
             console.log('Going to last member');
             window.location.href = members[members.length - 1].website;
+        } else {
+            console.log('No valid navigation direction specified for homepage');
         }
         return;
     }
@@ -866,6 +878,7 @@ function handleNavigation(hashString) {
         );
         
         console.log('Current index in members array:', currentIndex);
+        console.log('Members array length:', members.length);
         
         if (currentIndex !== -1) {
             let targetIndex;
@@ -873,19 +886,42 @@ function handleNavigation(hashString) {
             if (navDirection === 'prev') {
                 // Go to previous website, or wrap around to the last one
                 targetIndex = currentIndex === 0 ? members.length - 1 : currentIndex - 1;
+                console.log('Previous navigation: current index', currentIndex, '-> target index', targetIndex);
             } else {
                 // Go to next website, or wrap around to the first one
                 targetIndex = (currentIndex + 1) % members.length;
+                console.log('Next navigation: current index', currentIndex, '-> target index', targetIndex);
+            }
+            
+            // Validate target index
+            if (targetIndex < 0 || targetIndex >= members.length) {
+                console.error('Invalid target index:', targetIndex, 'for members array of length:', members.length);
+                window.location.href = members[0].website;
+                return;
+            }
+            
+            const targetMember = members[targetIndex];
+            if (!targetMember || !targetMember.website) {
+                console.error('Invalid target member at index:', targetIndex);
+                window.location.href = members[0].website;
+                return;
             }
             
             console.log('Target index:', targetIndex);
-            console.log('Navigating to:', members[targetIndex].website);
+            console.log('Target member:', targetMember.name);
+            console.log('Navigating to:', targetMember.website);
             
             // Navigate to the target website
-            window.location.href = members[targetIndex].website;
+            window.location.href = targetMember.website;
         } else {
             // If website not found in members array, go to first member
             console.log('Website not found in members array, going to first member');
+            console.log('Searched for variations:', [
+                websiteUrl,
+                'https://' + websiteUrl,
+                'http://' + websiteUrl
+            ]);
+            console.log('Available websites:', members.map(m => m.website));
             window.location.href = members[0].website;
         }
     } else {
