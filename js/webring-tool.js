@@ -423,16 +423,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (format === "html") {
       // HTML format
       let html = `<div style="display: flex; align-items: center; gap: 15px; background-color: ${getColors(theme, previewTheme).bg}; padding: 15px 25px; border-radius: ${rounded ? "20px" : "8px"}; border: 1px solid ${getColors(theme, previewTheme).border}; ${textWrap ? "flex-direction: column; text-align: center;" : ""} ${glowingEffect ? "box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" : ""} ${hoverScale ? "transition: transform 0.2s ease;" : ""}">
-    <a href="https://webring.ayanali.net/#${websiteUrl}?nav=prev" style="color: ${getColors(theme, previewTheme).text}; text-decoration: none; font-size: 1.5rem;">${arrows.prev}</a>
-    <a href="https://webring.ayanali.net/#${websiteUrl}" target="_blank" ${spinningIcon ? 'style="display: inline-block;"' : ""}>
-        <img src="https://webring.ayanali.net/${iconPath}" alt="SKULE Website Phone Book" style="width: 32px; height: 32px; ${spinningIcon ? "transition: transform 2s linear;" : ""}" ${spinningIcon ? "onmouseover=\"this.style.animation='spin 2s linear infinite'\" onmouseout=\"this.style.animation='none'\"" : ""}/>
+    <a href="https://webring.skule.ca/#${websiteUrl}?nav=prev" style="color: ${getColors(theme, previewTheme).text}; text-decoration: none; font-size: 1.5rem;">${arrows.prev}</a>
+    <a href="https://webring.skule.ca/#${websiteUrl}" target="_blank" ${spinningIcon ? 'style="display: inline-block;"' : ""}>
+        <img src="https://webring.skule.ca/${iconPath}" alt="SKULE WebRing" style="width: 32px; height: 32px; ${spinningIcon ? "transition: transform 2s linear;" : ""}" ${spinningIcon ? "onmouseover=\"this.style.animation='spin 2s linear infinite'\" onmouseout=\"this.style.animation='none'\"" : ""}/>
     </a>
-    <a href="https://webring.ayanali.net/#${websiteUrl}?nav=next" style="color: ${getColors(theme, previewTheme).text}; text-decoration: none; font-size: 1.5rem;">${arrows.next}</a>
+    <a href="https://webring.skule.ca/#${websiteUrl}?nav=next" style="color: ${getColors(theme, previewTheme).text}; text-decoration: none; font-size: 1.5rem;">${arrows.next}</a>
 </div>
 ${
   showBadge
-    ? `\n<a href="https://webring.ayanali.net/#${websiteUrl}" target="_blank">
-    <img src="https://webring.ayanali.net/${badgePath}" alt="Member of SKULE Website Phone Book" width="88" height="31" style="margin-top: 10px;" />
+    ? `\n<a href="https://webring.skule.ca/#${websiteUrl}" target="_blank">
+    <img src="https://webring.skule.ca/${badgePath}" alt="Member of SKULE WebRing" width="88" height="31" style="margin-top: 10px;" />
 </a>`
     : ""
 }`
@@ -451,12 +451,12 @@ ${
             webring.style.backgroundColor = '#2a2a2a';
             webring.style.borderColor = '#444444';
             links.forEach(link => link.style.color = '#e0e0e0');
-            img.src = 'https://webring.ayanali.net/img/icon-dark.svg';
+            img.src = 'https://webring.skule.ca/img/icon-dark.svg';
         } else {
             webring.style.backgroundColor = '#f5f5f5';
             webring.style.borderColor = '#dddddd';
             links.forEach(link => link.style.color = '#333333');
-            img.src = 'https://webring.ayanali.net/img/icon.svg';
+            img.src = 'https://webring.skule.ca/img/icon.svg';
         }
     }
     
@@ -468,16 +468,16 @@ ${
 </script>
 
 <div class="webring-auto" style="display: flex; align-items: center; gap: 15px; padding: 15px 25px; border-radius: ${rounded ? "20px" : "8px"}; border: 1px solid; ${textWrap ? "flex-direction: column; text-align: center;" : ""} ${glowingEffect ? "box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" : ""} ${hoverScale ? "transition: transform 0.2s ease;" : ""}">
-    <a href="https://webring.ayanali.net/#${websiteUrl}?nav=prev" style="text-decoration: none; font-size: 1.5rem;">${arrows.prev}</a>
-    <a href="https://webring.ayanali.net/#${websiteUrl}" target="_blank" ${spinningIcon ? 'style="display: inline-block;"' : ""}>
-        <img src="https://webring.ayanali.net/img/icon.svg" alt="SKULE Website Phone Book" style="width: 32px; height: 32px; ${spinningIcon ? "transition: transform 2s linear;" : ""}" ${spinningIcon ? "onmouseover=\"this.style.animation='spin 2s linear infinite'\" onmouseout=\"this.style.animation='none'\"" : ""}/>
+    <a href="https://webring.skule.ca/#${websiteUrl}?nav=prev" style="text-decoration: none; font-size: 1.5rem;">${arrows.prev}</a>
+    <a href="https://webring.skule.ca/#${websiteUrl}" target="_blank" ${spinningIcon ? 'style="display: inline-block;"' : ""}>
+        <img src="https://webring.skule.ca/img/icon.svg" alt="SKULE WebRing" style="width: 32px; height: 32px; ${spinningIcon ? "transition: transform 2s linear;" : ""}" ${spinningIcon ? "onmouseover=\"this.style.animation='spin 2s linear infinite'\" onmouseout=\"this.style.animation='none'\"" : ""}/>
     </a>
-    <a href="https://webring.ayanali.net/#${websiteUrl}?nav=next" style="text-decoration: none; font-size: 1.5rem;">${arrows.next}</a>
+    <a href="https://webring.skule.ca/#${websiteUrl}?nav=next" style="text-decoration: none; font-size: 1.5rem;">${arrows.next}</a>
 </div>
 ${
   showBadge
-    ? `\n<a href="https://webring.ayanali.net/#${websiteUrl}" target="_blank">
-    <img src="https://webring.ayanali.net/${badgePath}" alt="Member of SKULE Website Phone Book" width="88" height="31" style="margin-top: 10px;" />
+    ? `\n<a href="https://webring.skule.ca/#${websiteUrl}" target="_blank">
+    <img src="https://webring.skule.ca/${badgePath}" alt="Member of SKULE WebRing" width="88" height="31" style="margin-top: 10px;" />
 </a>`
     : ""
 }`
@@ -511,11 +511,11 @@ ${html}`
   ${hoverScale ? "transition: 'transform 0.2s ease'," : ""}
   ${hoverScale ? "':hover': { transform: 'scale(1.05)' }," : ""}
 }}>
-    <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=prev\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
-    <a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
+    <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=prev\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
+    <a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
         <img 
-          src={\`https://webring.ayanali.net/${iconPath || "/placeholder.svg"}\`} 
-          alt="SKULE Website Phone Book" 
+          src={\`https://webring.skule.ca/${iconPath || "/placeholder.svg"}\`} 
+          alt="SKULE WebRing" 
           style={{ 
             width: '32px', 
             height: '32px',
@@ -523,12 +523,12 @@ ${html}`
           }}
         />
     </a>
-    <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=next\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
+    <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=next\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
 </div>
 ${
   showBadge
-    ? `\n<a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank">
-    <img src={\`https://webring.ayanali.net/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE Website Phone Book" width={88} height={31} style={{ marginTop: '10px' }} />
+    ? `\n<a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank">
+    <img src={\`https://webring.skule.ca/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE WebRing" width={88} height={31} style={{ marginTop: '10px' }} />
 </a>`
     : ""
 }`
@@ -567,11 +567,11 @@ function WebringElement() {
                 ${hoverScale ? "transition: 'transform 0.2s ease'," : ""}
                 ${hoverScale ? "':hover': { transform: 'scale(1.05)' }," : ""}
             }}>
-                <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=prev\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
-                <a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
+                <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=prev\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
+                <a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
                     <img 
-                        src={isDark ? 'https://webring.ayanali.net/img/icon-dark.svg' : 'https://webring.ayanali.net/img/icon.svg'} 
-                        alt="SKULE Website Phone Book" 
+                        src={isDark ? 'https://webring.skule.ca/img/icon-dark.svg' : 'https://webring.skule.ca/img/icon.svg'} 
+                        alt="SKULE WebRing" 
                         style={{ 
                             width: '32px', 
                             height: '32px',
@@ -579,12 +579,12 @@ function WebringElement() {
                         }}
                     />
                 </a>
-                <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=next\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
+                <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=next\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
             </div>
             ${
               showBadge
-                ? `\n             <a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank">
-                <img src={\`https://webring.ayanali.net/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE Website Phone Book" width={88} height={31} style={{ marginTop: '10px' }} />
+                ? `\n             <a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank">
+                <img src={\`https://webring.skule.ca/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE WebRing" width={88} height={31} style={{ marginTop: '10px' }} />
             </a>`
                 : ""
             }
@@ -635,11 +635,11 @@ ${jsx}`
   ${hoverScale ? "transition: 'transform 0.2s ease'," : ""}
   ${hoverScale ? "':hover': { transform: 'scale(1.05)' }," : ""}
 }}>
-    <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=prev\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
-    <a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
+    <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=prev\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
+    <a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
         <img 
-          src={\`https://webring.ayanali.net/${iconPath || "/placeholder.svg"}\`} 
-          alt="SKULE Website Phone Book" 
+          src={\`https://webring.skule.ca/${iconPath || "/placeholder.svg"}\`} 
+          alt="SKULE WebRing" 
           style={{ 
             width: '32px', 
             height: '32px',
@@ -647,12 +647,12 @@ ${jsx}`
           }}
         />
     </a>
-    <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=next\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
+    <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=next\`} style={{ color: '${getColors(theme, previewTheme).text}', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
 </div>
 ${
   showBadge
-    ? `\n<a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank">
-    <img src={\`https://webring.ayanali.net/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE Website Phone Book" width={88} height={31} style={{ marginTop: '10px' }} />
+    ? `\n<a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank">
+    <img src={\`https://webring.skule.ca/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE WebRing" width={88} height={31} style={{ marginTop: '10px' }} />
 </a>`
     : ""
 }`
@@ -691,11 +691,11 @@ const WebringElement: React.FC = () => {
                 ${hoverScale ? "transition: 'transform 0.2s ease'," : ""}
                 ${hoverScale ? "':hover': { transform: 'scale(1.05)' }," : ""}
             }}>
-                <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=prev\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
-                <a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
+                <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=prev\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.prev}</a>
+                <a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank" ${spinningIcon ? "style={{ display: 'inline-block' }}" : ""}>
                     <img 
-                        src={isDark ? 'https://webring.ayanali.net/img/icon-dark.svg' : 'https://webring.ayanali.net/img/icon.svg'} 
-                        alt="SKULE Website Phone Book" 
+                        src={isDark ? 'https://webring.skule.ca/img/icon-dark.svg' : 'https://webring.skule.ca/img/icon.svg'} 
+                        alt="SKULE WebRing" 
                         style={{ 
                             width: '32px', 
                             height: '32px',
@@ -703,12 +703,12 @@ const WebringElement: React.FC = () => {
                         }}
                     />
                 </a>
-                <a href={\`https://webring.ayanali.net/#${websiteUrl}?nav=next\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
+                <a href={\`https://webring.skule.ca/#${websiteUrl}?nav=next\`} style={{ color: isDark ? '#e0e0e0' : '#333333', textDecoration: 'none', fontSize: '1.5rem' }}>${arrows.next}</a>
             </div>
             ${
               showBadge
-                ? `\n            <a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank">
-                <img src={\`https://webring.ayanali.net/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE Website Phone Book" width={88} height={31} style={{ marginTop: '10px' }} />
+                ? `\n            <a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank">
+                <img src={\`https://webring.skule.ca/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE WebRing" width={88} height={31} style={{ marginTop: '10px' }} />
             </a>`
                 : ""
             }
@@ -750,9 +750,9 @@ ${tsx}`
       // PHP format (beta)
       let php = `<?php
 /**
- * SKULE Website Phone Book - Webring Element
+ * SKULE WebRing - Webring Element
  * 
- * This code generates a webring element for the SKULE Website Phone Book.
+ * This code generates a webring element for the SKULE WebRing.
  * Replace 'your-website.com' with your actual website URL.
  */
 
@@ -818,16 +818,16 @@ ${spinningIcon ? `<style>
 </style>
 ` : ""}
 <div style="display: flex; align-items: center; gap: 15px; background-color: <?php echo $bgColor; ?>; padding: 15px 25px; border-radius: ${rounded ? "20px" : "8px"}; border: 1px solid <?php echo $borderColor; ?>; ${textWrap ? "flex-direction: column; text-align: center;" : ""} ${glowingEffect ? "box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" : ""} ${hoverScale ? "transition: transform 0.2s ease;" : ""}">
-    <a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>?nav=prev" style="color: <?php echo $textColor; ?>; text-decoration: none; font-size: 1.5rem;">${arrows.prev}</a>
-    <a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>" target="_blank" ${spinningIcon ? 'style="display: inline-block;"' : ""}>
-        <img src="https://webring.ayanali.net/<?php echo $iconPath; ?>" alt="SKULE Website Phone Book" style="width: 32px; height: 32px; ${spinningIcon ? "transition: transform 2s linear;" : ""}" ${spinningIcon ? "onmouseover=\"this.style.animation='spin 2s linear infinite'\" onmouseout=\"this.style.animation='none'\"" : ""}/>
+    <a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>?nav=prev" style="color: <?php echo $textColor; ?>; text-decoration: none; font-size: 1.5rem;">${arrows.prev}</a>
+    <a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>" target="_blank" ${spinningIcon ? 'style="display: inline-block;"' : ""}>
+        <img src="https://webring.skule.ca/<?php echo $iconPath; ?>" alt="SKULE WebRing" style="width: 32px; height: 32px; ${spinningIcon ? "transition: transform 2s linear;" : ""}" ${spinningIcon ? "onmouseover=\"this.style.animation='spin 2s linear infinite'\" onmouseout=\"this.style.animation='none'\"" : ""}/>
     </a>
-    <a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>?nav=next" style="color: <?php echo $textColor; ?>; text-decoration: none; font-size: 1.5rem;">${arrows.next}</a>
+    <a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>?nav=next" style="color: <?php echo $textColor; ?>; text-decoration: none; font-size: 1.5rem;">${arrows.next}</a>
 </div>
 ${
   showBadge
-    ? `\n<a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>" target="_blank">
-    <img src="https://webring.ayanali.net/<?php echo $badgePath; ?>" alt="Member of SKULE Website Phone Book" width="88" height="31" style="margin-top: 10px;" />
+    ? `\n<a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>" target="_blank">
+    <img src="https://webring.skule.ca/<?php echo $badgePath; ?>" alt="Member of SKULE WebRing" width="88" height="31" style="margin-top: 10px;" />
 </a>`
     : ""
 }`
@@ -913,12 +913,12 @@ ${
       badgeType === "custom" && customBadgeUrl ? customBadgeUrl : "badges/default-badge.png"
 
     if (format === "html") {
-      return `<a href="https://webring.ayanali.net/#${websiteUrl}" target="_blank">
-    <img src="https://webring.ayanali.net/${badgePath}" alt="Member of SKULE Website Phone Book" width="88" height="31" />
+      return `<a href="https://webring.skule.ca/#${websiteUrl}" target="_blank">
+    <img src="https://webring.skule.ca/${badgePath}" alt="Member of SKULE WebRing" width="88" height="31" />
 </a>`
     } else if (format === "jsx" || format === "tsx") {
-      return `<a href={\`https://webring.ayanali.net/#${websiteUrl}\`} target="_blank">
-    <img src={\`https://webring.ayanali.net/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE Website Phone Book" width={88} height={31} />
+      return `<a href={\`https://webring.skule.ca/#${websiteUrl}\`} target="_blank">
+    <img src={\`https://webring.skule.ca/${badgePath || "/placeholder.svg"}\`} alt="Member of SKULE WebRing" width={88} height={31} />
 </a>`
     } else if (format === "php") {
       return `<?php
@@ -926,8 +926,8 @@ $websiteUrl = '${websiteUrl}';
 $badgePath = '${badgePath}';
 ?>
 
-<a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>" target="_blank">
-    <img src="https://webring.ayanali.net/<?php echo $badgePath; ?>" alt="Member of SKULE Website Phone Book" width="88" height="31" />
+<a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>" target="_blank">
+    <img src="https://webring.skule.ca/<?php echo $badgePath; ?>" alt="Member of SKULE WebRing" width="88" height="31" />
 </a>`
     }
   }
@@ -953,9 +953,9 @@ $badgePath = '${badgePath}';
 
     return `<?php
 /**
- * SKULE Website Phone Book - Webring Element
+ * SKULE WebRing - Webring Element
  * 
- * This code generates a webring element for the SKULE Website Phone Book.
+ * This code generates a webring element for the SKULE WebRing.
  * Replace 'your-website.com' with your actual website URL.
  */
 
@@ -1088,17 +1088,17 @@ EOT;
 </style>
 
 <div class="<?php echo '${className}'; ?>">
-    <a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>?nav=prev"><?php echo $prevArrow; ?></a>
-    <a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>" target="_blank">
-        <img src="https://webring.ayanali.net/<?php echo $iconPath; ?>" alt="SKULE Website Phone Book" />
+    <a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>?nav=prev"><?php echo $prevArrow; ?></a>
+    <a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>" target="_blank">
+        <img src="https://webring.skule.ca/<?php echo $iconPath; ?>" alt="SKULE WebRing" />
     </a>
-    <a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>?nav=next"><?php echo $nextArrow; ?></a>
+    <a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>?nav=next"><?php echo $nextArrow; ?></a>
 </div>
 ${
   showBadge
     ? `
-<a href="https://webring.ayanali.net/#<?php echo $websiteUrl; ?>" target="_blank" class="${className}-badge">
-    <img src="https://webring.ayanali.net/<?php echo $badgePath; ?>" alt="Member of SKULE Website Phone Book" width="88" height="31" />
+<a href="https://webring.skule.ca/#<?php echo $websiteUrl; ?>" target="_blank" class="${className}-badge">
+    <img src="https://webring.skule.ca/<?php echo $badgePath; ?>" alt="Member of SKULE WebRing" width="88" height="31" />
 </a>`
     : ""
 }`

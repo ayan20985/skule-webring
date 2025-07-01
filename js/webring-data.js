@@ -96,6 +96,6 @@ const members = [
     //     "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
     //     "year": "1-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
     //     "grad": "2T5",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
-    //     "badge": "https://your-website.com/badge.png"  // Else use the default badge @ https://webring.ayanali.net/badges/default-badge.png
+    //     "badge": "https://your-website.com/badge.png"  // Else use the default badge @ https://webring.skule.ca/badges/default-badge.png
     // }
 ]; 

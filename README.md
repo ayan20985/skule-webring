@@ -1,10 +1,10 @@
-# Currently Unnamed Webring
+# SKULE WebRing
 
 A webring for University of Toronto Engineering students and the broader UofT community. This webring connects personal websites, portfolios, and blogs of UofT students, faculty, and alumni.
 
 ## About
 
-The Currently Unnamed Webring is a community-driven project that connects websites of UofT community members through a retro-inspired webring. It's a way to discover interesting sites, share your work, and build connections within the UofT tech community.
+The SKULE WebRing is a community-driven project that connects websites of UofT community members through a retro-inspired webring. It's a way to discover interesting sites, share your work, and build connections within the UofT tech community.
 
 The webring features a deliberately minimalist design, inspired by classic webrings like [XXIIVV](https://webring.xxiivv.com/), focusing on content and community rather than visual complexity.
 
@@ -22,9 +22,11 @@ The webring features a deliberately minimalist design, inspired by classic webri
 
 ### Join Process
 
-1. Add the webring widget to your website HTML (template below). 
+1. Fill in the student information form in [here](https://docs.google.com/forms/d/e/1FAIpQLSdL70J2n1XTJ9DRo2T2uL_Nzn7Jpl_HiuDwihizBAFw6JufzQ/viewform?usp=sharing&ouid=108594782023550487497).
 
-2. Fork this repository and add your information to the BOTTOM of the `members` array in `js/webring-data.js` following this format:
+2. Add the webring widget to your website HTML (template below). 
+
+3. Fork this repository and add your information to the BOTTOM of the `members` array in `js/webring-data.js` following this format:
    ```js
    {
      "name": "Your Name",
@@ -50,11 +52,11 @@ Since every website is unique, we suggest you add your own flair to the icon. He
 ### Light Mode Widget:
 ```html
 <div style="display: flex; align-items: center; gap: 15px; background-color: #f5f5f5; padding: 15px 25px; border-radius: 8px; border: 1px solid #ddd;">
-    <a href="https://webring.ayanali.net/#https://your-website.com?nav=prev" style="color: #333; text-decoration: none; font-size: 1.5rem;">←</a>
-    <a href="https://webring.ayanali.net/#https://your-website.com" target="_blank">
-        <img src="https://webring.ayanali.net/img/icon.svg" alt="The Currently Unnamed Webring" style="width: 32px; height: 32px;"/>
-    </a>
-    <a href="https://webring.ayanali.net/#https://your-website.com?nav=next" style="color: #333; text-decoration: none; font-size: 1.5rem;">→</a>
+    <a href="https://webring.skule.ca/#https://your-website.com?nav=prev" style="color: #333; text-decoration: none; font-size: 1.5rem;">←</a>
+<a href="https://webring.skule.ca/#https://your-website.com" target="_blank">
+<img src="https://webring.skule.ca/img/icon.svg" alt="SKULE WebRing" style="width: 32px; height: 32px;"/>
+</a>
+<a href="https://webring.skule.ca/#https://your-website.com?nav=next" style="color: #333; text-decoration: none; font-size: 1.5rem;">→</a>
 </div>
 <!-- Replace 'your-website.com' with your actual website URL -->
 ```
@@ -62,11 +64,11 @@ Since every website is unique, we suggest you add your own flair to the icon. He
 ### Dark Mode Widget:
 ```html
 <div style="display: flex; align-items: center; gap: 15px; background-color: #2a2a2a; padding: 15px 25px; border-radius: 8px; border: 1px solid #444;">
-    <a href="https://webring.ayanali.net/#https://your-website.com?nav=prev" style="color: #e0e0e0; text-decoration: none; font-size: 1.5rem;">←</a>
-    <a href="https://webring.ayanali.net/#https://your-website.com" target="_blank">
-        <img src="https://webring.ayanali.net/img/icon-dark.svg" alt="The Currently Unnamed Webring" style="width: 32px; height: 32px;"/>
-    </a>
-    <a href="https://webring.ayanali.net/#https://your-website.com?nav=next" style="color: #e0e0e0; text-decoration: none; font-size: 1.5rem;">→</a>
+    <a href="https://webring.skule.ca/#https://your-website.com?nav=prev" style="color: #e0e0e0; text-decoration: none; font-size: 1.5rem;">←</a>
+<a href="https://webring.skule.ca/#https://your-website.com" target="_blank">
+<img src="https://webring.skule.ca/img/icon-dark.svg" alt="SKULE WebRing" style="width: 32px; height: 32px;"/>
+</a>
+<a href="https://webring.skule.ca/#https://your-website.com?nav=next" style="color: #e0e0e0; text-decoration: none; font-size: 1.5rem;">→</a>
 </div>
 <!-- Replace 'your-website.com' with your actual website URL -->
 ```
@@ -82,11 +84,11 @@ Since every website is unique, we suggest you add your own flair to the icon. He
   borderRadius: '8px',
   border: '1px solid #ddd'
 }}>
-    <a href='https://webring.ayanali.net/#https://your-website.com?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
-    <a href='https://webring.ayanali.net/#https://your-website.com' target='_blank'>
-        <img src='https://webring.ayanali.net/img/icon.svg' alt='SKULE Webring' style={{ width: '32px', height: '32px' }}/>
-    </a>
-    <a href='https://webring.ayanali.net/#https://your-website.com?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
+    <a href='https://webring.skule.ca/#https://your-website.com?nav=prev' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
+<a href='https://webring.skule.ca/#https://your-website.com' target='_blank'>
+<img src='https://webring.skule.ca/img/icon.svg' alt='SKULE WebRing' style={{ width: '32px', height: '32px' }}/>
+</a>
+<a href='https://webring.skule.ca/#https://your-website.com?nav=next' style={{ color: '#333', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
 </div>
 // Replace 'your-website.com' with your actual website URL
 ```
@@ -102,11 +104,11 @@ Since every website is unique, we suggest you add your own flair to the icon. He
   borderRadius: '8px',
   border: '1px solid #444'
 }}>
-    <a href='https://webring.ayanali.net/#https://your-website.com?nav=prev' style={{ color: '#e0e0e0', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
-    <a href='https://webring.ayanali.net/#https://your-website.com' target='_blank'>
-        <img src='https://webring.ayanali.net/img/icon-dark.svg' alt='SKULE Webring' style={{ width: '32px', height: '32px' }}/>
-    </a>
-    <a href='https://webring.ayanali.net/#https://your-website.com?nav=next' style={{ color: '#e0e0e0', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
+    <a href='https://webring.skule.ca/#https://your-website.com?nav=prev' style={{ color: '#e0e0e0', textDecoration: 'none', fontSize: '1.5rem' }}>←</a>
+<a href='https://webring.skule.ca/#https://your-website.com' target='_blank'>
+<img src='https://webring.skule.ca/img/icon-dark.svg' alt='SKULE WebRing' style={{ width: '32px', height: '32px' }}/>
+</a>
+<a href='https://webring.skule.ca/#https://your-website.com?nav=next' style={{ color: '#e0e0e0', textDecoration: 'none', fontSize: '1.5rem' }}>→</a>
 </div>
 // Replace 'your-website.com' with your actual website URL
 ```

@@ -843,7 +843,7 @@ function handleNavigation(hashString) {
     console.log('Website URL:', websiteUrl);
     
     // Special case: If navigating from the webring homepage
-    if (websiteUrl === 'webring.ayanali.net' || websiteUrl === 'https://webring.ayanali.net') {
+    if (websiteUrl === 'webring.skule.ca' || websiteUrl === 'https://webring.skule.ca') {
         console.log('Navigating from webring homepage');
         if (navDirection === 'next') {
             // Go to first member when clicking next
