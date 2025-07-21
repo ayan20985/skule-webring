@@ -86,6 +86,15 @@ const members = [
         year: "6-25",
         grad: "2T8",   
         badge: "https://jamesh.skule.ca/assets/badge.png"  
+    },
+    {
+  	name: "Colin Ye",
+  	website: "https://colinye.tech",
+  	program: "CIV",
+  	designation: "BASc",
+  	year: "7-25",
+	grad: "2T8",
+	badge: "https://colinye.tech/images/badge.png"
     }
     
     // Add your entry below this line in the following format:
