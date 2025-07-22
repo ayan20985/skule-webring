@@ -5,92 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKULE WebRing Badge Instructions</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .badge-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin: 1.5rem 0;
-        }
-        pre {
-            background: #f5f5f5;
-            padding: 1em;
-            border-radius: 6px;
-            overflow-x: auto;
-        }
-        .email-example {
-            background: #f5f5f5;
-            padding: 1em;
-            border-radius: 6px;
-            font-family: monospace;
-            margin-top: 1em;
-        }
-        h1, h2 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Instructions for using SKULE WebRing badges on your website and email signature.">
 </head>
 <body>
-    <main style="max-width: 700px; margin: 2rem auto;">
-        <h1>Show Off Your SKULE WebRing Badge!</h1>
-        <p>
-            Proudly display your SKULE WebRing badge on your website or under your email signoff! Below are suggestions and instructions for how to do this, plus some ready-to-use badge images.
-        </p>
-        <div class="badge-row">
-            <img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" />
-            <img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" />
-            <img src="https://webring.skule.ca/img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" />
-            <img src="https://webring.skule.ca/img/ring.png" alt="RING Badge" width="88" height="31" />
+    <canvas id="background-canvas"></canvas>
+    <header>
+        <div class="theme-toggle">
+            <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                <span class="theme-icon">◐</span>
+            </button>
+            <button id="bg-toggle-btn" aria-label="Toggle pixel background" class="bg-toggle-off">
+                <span class="bg-icon">◱</span>
+            </button>
         </div>
+        <h1 style="display: flex; align-items: center; gap: 0.5em;">
+            <a href="https://webring.skule.ca">
+                <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;" id="header-webring-icon"/>
+            </a>
+            SKULE WebRing Badge Instructions
+        </h1>
+        <p class="subtitle">Instructions for using SKULE WebRing badges on your website and email signature.</p>
+    </header>
 
-        <h2>How to Add a Badge to Your Website</h2>
-        <p>Copy and paste the following HTML where you want the badge to appear (for example, in your website footer):</p>
-        <pre>&lt;a href="https://webring.skule.ca" target="_blank"&gt;
+    <main>
+        <section>
+            <h2>Show Off Your SKULE WebRing Badge!</h2>
+            <p>
+                Proudly display your SKULE WebRing badge on your website or under your email signoff! Below are suggestions and instructions for how to do this, plus some ready-to-use badge images.
+            </p>
+            <div class="badge-row">
+                <img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" />
+                <img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" />
+                <img src="https://webring.skule.ca/img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" />
+                <img src="https://webring.skule.ca/img/ring.png" alt="RING Badge" width="88" height="31" />
+            </div>
+        </section>
+
+        <section>
+            <h2>Make Your Own Badge!</h2>
+            <p>
+                Make your own webring-member-adjacent badge! I love seeing your custom sign-offs, random musings, interesting articles of information, proclamations of love, and more! Email your badge to <a href="mailto:webring@skule.ca">webring@skule.ca</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>How to Add a Badge to Your Website</h2>
+            <p>Copy and paste the following HTML where you want the badge to appear (for example, in your website footer):</p>
+            <pre>&lt;a href="https://webring.skule.ca" target="_blank"&gt;
     &lt;img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" /&gt;
 &lt;/a&gt;
 </pre>
-        <p>If you want to use the larger button, you can use:</p>
-        <pre>&lt;a href="https://webring.skule.ca" target="_blank"&gt;
+            <p>If you want to use the larger button, you can use:</p>
+            <pre>&lt;a href="https://webring.skule.ca" target="_blank"&gt;
     &lt;img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" /&gt;
 &lt;/a&gt;
 </pre>
+        </section>
 
-        <h2>How to Add a Badge to Your Email Signature</h2>
-        <p>
-            Most email clients allow you to add an image and a link to your signature. Here is an example of how your email signature might look:
-        </p>
-        <div class="email-example">
-            Kind regards,<br>
-            Ayan Ali<br>
-            <a href="https://utef.ca">University of Toronto Flight Endurance Group</a><br>
-            <a href="https://webring.skule.ca" target="_blank">
-                <img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" style="vertical-align: middle;" />
-            </a>
-            <a href="https://webring.skule.ca" target="_blank">
-                <img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" style="vertical-align: middle; margin-left: -5px;" />
-            </a>
-        </div>
-        <p style="margin-top: 1em;">To include both badges in your email signature, use the following HTML:</p>
-        <pre>&lt;a href="https://webring.skule.ca" target="_blank"&gt;
+        <section>
+            <h2>How to Add a Badge to Your Email Signature</h2>
+            <p>
+                Most email clients allow you to add an image and a link to your signature. Here is an example of how your email signature might look:
+            </p>
+            <div class="email-example">
+                Kind regards,<br>
+                Ayan Ali<br>
+                <a href="https://utef.ca">University of Toronto Flight Endurance Group</a><br>
+                <a href="https://webring.skule.ca" target="_blank">
+                    <img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" style="vertical-align: middle;" />
+                </a>
+                <a href="https://webring.skule.ca" target="_blank">
+                    <img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" style="vertical-align: middle; margin-left: -5px;" />
+                </a>
+            </div>
+            <p style="margin-top: 1em;">To include both badges in your email signature, use the following HTML:</p>
+            <pre>&lt;a href="https://webring.skule.ca" target="_blank"&gt;
     &lt;img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" style="vertical-align: middle;" /&gt;
 &lt;/a&gt;
 &lt;a href="https://webring.skule.ca" target="_blank"&gt;
     &lt;img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" style="vertical-align: middle; margin-left: 4px;" /&gt;
 &lt;/a&gt;
 </pre>
+        </section>
 
-        <h2>What Link Should I Use?</h2>
-        <p>
-            When adding a badge to your email signature or website, always link to <a href="https://webring.skule.ca" target="_blank">https://webring.skule.ca</a> so others can discover and join the SKULE WebRing.
-        </p>
-
-        <h2>Contact</h2>
-        <p>
-            I love seeing your custom sign-offs, random musings, interesting articles of information, proclamations of love, and more!
-            <br><br>
-            If you have questions, want to show off your implementation, or want to afford your greetings, email at <a href="mailto:webring@skule.ca">webring@skule.ca</a>!
-        </p>
+        <section>
+            <h2>What Link Should I Use?</h2>
+            <p style="margin-bottom: -30px;">
+                When adding a badge to your email signature or website, always link to <a href="https://webring.skule.ca" target="_blank">https://webring.skule.ca</a> so others can discover and join the SKULE WebRing.
+            </p>
+        </section>
     </main>
+
+    <footer>
+        <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a> for the <a href="https://skule.ca">SKULE Community</a>. Built on what was Canada Dry, a most interesting beverage.</p>
+    </footer>
+    <style>
+      @media (max-width: 600px) {
+        .footer-badges {
+          flex-wrap: wrap;
+          gap: 8px !important;
+          margin: 1rem 0 !important;
+          justify-content: center;
+        }
+        .footer-badges img {
+          margin-bottom: 6px;
+        }
+      }
+    </style>
+    <div class="footer-badges" style="display: flex; justify-content: center; align-items: center; gap: 0; margin: 0;">
+        <a href="button.html"><img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" /></a>
+        <a href="button.html"><img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" /></a>
+        <a href="button.html"><img src="https://webring.skule.ca/img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" /></a>
+        <a href="button.html"><img src="https://webring.skule.ca/img/ring.png" alt="RING Badge" width="88" height="31" /></a>
+    </div>
+
+    <script src="js/webring-data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      function updateHeaderIcon() {
+        const icon = document.getElementById('header-webring-icon');
+        if (!icon) return;
+        const isDark = document.body.getAttribute('data-theme') === 'dark' ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.getAttribute('data-theme'));
+        icon.src = isDark ? 'img/icon-dark.svg' : 'img/icon.svg';
+      }
+      document.addEventListener('DOMContentLoaded', updateHeaderIcon);
+      // Listen for theme changes
+      const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+      themeMedia.addEventListener('change', updateHeaderIcon);
+      // If you have a theme toggle, also call updateHeaderIcon after toggling
+      const observer = new MutationObserver(updateHeaderIcon);
+      observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    </script>
 </body>
 </html>

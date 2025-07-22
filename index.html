@@ -32,7 +32,9 @@
             </button>
         </div>
         <h1 style="display: flex; align-items: center; gap: 0.5em;">
-            <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;" id="header-webring-icon"/>
+            <a href="https://webring.skule.ca">
+                <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;" id="header-webring-icon"/>
+            </a>
             SKULE WebRing
         </h1>
         <p class="subtitle" style="margin-bottom: -20px;">A WebRing for University of Toronto Engineering students and the broader UofT community.</p>
@@ -117,7 +119,20 @@
     <footer>
         <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a> for the <a href="https://skule.ca">SKULE Community</a>. Built on what was Canada Dry, a most interesting beverage.</p>
     </footer>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 0; margin: 0;">
+    <style>
+      @media (max-width: 600px) {
+        .footer-badges {
+          flex-wrap: wrap;
+          gap: 8px !important;
+          margin: 1rem 0 !important;
+          justify-content: center;
+        }
+        .footer-badges img {
+          margin-bottom: 6px;
+        }
+      }
+    </style>
+    <div class="footer-badges" style="display: flex; justify-content: center; align-items: center; gap: 0; margin: 0;">
         <a href="button.html"><img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" /></a>
         <a href="button.html"><img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" /></a>
         <a href="button.html"><img src="https://webring.skule.ca/img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" /></a>
