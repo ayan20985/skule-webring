@@ -32,7 +32,7 @@
             </button>
         </div>
         <h1 style="display: flex; align-items: center; gap: 0.5em;">
-            <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;"/>
+            <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;" id="header-webring-icon"/>
             SKULE WebRing
         </h1>
         <p class="subtitle" style="margin-bottom: -20px;">A WebRing for University of Toronto Engineering students and the broader UofT community.</p>
@@ -126,5 +126,21 @@
 
     <script src="js/webring-data.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      function updateHeaderIcon() {
+        const icon = document.getElementById('header-webring-icon');
+        if (!icon) return;
+        const isDark = document.body.getAttribute('data-theme') === 'dark' ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.getAttribute('data-theme'));
+        icon.src = isDark ? 'img/icon-dark.svg' : 'img/icon.svg';
+      }
+      document.addEventListener('DOMContentLoaded', updateHeaderIcon);
+      // Listen for theme changes
+      const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+      themeMedia.addEventListener('change', updateHeaderIcon);
+      // If you have a theme toggle, also call updateHeaderIcon after toggling
+      const observer = new MutationObserver(updateHeaderIcon);
+      observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    </script>
 </body>
 </html>
