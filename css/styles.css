@@ -236,47 +236,47 @@ section {
 }
 
 .search-bar button {
-  padding: 10px 20px;
-  background-color: var(--link-color);
-  color: white;
-  border: none;
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  background-color: var(--code-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 0 4px 4px 0;
+  margin-left: -6px;
   cursor: pointer;
   font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .search-bar button:hover {
-  background-color: var(--link-hover-color);
+  background-color: var(--bg-color);
 }
 
 /* Action Buttons - New Style */
 .action-buttons {
-  margin: 0.5rem 0 1.5rem 0;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  width: 100%;
+  gap: 0.5rem;
 }
 
 .action-button {
-  flex: 1;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  text-align: center;
   padding: 6px 10px;
-  background-color: var(--link-color);
-  color: white !important;
-  border: none;
+  border: 1px solid var(--border-color);
+  background-color: var(--code-bg);
+  color: var(--text-color);
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  text-decoration: none !important;
-  transition: background-color 0.2s ease;
-  text-align: center;
-  min-width: 120px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .action-button:hover {
-  background-color: var(--link-hover-color);
-  text-decoration: none !important;
+  background-color: var(--bg-color);
 }
 
 /* Members Table */
