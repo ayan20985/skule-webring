@@ -3,8 +3,8 @@
   --bg-color: #ffffff;
   --bg-color-rgb: 255, 255, 255;
   --text-color: #333333;
-  --link-color: #3a7b6d; /* Muted teal instead of blue */
-  --link-hover-color: #2a5b4d; /* Darker teal for hover */
+  --link-color: #888888; /* Neutral grey instead of blue/teal */
+  --link-hover-color: #555555; /* Darker grey for hover */
   --border-color: #dddddd;
   --code-bg: #f5f5f5;
   --table-row-alt: #f9f9f9;
@@ -16,8 +16,8 @@
   --bg-color: #1a1a1a;
   --bg-color-rgb: 26, 26, 26;
   --text-color: #e0e0e0;
-  --link-color: #8ba89b; /* Muted sage green instead of blue */
-  --link-hover-color: #a8c8bb; /* Lighter sage for hover */
+  --link-color: #bbbbbb; /* Lighter grey for dark mode */
+  --link-hover-color: #eeeeee; /* Even lighter grey for hover */
   --border-color: #444444;
   --code-bg: #2a2a2a;
   --table-row-alt: #252525;

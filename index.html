@@ -31,16 +31,16 @@
                 <span class="bg-icon">◱</span>
             </button>
         </div>
-        <h1>SKULE WebRing</h1>
-        <div class="caution-box">
-            This website has been approved, it currently is getting updated as of June 30th 2025. 
-        </div>
-        <p class="subtitle">A webring for University of Toronto Engineering students and the broader UofT community.</p>
+        <h1 style="display: flex; align-items: center; gap: 0.5em;">
+            <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;"/>
+            SKULE WebRing
+        </h1>
+        <p class="subtitle" style="margin-bottom: -20px;">A WebRing for University of Toronto Engineering students and the broader UofT community.</p>
     </header>
-
+    
     <main>
         <!-- Webring Widget for Navigation -->
-        <section class="webring-nav" style="display: flex; justify-content: center; margin-bottom: 2rem;">
+        <section class="webring-nav" style="display: flex; justify-content: center; margin-bottom: -15px;">
             <div class="widget-container">
                 <a href="#webring.skule.ca?nav=prev">←</a>
                 <a href="https://webring.skule.ca">
@@ -52,30 +52,28 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about" style="margin-bottom: 50px; margin-top: 25px;">
             <p>
-                This webring is an attempt to inspire students and alumni of UofT to build their own websites and share traffic amongst each other.
+                This WebRing serves to inspire students and alumni of UofT to build their own websites and share traffic amongst each other.
                 The ring welcomes <strong>websites made with hands</strong>.
             </p>
         </section>
 
-        <section id="search" class="search-container">
-            <div class="search-bar">
-                <input type="text" id="member-search" placeholder="Search members by name, website, or program...">
-                <button id="search-button">Search</button>
-            </div>
-        </section>
-
-        <div class="action-buttons">
-            <a href="#" id="report-link" class="action-button">Report Broken Link</a>
-            <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank" class="action-button">Join the Ring</a>
-            <a href="#random" id="random-link" class="action-button">Random</a>
-            <a href="https://github.com/ayan20985/webring" target="_blank" class="action-button">GitHub</a>
-        </div>
-
         <section id="members">
-            <h2>Members</h2>
-            <p>This webring currently has <span id="member-count">0</span> members. Last updated <span id="last-updated">January 2025</span>.</p>
+            <h2>Membership Directory</h2>
+            <p style="margin-bottom: -25px;">This webring currently has <span id="member-count">0</span> members. Last updated <span id="last-updated">January 2025</span>.</p>
+            <div class="search-container" id="search">
+                <div class="search-bar">
+                    <input type="text" id="member-search" placeholder="Search members by name, website, or program...">
+                    <button id="search-button">Search</button>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <a href="#" id="report-link" class="action-button">Report Broken Link</a>
+                <a href="https://github.com/ayan20985/webring#joining-the-webring" target="_blank" class="action-button">Join the Ring</a>
+                <a href="#random" id="random-link" class="action-button">Random</a>
+                <a href="https://github.com/ayan20985/webring" target="_blank" class="action-button">GitHub</a>
+            </div>
             <table id="members-table">
                 <thead>
                     <tr>
@@ -98,11 +96,11 @@
             </div>
         </section>
 
-        <section id="what">
-            <h2>What is a Webring?</h2>
+        <section id="what" style="margin-bottom: -30px; padding-bottom: 0;">
+            <h2>What is a WebRing??</h2>
             <p>
-                A webring is a collection of websites linked together in a circular structure.
-                In the early days of the web, webrings were a popular way to discover related websites.
+                A WebRing is a collection of websites linked together in a circular structure.
+                In the early days of the web, WebRings were a popular way to discover related websites.
                 Each site in the ring includes a navigation widget that lets visitors travel to the next or previous site in the ring.
             </p>
             <p>
@@ -116,8 +114,14 @@
     </main>
 
     <footer>
-        <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a>. Built on what was Canada Dry, a most interesting beverage.</p>
+        <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a> for the <a href="https://skule.ca">SKULE Community</a>. Built on what was Canada Dry, a most interesting beverage.</p>
     </footer>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 0; margin: 0;">
+        <img src="img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" />
+        <img src="img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" />
+        <img src="img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" />
+        <img src="img/ring.png" alt="RING Badge" width="88" height="31" />
+    </div>
 
     <script src="js/webring-data.js"></script>
     <script src="js/script.js"></script>
