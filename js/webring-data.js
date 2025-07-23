@@ -8,7 +8,7 @@ const lastUpdated = "this 22nd day of July 2025"; // update this value when new 
 const members = [
     {
         name: "Ayan Ali",
-        website: "https://new.ayanali.net",
+        website: "https://ayanali.net",
         program: "ECE, EE",
         designation: "BASc",
         year: "5-25",
