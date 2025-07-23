@@ -242,7 +242,7 @@ section {
   color: var(--text-color);
   border: 1px solid var(--border-color);
   border-radius: 0 4px 4px 0;
-  margin-left: -6px;
+  margin-left: -1px;
   cursor: pointer;
   font-size: 1rem;
   text-decoration: none;
@@ -306,7 +306,7 @@ section {
 
 .table-wrapper {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-behavior: smooth;
 }
 
@@ -590,40 +590,41 @@ footer {
 
 .pagination button {
   padding: 6px 10px;
-  border: 1px solid var(--table-border);
-  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  background-color: var(--code-bg);
   color: var(--text-color);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border-radius: 0;
   margin-left: -1px;
   transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
 }
 
 .pagination button:first-child {
-  border-radius: 3px 0 0 3px;
+  border-radius: 4px 0 0 4px;
   margin-left: 0;
 }
 
 .pagination button:last-child {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 4px 4px 0;
 }
 
 .pagination button.active {
-  background-color: var(--code-bg);
+  background-color: var(--bg-color);
   color: var(--text-color);
-  border-color: var(--table-border);
-  font-weight: 500;
+  border-color: var(--border-color);
+  font-weight: normal;
 }
 
 .pagination button:hover:not(.active):not(:disabled) {
-  background-color: var(--table-row-alt);
+  background-color: var(--bg-color);
 }
 
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background-color: var(--bg-color);
+  background-color: var(--code-bg);
 }
 
 /* Member Badge */

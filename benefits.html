@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKULE WebRing SEO Benefits</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Learn how joining the SKULE WebRing improves your website's SEO, search rankings, and online discoverability.">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <header>
+        <div class="theme-toggle">
+            <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                <span class="theme-icon">◐</span>
+            </button>
+            <button id="bg-toggle-btn" aria-label="Toggle pixel background" class="bg-toggle-off">
+                <span class="bg-icon">◱</span>
+            </button>
+        </div>
+        <h1 style="display: flex; align-items: center; gap: 0.5em;">
+            <a href="https://webring.skule.ca">
+                <img src="img/icon.svg" alt="WebRing Icon" width="32" height="32" style="vertical-align: middle;" id="header-webring-icon"/>
+            </a>
+            SKULE WebRing SEO Benefits
+        </h1>
+        <p class="subtitle">How joining the SKULE WebRing boosts your search rankings and online visibility.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>SEO Principles and The Creation of a Powerful Backlink Network</h2>
+            <p>
+                Search engines rank pages using PageRank algorithms that evaluate link authority through graph theory. Each inbound link transfers link equity, a quantified trust signal based on the linking domain's authority score, topical relevance, and anchor text optimization. Google's RankBrain uses machine learning to assess E-A-T (Expertise, Authoritativeness, Trustworthiness) by analyzing link networks, user engagement metrics, and content quality signals.
+            </p>
+            <p>
+                Every member of the SKULE WebRing creates high-quality backlinks to your website. Search engines like Google use backlinks as a key ranking factor. With <strong>10 active members</strong> and growing, you gain authoritative backlinks from fellow UofT engineering students and alumni.
+            </p>
+            <p>
+                These backlinks are from <strong>relevant, high-quality websites</strong> in your field, which Google values much more highly than random or low-quality links.
+            </p>
+        </section>
+
+        <section>
+            <h2>Domain Authority Boost and Professional Network Visibility</h2>
+            <p>
+                Search engines evaluate your website's <strong>domain authority</strong> based on the quality and quantity of sites linking to you. The SKULE WebRing provides instant credibility through association with the UofT engineering community, trust signals from established academic and professional websites, and topical relevance within your field of expertise.
+            </p>
+            <p></p>
+                Beyond SEO, the SKULE WebRing enhances your professional presence. Employers searching for UofT talent can find your profile, professors and researchers can discover your work, and fellow students and alumni can connect with you.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a> for the <a href="https://skule.ca">SKULE Community</a>. Built on what was Canada Dry, a most interesting beverage.</p>
+    </footer>
+    <style>
+      @media (max-width: 600px) {
+        .footer-badges {
+          flex-wrap: wrap;
+          gap: 8px !important;
+          margin: 1rem 0 !important;
+          justify-content: center;
+        }
+        .footer-badges img {
+          margin-bottom: 6px;
+        }
+      }
+    </style>
+    <div class="footer-badges" style="display: flex; justify-content: center; align-items: center; gap: 0; margin: 0;">
+        <a href="button.html"><img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" /></a>
+        <a href="button.html"><img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" /></a>
+        <a href="button.html"><img src="https://webring.skule.ca/img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" /></a>
+        <a href="button.html"><img src="https://webring.skule.ca/img/ring.png" alt="RING Badge" width="88" height="31" /></a>
+    </div>
+
+    <script src="js/webring-data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      function updateHeaderIcon() {
+        const icon = document.getElementById('header-webring-icon');
+        if (!icon) return;
+        const isDark = document.body.getAttribute('data-theme') === 'dark' ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !document.body.getAttribute('data-theme'));
+        icon.src = isDark ? 'img/icon-dark.svg' : 'img/icon.svg';
+      }
+      document.addEventListener('DOMContentLoaded', updateHeaderIcon);
+      // Listen for theme changes
+      const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+      themeMedia.addEventListener('change', updateHeaderIcon);
+      // If you have a theme toggle, also call updateHeaderIcon after toggling
+      const observer = new MutationObserver(updateHeaderIcon);
+      observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    </script>
+</body>
+</html> 

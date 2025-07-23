@@ -690,8 +690,8 @@ function renderPagination(container, totalItems, currentPage, itemsPerPage) {
     
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     
-    // If only one page or no items, don't render pagination
-    if (totalPages <= 1) {
+    // If no items, don't render pagination
+    if (totalItems === 0) {
         return;
     }
     
