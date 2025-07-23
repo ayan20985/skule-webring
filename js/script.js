@@ -929,3 +929,63 @@ function handleNavigation(hashString) {
         console.log('No navigation direction specified');
     }
 } 
+
+// Table Scroll Indicators
+document.addEventListener('DOMContentLoaded', () => {
+    const tableWrapper = document.getElementById('table-wrapper');
+    const scrollLeftIndicator = document.getElementById('scroll-left');
+    const scrollRightIndicator = document.getElementById('scroll-right');
+    
+    if (!tableWrapper || !scrollLeftIndicator || !scrollRightIndicator) {
+        return; // Elements not found, skip initialization
+    }
+    
+    function updateScrollIndicators() {
+        const { scrollLeft, scrollWidth, clientWidth } = tableWrapper;
+        const maxScrollLeft = scrollWidth - clientWidth;
+        
+        // Show/hide left indicator
+        if (scrollLeft > 5) {
+            scrollLeftIndicator.classList.add('visible');
+        } else {
+            scrollLeftIndicator.classList.remove('visible');
+        }
+        
+        // Show/hide right indicator
+        if (scrollLeft < maxScrollLeft - 5) {
+            scrollRightIndicator.classList.add('visible');
+        } else {
+            scrollRightIndicator.classList.remove('visible');
+        }
+    }
+    
+    // Check scroll indicators on scroll
+    tableWrapper.addEventListener('scroll', updateScrollIndicators);
+    
+    // Check scroll indicators on resize
+    window.addEventListener('resize', () => {
+        setTimeout(updateScrollIndicators, 100);
+    });
+    
+    // Check scroll indicators when table content changes
+    const observer = new MutationObserver(() => {
+        setTimeout(updateScrollIndicators, 100);
+    });
+    
+    const membersTable = document.getElementById('members-table');
+    if (membersTable) {
+        observer.observe(membersTable, { childList: true, subtree: true });
+    }
+    
+    // Click handlers for scroll indicators
+    scrollLeftIndicator.addEventListener('click', () => {
+        tableWrapper.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    
+    scrollRightIndicator.addEventListener('click', () => {
+        tableWrapper.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+    
+    // Initial check
+    setTimeout(updateScrollIndicators, 500);
+});
