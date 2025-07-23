@@ -13,7 +13,7 @@ const members = [
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
-        badge: "https://new.ayanali.net/badge.gif"
+        badge: "https://ayanali.net/badge.gif"
     },
     {
         name: "Luke Payant",
