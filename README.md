@@ -33,7 +33,7 @@ The SKULE WebRing is a community-driven project that connects websites of UofT c
 
 ### Join Process
 
-1. Fill in the student information form in [here](https://docs.google.com/forms/d/e/1FAIpQLSdL70J2n1XTJ9DRo2T2uL_Nzn7Jpl_HiuDwihizBAFw6JufzQ/viewform?usp=sharing&ouid=108594782023550487497).
+1. Create a personal website.
 
 2. Add the WebRing widget to your website HTML (template below). 
 
@@ -50,7 +50,9 @@ The SKULE WebRing is a community-driven project that connects websites of UofT c
    }
    ```
 
-3. Submit a Pull Request.
+4. Submit a Pull Request.
+
+5. Fill in the student information form in [here](https://docs.google.com/forms/d/e/1FAIpQLSdL70J2n1XTJ9DRo2T2uL_Nzn7Jpl_HiuDwihizBAFw6JufzQ/viewform?usp=sharing&ouid=108594782023550487497).
 
 ### Maintenance
 
