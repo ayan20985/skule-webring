@@ -9,13 +9,13 @@
 
 </div>
 
-# SKULE WebRing
+# SKULE™ WebRing
 
 A WebRing for University of Toronto Engineering students and the broader UofT community. This WebRing connects personal websites, portfolios, and blogs of UofT students, faculty, and alumni.
 
 ## About
 
-The SKULE WebRing is a community-driven project that connects websites of UofT community members through a retro-inspired WebRing. It's a way to discover interesting sites, share your work, and build connections within the UofT tech community.
+The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-inspired WebRing. It's a way to discover interesting sites, share your work, and build connections.
 
 ## Joining the WebRing
 
@@ -130,7 +130,7 @@ You can also add automatic theme switching based on the user's system preference
 
 ## Website Badges
 
-You can create a custom badge for your website to display in the members table. This is a great way to showcase your personal brand or website design.
+You need to create a custom badge for your website to display in the members table.
 
 ### Creating Your Badge
 
