@@ -103,7 +103,7 @@ const members = [
   	designation: "BASc",
   	year: "7-25",
 	grad: "2T8",
-	badge: "https://ketingtrinh.github.io/monke-bade.png"
+	badge: "https://ketingtrinh.github.io/monke-badge.png"
     }
     
     // Add your entry below this line in the following format:
