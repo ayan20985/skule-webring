@@ -95,6 +95,15 @@ const members = [
   	year: "7-25",
 	grad: "2T8",
 	badge: "https://colinye.tech/images/badge.png"
+    },
+    {
+  	name: "Keting Trinh",
+  	website: "https://ketingtrinh.github.io",
+  	program: "Mech",
+  	designation: "BASc",
+  	year: "7-25",
+	grad: "2T8",
+	badge: "https://ketingtrinh.github.io/monke-bade.png"
     }
     
     // Add your entry below this line in the following format:
