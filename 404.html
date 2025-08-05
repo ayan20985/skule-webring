@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <style>
+    body { font-family: Inter, Arial, sans-serif; text-align: center; padding: 2em; }
+    h1 { font-size: 2.5em; margin-bottom: 0.5em; }
+    p { font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>404 - Page Not Found</h1>
+  <p>If you were looking for a page ending in <code>.html/</code>, you will be redirected automatically.</p>
+  <p><a href="/">Return to Home</a></p>
+  <script>
+    // Redirect /something.html/ to /something.html
+    var path = window.location.pathname;
+    var htmlSlashMatch = path.match(/(.*\.html)\/$/);
+    if (htmlSlashMatch) {
+      var newUrl = htmlSlashMatch[1] + window.location.search + window.location.hash;
+      window.location.replace(newUrl);
+    }
+  </script>
+</body>
+</html> 
