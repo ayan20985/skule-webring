@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "this 22nd day of July 2025"; // update this value when new members are added
+const lastUpdated = "this 27th day of July 2025"; // update this value when new members are added
 
 const members = [
     {
@@ -95,6 +95,15 @@ const members = [
   	year: "7-25",
 	grad: "2T8",
 	badge: "https://colinye.tech/images/badge.png"
+    },
+    {
+  	name: "Keting Trinh",
+  	website: "https://ketingtrinh.github.io",
+  	program: "Mech",
+  	designation: "BASc",
+  	year: "7-25",
+	grad: "2T8",
+	badge: "https://ketingtrinh.github.io/monke-badge.png"
     }
     
     // Add your entry below this line in the following format:
