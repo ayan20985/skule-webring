@@ -104,6 +104,15 @@ const members = [
   	year: "7-25",
 	grad: "2T8",
 	badge: "https://ketingtrinh.github.io/monke-badge.png"
+    },
+    {
+        "name": "Vir Patel",
+        "website": "https://www.virpatel.dev",
+        "program": "ECE, CE",
+        "designation": "BAsc",
+        "year": "8-25",  
+        "grad": "2T8",
+        "badge": "https://your-website.com/badge.png"  // Else use the default badge @ https://webring.skule.ca/badges/default-badge.png
     }
     
     // Add your entry below this line in the following format:
