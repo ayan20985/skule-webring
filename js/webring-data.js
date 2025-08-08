@@ -111,8 +111,8 @@ const members = [
         "program": "ECE, CE",
         "designation": "BAsc",
         "year": "8-25",  
-        "grad": "2T8",
-        "badge": "https://your-website.com/badge.png"  // Else use the default badge @ https://webring.skule.ca/badges/default-badge.png
+        "grad": "2028",
+        "badge": "https://virpatel.dev/web_badge.gif"
     }
     
     // Add your entry below this line in the following format:
