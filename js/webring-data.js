@@ -114,6 +114,16 @@ const members = [
         "grad": "2028",
         "badge": "https://virpatel.dev/web_badge.gif"
     }
+
+	{
+  name: "Rango LF",
+  website: "https://rango-lf.github.io/rango-lf",
+  program: "MIE",
+  designation: "Undergrad",
+  year: "8-25"  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
+  grad: "2T9",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
+  badge: "https://rango-lf.github.io/rango-lf/itsrangobaby.png"  // URL to your custom website badge (required)
+}
     
     // Add your entry below this line in the following format:
     // {
