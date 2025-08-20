@@ -113,7 +113,16 @@ const members = [
         "year": "8-25",  
         "grad": "2028",
         "badge": "https://virpatel.dev/web_badge.gif"
-    }
+    },
+	{
+  	name: "Nick Fry",
+  	website: "https://nickfry.ca",
+  	program: "Engineering Science",
+  	designation: "Undergrad",
+  	year: "8-25",  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
+  	grad: "2T8",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
+  	badge: "https://nickfry.ca/badge.png"  // URL to your custom website badge (required)
+	}
     
     // Add your entry below this line in the following format:
     // {
