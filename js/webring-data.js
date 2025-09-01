@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "this 1st day of September 2025"; // update this value when new members are added
+const lastUpdated = "1 September 2025"; // update this value when new members are added
 
 const members = [
     {
@@ -65,9 +65,9 @@ const members = [
         website: "https://jakkii.ca",
         program: "EngSci, General",
         designation: "BASc",
-        year: "5-25",  
-        grad: "2T8",   
-        badge: "https://www.jakkii.ca/images/webring.png"  
+        year: "5-25",
+        grad: "2T8",
+        badge: "https://www.jakkii.ca/images/webring.png"
     },
     {
         name: "Sadman Hossain",
@@ -75,8 +75,8 @@ const members = [
         program: "ECE, CE",
         designation: "BASc",
         year: "5-25",
-        grad: "2T5",   
-        badge: "https://sadman.ca/badge.gif"  
+        grad: "2T5",
+        badge: "https://sadman.ca/badge.gif"
     },
     {
         name: "James Huynh",
@@ -84,63 +84,63 @@ const members = [
         program: "ECE, EE",
         designation: "BASc",
         year: "6-25",
-        grad: "2T8",   
-        badge: "https://jamesh.skule.ca/assets/badge.png"  
+        grad: "2T8",
+        badge: "https://jamesh.skule.ca/assets/badge.png"
     },
     {
-  	name: "Colin Ye",
-  	website: "https://colinye.tech",
-  	program: "CIV",
-  	designation: "BASc",
-  	year: "7-25",
-	grad: "2T8",
-	badge: "https://colinye.tech/images/badge.png"
+        name: "Colin Ye",
+        website: "https://colinye.tech",
+        program: "CIV",
+        designation: "BASc",
+        year: "7-25",
+        grad: "2T8",
+        badge: "https://colinye.tech/images/badge.png"
     },
     {
-  	name: "Keting Trinh",
-  	website: "https://ketingtrinh.github.io",
-  	program: "Mech",
-  	designation: "BASc",
-  	year: "7-25",
-	grad: "2T8",
-	badge: "https://ketingtrinh.github.io/monke-badge.png"
+        name: "Keting Trinh",
+        website: "https://ketingtrinh.github.io",
+        program: "Mech",
+        designation: "BASc",
+        year: "7-25",
+        grad: "2T8",
+        badge: "https://ketingtrinh.github.io/monke-badge.png"
     },
     {
-        "name": "Vir Patel",
-        "website": "https://www.virpatel.dev",
-        "program": "ECE, CE",
-        "designation": "BAsc",
-        "year": "8-25",  
-        "grad": "2028",
-        "badge": "https://virpatel.dev/web_badge.gif"
+        name: "Vir Patel",
+        website: "https://www.virpatel.dev",
+        program: "ECE, CE",
+        designation: "BASc",
+        year: "8-25",
+        grad: "2T8", // kept consistent with UofT format
+        badge: "https://virpatel.dev/web_badge.gif"
     },
-	  {
-  	name: "Nick Fry",
-  	website: "https://nickfry.ca",
-  	program: "EngSci, General",
-  	designation: "BASC",
-  	year: "8-25",  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
-  	grad: "2T8",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
-  	badge: "https://nickfry.ca/badge.png"  // URL to your custom website badge (required)
-	  },
     {
-    name: "Rango LF",
-    website: "https://rango-lf.github.io/rango-lf",
-    program: "Mech",
-    designation: "BASC",
-    year: "8-25"  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
-    grad: "2T9",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
-    badge: "https://rango-lf.github.io/rango-lf/itsrangobaby.png"  // URL to your custom website badge (required)
+        name: "Nick Fry",
+        website: "https://nickfry.ca",
+        program: "EngSci, General",
+        designation: "BASc",
+        year: "8-25",
+        grad: "2T8",
+        badge: "https://nickfry.ca/badge.png"
+    },
+    {
+        name: "Rango LF",
+        website: "https://rango-lf.github.io/rango-lf",
+        program: "Mech",
+        designation: "BASc",
+        year: "8-25",
+        grad: "2T9",
+        badge: "https://rango-lf.github.io/rango-lf/itsrangobaby.png"
     }
-    
-    // Add your entry below this line in the following format:
-    // {
-    //     "name": "Your Name",
-    //     "website": "https://your-website.com",
-    //     "program": "Your Program (e.g., ECE, EngSci, CS, Maths, etc.)",
-    //     "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
-    //     "year": "1-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
-    //     "grad": "2T5",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
-    //     "badge": "https://your-website.com/badge.png"  // Else use the default badge @ https://webring.skule.ca/badges/default-badge.png
-    // }
-]; 
+];
+
+// Add your entry below this line in the following format:
+// {
+//     name: "Your Name",
+//     website: "https://your-website.com",
+//     program: "Your Program (e.g., ECE, EngSci, CS, Maths, etc.)",
+//     designation: "Your Role (e.g., BASc, Grad, Faculty, etc.)",
+//     year: "1-25",  // Month and year added to the webring (e.g., 1-25 for January 2025)
+//     grad: "2T5",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
+//     badge: "https://your-website.com/badge.png"  // Else use the default badge @ https://webring.skule.ca/badges/default-badge.png
+// }
