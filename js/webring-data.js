@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "this 7th day of August 2025"; // update this value when new members are added
+const lastUpdated = "this 1st day of September 2025"; // update this value when new members are added
 
 const members = [
     {
@@ -117,8 +117,8 @@ const members = [
 	  {
   	name: "Nick Fry",
   	website: "https://nickfry.ca",
-  	program: "Engineering Science",
-  	designation: "Undergrad",
+  	program: "EngSci, General",
+  	designation: "BASC",
   	year: "8-25",  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
   	grad: "2T8",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
   	badge: "https://nickfry.ca/badge.png"  // URL to your custom website badge (required)
@@ -126,8 +126,8 @@ const members = [
     {
     name: "Rango LF",
     website: "https://rango-lf.github.io/rango-lf",
-    program: "MIE",
-    designation: "Undergrad",
+    program: "Mech",
+    designation: "BASC",
     year: "8-25"  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
     grad: "2T9",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
     badge: "https://rango-lf.github.io/rango-lf/itsrangobaby.png"  // URL to your custom website badge (required)
