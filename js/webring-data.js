@@ -131,6 +131,15 @@ const members = [
         year: "8-25",
         grad: "2T9",
         badge: "https://rango-lf.github.io/rango-lf/itsrangobaby.png"
+    },
+    {
+        name: "Ted Pinkerton",
+        website: "https://tedpinkerton.ca",
+        program: "EngSci, MI",
+        designation: "BASc",
+        year: "9-25", 
+        grad: "2T4",
+        badge: "https://tedpinkerton.ca/assets/icon_dark-4310873dd3666173.png"
     }
 ];
 
