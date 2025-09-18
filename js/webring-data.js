@@ -131,6 +131,15 @@ const members = [
         year: "8-25",
         grad: "2T9",
         badge: "https://rango-lf.github.io/rango-lf/itsrangobaby.png"
+    },
+    {
+        name: "Karan Chawla",
+        website: "https://www.karan-chawla.com/",
+        program: "EngSci, General",
+        designation: "BASc",
+        year: "9-25",
+        grad: "2T9",
+        badge: "https://www.karan-chawla.com/Karan_Chawla_Banner.png"
     }
 ];
 
