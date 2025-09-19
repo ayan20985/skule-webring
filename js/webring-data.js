@@ -139,7 +139,7 @@ const members = [
         designation: "BASc",
         year: "9-25", 
         grad: "2T4",
-        badge: "https://tedpinkerton.ca/assets/icon_dark-4310873dd3666173.png"
+        badge: "https://tedpinkerton.ca/assets/badge-87af2813ae1eccb8.png"
     }
 ];
 
