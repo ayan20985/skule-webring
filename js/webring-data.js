@@ -140,6 +140,15 @@ const members = [
         year: "9-25", 
         grad: "2T4",
         badge: "https://tedpinkerton.ca/assets/badge-87af2813ae1eccb8.png"
+    },
+    {
+         name: "Karan Chawla",
+        website: "https://www.karan-chawla.com/",
+        program: "EngSci, General",
+        designation: "BASc",
+        year: "9-25",
+        grad: "2T9",
+        badge: "https://www.karan-chawla.com/Karan_Chawla_Banner.png"
     }
 ];
 
