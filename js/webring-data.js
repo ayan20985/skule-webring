@@ -154,7 +154,7 @@ const members = [
         name: "Jaden Park",
         website: "https://jadenpark.ca",
         program: "Industrial Engineering",
-        designation: "Undergrad",
+        designation: "BASc",
         year: "11-25",
         grad: "2T8",
         badge: "https://jadenpark.ca/badge.png"
