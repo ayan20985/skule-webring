@@ -153,7 +153,7 @@ const members = [
     {
         name: "Jaden Park",
         website: "https://jadenpark.ca",
-        program: "Industrial Engineering",
+        program: "INDY",
         designation: "BASc",
         year: "11-25",
         grad: "2T8",
