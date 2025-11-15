@@ -90,7 +90,7 @@ const members = [
     {
         name: "Colin Ye",
         website: "https://colinye.tech",
-        program: "CIV",
+        program: "Civil",
         designation: "BASc",
         year: "7-25",
         grad: "2T8",
@@ -99,7 +99,7 @@ const members = [
     {
         name: "Keting Trinh",
         website: "https://ketingtrinh.github.io",
-        program: "Mech",
+        program: "Mechanical",
         designation: "BASc",
         year: "7-25",
         grad: "2T8",
@@ -126,7 +126,7 @@ const members = [
     {
         name: "Rango LF",
         website: "https://rango-lf.github.io/rango-lf",
-        program: "Mech",
+        program: "Mechanical",
         designation: "BASc",
         year: "8-25",
         grad: "2T9",
@@ -153,7 +153,7 @@ const members = [
     {
         name: "Jaden Park",
         website: "https://jadenpark.ca",
-        program: "INDY",
+        program: "Industrial",
         designation: "BASc",
         year: "11-25",
         grad: "2T8",
