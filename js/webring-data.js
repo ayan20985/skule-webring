@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "23rd September 2025"; // update this value when new members are added
+const lastUpdated = "14th November 2025"; // update this value when new members are added
 
 const members = [
     {
@@ -149,6 +149,15 @@ const members = [
         year: "9-25",
         grad: "2T9",
         badge: "https://www.karan-chawla.com/Karan_Chawla_Banner.png"
+    },
+    {
+        name: "Jaden Park",
+        website: "https://jadenpark.ca",
+        program: "INDY",
+        designation: "BASc",
+        year: "11-25",
+        grad: "2T8",
+        badge: "https://jadenpark.ca/badge.png"
     }
 ];
 
