@@ -35,12 +35,12 @@ const members = [
     },
     {
         name: "Eric Xie",
-        website: "https://epiceric.tech",
+        website: "https://erictaoxie.com",
         program: "EngSci, General",
         designation: "BASc",
         year: "5-25",
         grad: "2T8",
-        badge: "https://epiceric.tech/webring-badge.png"
+        badge: "https://erictaoxie.com/webring-badge.png"
     },
     {
         name: "Jet Chiang",
