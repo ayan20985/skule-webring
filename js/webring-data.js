@@ -169,6 +169,15 @@ const members = [
       "year": "12-25", 
       "grad": "2T9", 
       "badge": "https://ethanyang.dev/badge.png"
+    },
+    {
+      "name": "Kelvin Cao",
+      "website": "https://kelvincao.ca",
+      "program": "Mechanical",
+      "designation": "BASc",
+      "year": "1-26", 
+      "grad": "2T5", 
+      "badge": "https://kelvincao.ca/badge.gif"
     }
 ];
 
