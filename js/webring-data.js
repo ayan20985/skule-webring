@@ -182,7 +182,7 @@ const members = [
     {
     "name": "Muhiedin Omar",
     "website": "https://muhiedin.me",
-    "program": "Electrical",
+    "program": "ECE, EE",
     "designation": "BASc",
     "year": "1-26",  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
     "grad": "2T8 + PEY",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
