@@ -187,6 +187,15 @@ const members = [
     "year": "1-26",  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
     "grad": "2T8 + PEY",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
     "badge": "https://muhiedin.me/icon/icon.gif"  // URL to your custom website badge (required)
+    },
+    {
+    "name": "Srijit Iyer",
+    "website": "https://srijitiyer.com",
+    "program": "ECE, CE",
+    "designation": "BASc",
+    "year": "4-26",
+    "grad": "2T8",
+    "badge": "https://srijitiyer.com/badge.svg"
     }
 ];
 
