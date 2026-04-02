@@ -189,6 +189,15 @@ const members = [
     "badge": "https://muhiedin.me/icon/icon.gif"  // URL to your custom website badge (required)
     },
     {
+    "name": "Srihith Jarabana",
+    "website": "https://www.jarabana.com",
+    "program": "Rotman Commerce",
+    "designation": "BCom",
+    "year": "3-26",
+    "grad": "2T9",
+    "badge": "https://www.jarabana.com/badge.png"
+    },
+    {
     "name": "Srijit Iyer",
     "website": "https://srijitiyer.com",
     "program": "ECE, CE",
