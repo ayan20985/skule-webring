@@ -3,7 +3,7 @@
 // To add yourself to the webring, please add your entry at the bottom of this array
 // and submit a pull request.
 
-const lastUpdated = "14th November 2025"; // update this value when new members are added
+const lastUpdated = "1st April 2026"; // update this value when new members are added
 
 const members = [
     {
@@ -189,13 +189,22 @@ const members = [
     "badge": "https://muhiedin.me/icon/icon.gif"  // URL to your custom website badge (required)
     },
     {
-        "name": "Srihith Jarabana",
-        "website": "https://www.jarabana.com",
-        "program": "Rotman Commerce",
-        "designation": "BCom",
-        "year": "3-26",
-        "grad": "2T9",
-        "badge": "https://www.jarabana.com/badge.png"
+    "name": "Srihith Jarabana",
+    "website": "https://www.jarabana.com",
+    "program": "Rotman Commerce",
+    "designation": "BCom",
+    "year": "3-26",
+    "grad": "2T9",
+    "badge": "https://www.jarabana.com/badge.png"
+    },
+    {
+    "name": "Srijit Iyer",
+    "website": "https://srijitiyer.com",
+    "program": "ECE, CE",
+    "designation": "BASc",
+    "year": "4-26",
+    "grad": "2T8",
+    "badge": "https://srijitiyer.com/badge.svg"
     }
 ];
 
