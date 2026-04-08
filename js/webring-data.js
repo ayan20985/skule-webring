@@ -204,7 +204,7 @@ const members = [
     "designation": "BASc",
     "year": "4-26",
     "grad": "2T9",
-    "badge": "https://www.ibrahimkhawar.com/favicon.svg"
+    "badge": "https://www.ibrahimkhawar.com/res/website-badge.svg"
     }
 ];
 
