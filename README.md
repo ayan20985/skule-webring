@@ -145,12 +145,6 @@ You need to create a custom badge for your website to display in the members tab
 Badges must be 88x31 pixels or some multiple of this, they can png, .gif, or .svg file types.
 [Here](https://cyber.dabamos.de/88x31/index2.html) are some example badge styles you might consider.
 
-## Questions?
-
-- **Who can join?** Any UofT student, alumni, faculty, or staff with a personal website.
-- **My website isn't tech-related, can I still join?** Absolutely! The WebRing welcomes websites about any topic.
-- **How do I report issues?** Please open an issue on this repository.
-
 ## Credits
 
 Inspired by the [XXIIVV WebRing](https://WebRing.xxiivv.com/) and the early web's interconnected spirit.
