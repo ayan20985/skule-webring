@@ -194,6 +194,15 @@ const members = [
     "year": "4-26",
     "grad": "2T8",
     "badge": "https://srijitiyer.com/badge.svg"
+    },
+    {
+    "name": "Ibrahim Khawar",
+    "website": "https://www.ibrahimkhawar.com",
+    "program": "EngSci",
+    "designation": "BASc",
+    "year": "4-26",
+    "grad": "2T9",
+    "badge": "https://www.ibrahimkhawar.com/res/website-badge.svg"
     }
 ];
 
