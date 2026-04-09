@@ -8,15 +8,19 @@
     body { font-family: Inter, Arial, sans-serif; text-align: center; padding: 2em; }
     h1 { font-size: 2.5em; margin-bottom: 0.5em; }
     p { font-size: 1.2em; }
+    #not-found-content { display: none; }
   </style>
 </head>
 <body>
-  <h1>404 - Page Not Found</h1>
-  <p>If you were looking for a page ending in <code>.html/</code> or a member shortlink, you will be redirected automatically.</p>
-  <p><a href="/">Return to Home</a></p>
+  <p id="resolving-message">Looking up shortlink...</p>
+  <main id="not-found-content">
+    <h1>404 - Page Not Found</h1>
+    <p>If you were looking for a page ending in <code>.html/</code> or a member shortlink, you will be redirected automatically.</p>
+    <p><a href="/">Return to Home</a></p>
+  </main>
   <script>
-    const WEBRING_HOME_URL = "https://webring.skule.ca/";
     const WEBRING_DATA_URL = "/js/webring-data.json";
+    const NOT_FOUND_DELAY_MS = 3000;
     const RESERVED_PATHS = new Set([
       "index.html",
       "benefits.html",
@@ -30,6 +34,21 @@
       "sitemap.xml",
       "cname"
     ]);
+    const resolvingMessage = document.getElementById("resolving-message");
+    const notFoundContent = document.getElementById("not-found-content");
+
+    function showNotFound() {
+      if (resolvingMessage) {
+        resolvingMessage.style.display = "none";
+      }
+      if (notFoundContent) {
+        notFoundContent.style.display = "block";
+      }
+    }
+
+    function showNotFoundAfterDelay() {
+      window.setTimeout(showNotFound, NOT_FOUND_DELAY_MS);
+    }
 
     function normalizeAlias(alias) {
       if (!alias) return "";
@@ -70,6 +89,17 @@
       return aliasMap;
     }
 
+    function getHostNoWww(urlObject) {
+      return urlObject.hostname.toLowerCase().replace(/^www\./, "");
+    }
+
+    function isShortlinkPath(pathname) {
+      const trimmed = pathname.replace(/^\/+|\/+$/g, "");
+      if (!trimmed) return false;
+      const firstSegment = trimmed.split("/")[0].toLowerCase();
+      return !RESERVED_PATHS.has(firstSegment);
+    }
+
     async function handle404Routing() {
       const path = window.location.pathname;
 
@@ -83,6 +113,7 @@
 
       const trimmedPath = decodeURIComponent(path).replace(/^\/+|\/+$/g, "");
       if (!trimmedPath) {
+        showNotFound();
         return;
       }
 
@@ -90,12 +121,14 @@
       const normalizedSegment = normalizeAlias(firstSegment);
 
       if (!normalizedSegment || RESERVED_PATHS.has(firstSegment.toLowerCase())) {
+        showNotFound();
         return;
       }
 
       try {
         const response = await fetch(WEBRING_DATA_URL);
         if (!response.ok) {
+          showNotFoundAfterDelay();
           return;
         }
 
@@ -105,14 +138,26 @@
         const targetUrl = aliasMap.get(normalizedSegment);
 
         if (targetUrl) {
-          window.location.replace(targetUrl);
+          const currentUrl = new URL(window.location.href);
+          const resolvedTarget = new URL(targetUrl, currentUrl.origin);
+          const targetHostNoWww = getHostNoWww(resolvedTarget);
+          const currentHostNoWww = getHostNoWww(currentUrl);
+
+          // Prevent infinite loops when a member website points back to a shortlink on this same domain.
+          if (targetHostNoWww === currentHostNoWww && isShortlinkPath(resolvedTarget.pathname)) {
+            console.warn("Resolved shortlink points back to webring shortlink path; showing 404.");
+            showNotFoundAfterDelay();
+            return;
+          }
+
+          window.location.replace(resolvedTarget.href);
           return;
         }
 
-        // Unknown shortlink: send users to the main webring instead of leaving them stranded.
-        window.location.replace(WEBRING_HOME_URL);
+        showNotFoundAfterDelay();
       } catch (error) {
         console.error("Could not load redirect data:", error);
+        showNotFoundAfterDelay();
       }
     }
 

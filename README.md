@@ -36,6 +36,7 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
    {
      "name": "Your Name",
      "specialLink": "yourname",
+     "websitedisplay": "https://webring.skule.ca/yourname",  // Optional: website URL shown in the directory table
      "website": "https://your-website.com",
      "program": "Your Program (e.g., Engineering, Arts & Science, etc.)",
      "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
@@ -44,6 +45,8 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
      "badge": "https://your-website.com/badge.png"  // URL to your custom website badge
    }
    ```
+
+`websitedisplay` is optional. If set, the directory's Website column will show and link to that value, while `website` remains the canonical personal site used for navigation logic.
 
 ### Personal Shortlinks
 

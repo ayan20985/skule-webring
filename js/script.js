@@ -191,6 +191,7 @@ function initWebring() {
                 return (
                     (member.name && member.name.toLowerCase().includes(searchTerm)) ||
                     (member.website && member.website.toLowerCase().includes(searchTerm)) ||
+                    (member.websitedisplay && member.websitedisplay.toLowerCase().includes(searchTerm)) ||
                     (member.program && member.program.toLowerCase().includes(searchTerm)) ||
                     (member.faculty && member.faculty.toLowerCase().includes(searchTerm)) || // For backward compatibility
                     (member.designation && member.designation.toLowerCase().includes(searchTerm))
@@ -270,10 +271,13 @@ function renderMembersList(container, membersArray, currentPage, membersPerPage)
         // Add the rest of the row content without using innerHTML so listeners stay attached.
         const websiteCell = document.createElement('td');
         const websiteLink = document.createElement('a');
-        websiteLink.href = member.website;
+        const displayWebsiteRaw = member.websitedisplay || member.website || '';
+        const displayWebsiteUrl = normalizeWebsiteUrl(displayWebsiteRaw);
+        const useDisplayPath = Boolean(member.websitedisplay);
+        websiteLink.href = displayWebsiteUrl;
         websiteLink.target = '_blank';
         websiteLink.rel = 'noopener noreferrer';
-        websiteLink.textContent = formatUrl(member.website);
+        websiteLink.textContent = formatUrl(displayWebsiteUrl, useDisplayPath);
         websiteCell.appendChild(websiteLink);
 
         const nameCell = document.createElement('td');
@@ -399,6 +403,7 @@ function renderPagination(container, totalItems, currentPage, itemsPerPage) {
                 return (
                     (member.name && member.name.toLowerCase().includes(searchTerm)) ||
                     (member.website && member.website.toLowerCase().includes(searchTerm)) ||
+                    (member.websitedisplay && member.websitedisplay.toLowerCase().includes(searchTerm)) ||
                     (member.program && member.program.toLowerCase().includes(searchTerm)) ||
                     (member.faculty && member.faculty.toLowerCase().includes(searchTerm)) ||
                     (member.designation && member.designation.toLowerCase().includes(searchTerm))
@@ -411,13 +416,32 @@ function renderPagination(container, totalItems, currentPage, itemsPerPage) {
     }
 }
 
-// Format URL for display (remove https:// and trailing slashes)
-function formatUrl(url) {
+function normalizeWebsiteUrl(url) {
+    if (!url || typeof url !== 'string') {
+        return '';
+    }
+
+    const trimmedUrl = url.trim();
+    if (!trimmedUrl) {
+        return '';
+    }
+
+    return /^https?:\/\//i.test(trimmedUrl) ? trimmedUrl : `https://${trimmedUrl}`;
+}
+
+// Format URL for display (remove protocol and optionally keep path)
+function formatUrl(url, keepPath = false) {
+    if (!url) {
+        return '';
+    }
+
     // First remove protocol (http:// or https://)
     let formattedUrl = url.replace(/^https?:\/\//, '');
-    
-    // Then extract just the domain name by removing everything after the first slash
-    formattedUrl = formattedUrl.split('/')[0];
+
+    // Optionally show only the domain for cleaner table display.
+    if (!keepPath) {
+        formattedUrl = formattedUrl.split('/')[0];
+    }
     
     // Remove trailing slash if any
     return formattedUrl.replace(/\/$/, '');

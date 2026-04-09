@@ -104,7 +104,8 @@
     {
       "name": "Keting Trinh",
       "specialLink": "keting",
-      "website": "https://webring.skule.ca/keting",
+      "websitedisplay": "https://webring.skule.ca/keting",
+      "website": "https://ketingtrinh.github.io",
       "program": "Mechanical",
       "designation": "BASc",
       "year": "7-25",
@@ -134,7 +135,8 @@
     {
       "name": "Rango LF",
       "specialLink": "rango",
-      "website": "https://webring.skule.ca/rango",
+      "websitedisplay": "https://webring.skule.ca/rango",
+      "website": "https://rango-lf.github.io/rango-lf",
       "program": "Mechanical",
       "designation": "BASc",
       "year": "8-25",
