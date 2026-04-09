@@ -48,6 +48,10 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
 
 `websitedisplay` is optional. If set, the directory's Website column will show and link to that value, while `website` remains the canonical personal site used for navigation logic.
 
+4. Submit a Pull Request.
+
+5. Fill in the student information form in [here](https://docs.google.com/forms/d/e/1FAIpQLSdL70J2n1XTJ9DRo2T2uL_Nzn7Jpl_HiuDwihizBAFw6JufzQ/viewform?usp=sharing&ouid=108594782023550487497).
+
 ### Personal Shortlinks
 
 Members can be reached using a shortlink under the webring domain `https://webring.skule.ca/yourname`. This should look more official than a vercel.app or github.io link if you should desire to use it.
@@ -66,10 +70,6 @@ Recommended format for `specialLink` values:
 - No spaces
 - Keep it short and stable
 - Matching is case-insensitive (`nameDUPLICATE` and `nameduplicate` both resolve)
-
-4. Submit a Pull Request.
-
-5. Fill in the student information form in [here](https://docs.google.com/forms/d/e/1FAIpQLSdL70J2n1XTJ9DRo2T2uL_Nzn7Jpl_HiuDwihizBAFw6JufzQ/viewform?usp=sharing&ouid=108594782023550487497).
 
 ### Maintenance
 
