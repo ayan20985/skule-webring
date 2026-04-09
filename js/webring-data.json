@@ -3,6 +3,7 @@
   "members": [
     {
       "name": "Ayan Ali",
+      "specialLink": "ayan",
       "website": "https://ayanali.net",
       "program": "ECE, EE",
       "designation": "BASc",
@@ -12,6 +13,7 @@
     },
     {
       "name": "Luke Payant",
+      "specialLink": "luke",
       "website": "https://lukepayant.com",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -21,6 +23,7 @@
     },
     {
       "name": "Hayson Cheung",
+      "specialLink": "hayson",
       "website": "https://hayson.me/My_Website",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -30,6 +33,7 @@
     },
     {
       "name": "Eric Xie",
+      "specialLink": "eric",
       "website": "https://erictaoxie.com",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -39,6 +43,7 @@
     },
     {
       "name": "Jet Chiang",
+      "specialLink": "jet",
       "website": "https://jetchiang.co",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -48,6 +53,7 @@
     },
     {
       "name": "Ketevan Gallagher",
+      "specialLink": "ketevan",
       "website": "https://ketevangallagher.com",
       "program": "ECE, CE",
       "designation": "BASc",
@@ -57,6 +63,7 @@
     },
     {
       "name": "Jacky Li",
+      "specialLink": "jacky",
       "website": "https://jakkii.ca",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -66,6 +73,7 @@
     },
     {
       "name": "Sadman Hossain",
+      "specialLink": "sadman",
       "website": "https://sadman.ca",
       "program": "ECE, CE",
       "designation": "BASc",
@@ -75,6 +83,7 @@
     },
     {
       "name": "James Huynh",
+      "specialLink": "james",
       "website": "https://jamesh.skule.ca",
       "program": "ECE, EE",
       "designation": "BASc",
@@ -84,6 +93,7 @@
     },
     {
       "name": "Colin Ye",
+      "specialLink": "colin",
       "website": "https://colinye.tech",
       "program": "Civil",
       "designation": "BASc",
@@ -93,7 +103,8 @@
     },
     {
       "name": "Keting Trinh",
-      "website": "https://ketingtrinh.github.io",
+      "specialLink": "keting",
+      "website": "https://webring.skule.ca/keting",
       "program": "Mechanical",
       "designation": "BASc",
       "year": "7-25",
@@ -102,6 +113,7 @@
     },
     {
       "name": "Vir Patel",
+      "specialLink": "vir",
       "website": "https://virpatel.dev",
       "program": "ECE, CE",
       "designation": "BASc",
@@ -111,6 +123,7 @@
     },
     {
       "name": "Nick Fry",
+      "specialLink": "nick",
       "website": "https://nickfry.ca",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -120,7 +133,8 @@
     },
     {
       "name": "Rango LF",
-      "website": "https://rango-lf.github.io/rango-lf",
+      "specialLink": "rango",
+      "website": "https://webring.skule.ca/rango-lf",
       "program": "Mechanical",
       "designation": "BASc",
       "year": "8-25",
@@ -129,6 +143,7 @@
     },
     {
       "name": "Ted Pinkerton",
+      "specialLink": "ted",
       "website": "https://tedpinkerton.ca",
       "program": "EngSci, MI",
       "designation": "BASc",
@@ -138,6 +153,7 @@
     },
     {
       "name": "Karan Chawla",
+      "specialLink": "karan",
       "website": "https://karan-chawla.com/",
       "program": "EngSci, General",
       "designation": "BASc",
@@ -147,6 +163,7 @@
     },
     {
       "name": "Jaden Park",
+      "specialLink": "jaden",
       "website": "https://jadenpark.ca",
       "program": "Industrial",
       "designation": "BASc",
@@ -156,6 +173,7 @@
     },
     {
       "name": "Ethan Yang",
+      "specialLink": "ethan",
       "website": "https://ethanyang.dev/",
       "program": "ECE, CE",
       "designation": "BASc",
@@ -165,6 +183,7 @@
     },
     {
       "name": "Kelvin Cao",
+      "specialLink": "kelvin",
       "website": "https://kelvincao.ca",
       "program": "Mechanical",
       "designation": "BASc",
@@ -174,6 +193,7 @@
     },
     {
       "name": "Muhiedin Omar",
+      "specialLink": "muhiedin",
       "website": "https://muhiedin.me",
       "program": "ECE, EE",
       "designation": "BASc",
@@ -183,6 +203,7 @@
     },
     {
       "name": "Srijit Iyer",
+      "specialLink": "srijit",
       "website": "https://srijitiyer.com",
       "program": "ECE, CE",
       "designation": "BASc",
@@ -192,12 +213,13 @@
     },
     {
       "name": "Ibrahim Khawar",
+      "specialLink": "ibrahim",
       "website": "https://ibrahimkhawar.com",
       "program": "EngSci",
       "designation": "BASc",
       "year": "4-26",
       "grad": "2T9",
-      "badge": "https://ibrahimkhawar.com/res/website-badge.svg"
+      "badge": "https://www.ibrahimkhawar.com/res/website-badge.svg"
     }
   ]
 }

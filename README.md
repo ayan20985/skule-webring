@@ -35,6 +35,7 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
    ```json
    {
      "name": "Your Name",
+     "specialLink": "yourname",
      "website": "https://your-website.com",
      "program": "Your Program (e.g., Engineering, Arts & Science, etc.)",
      "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
@@ -43,6 +44,25 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
      "badge": "https://your-website.com/badge.png"  // URL to your custom website badge
    }
    ```
+
+### Personal Shortlinks
+
+Members can be reached using a shortlink under the webring domain `https://webring.skule.ca/yourname`. This should look more official than a vercel.app or github.io link if you should desire to use it.
+
+How shortlinks are resolved:
+
+1. The system uses the `specialLink` field when provided.
+2. If `specialLink` is missing, it falls back to a normalized version of `name`.
+3. If two members resolve to the same shortlink, ordering in `js/webring-data.json` wins:
+- First keeps the base shortlink (example: `name`)
+- Second becomes `nameDUPLICATE`
+- Third becomes `nameDUPLICATE2`, and so on
+
+Recommended format for `specialLink` values:
+- Lowercase letters and numbers
+- No spaces
+- Keep it short and stable
+- Matching is case-insensitive (`nameDUPLICATE` and `nameduplicate` both resolve)
 
 4. Submit a Pull Request.
 

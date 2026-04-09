@@ -12,16 +12,111 @@
 </head>
 <body>
   <h1>404 - Page Not Found</h1>
-  <p>If you were looking for a page ending in <code>.html/</code>, you will be redirected automatically.</p>
+  <p>If you were looking for a page ending in <code>.html/</code> or a member shortlink, you will be redirected automatically.</p>
   <p><a href="/">Return to Home</a></p>
   <script>
-    // Redirect /something.html/ to /something.html
-    var path = window.location.pathname;
-    var htmlSlashMatch = path.match(/(.*\.html)\/$/);
-    if (htmlSlashMatch) {
-      var newUrl = htmlSlashMatch[1] + window.location.search + window.location.hash;
-      window.location.replace(newUrl);
+    const WEBRING_HOME_URL = "https://webring.skule.ca/";
+    const WEBRING_DATA_URL = "/js/webring-data.json";
+    const RESERVED_PATHS = new Set([
+      "index.html",
+      "benefits.html",
+      "404.html",
+      "css",
+      "js",
+      "img",
+      "badges",
+      "favicon.ico",
+      "robots.txt",
+      "sitemap.xml",
+      "cname"
+    ]);
+
+    function normalizeAlias(alias) {
+      if (!alias) return "";
+      return alias
+        .toString()
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9-]/g, "");
     }
+
+    function createAliasMap(memberList) {
+      const aliasMap = new Map();
+      const baseAliasCounts = new Map();
+
+      memberList.forEach((member) => {
+        if (!member || !member.website) return;
+
+        const baseAlias = normalizeAlias(member.specialLink || member.name);
+        if (!baseAlias) return;
+
+        const count = baseAliasCounts.get(baseAlias) || 0;
+        baseAliasCounts.set(baseAlias, count + 1);
+
+        let resolvedAlias = baseAlias;
+        if (count >= 1) {
+          resolvedAlias = `${baseAlias}duplicate`;
+          if (count > 1) {
+            resolvedAlias = `${resolvedAlias}${count}`;
+          }
+        }
+
+        // Keep first entry for the base alias; later duplicates become baseAliasDUPLICATE, baseAliasDUPLICATE2, etc.
+        if (!aliasMap.has(resolvedAlias)) {
+          aliasMap.set(resolvedAlias, member.website);
+        }
+      });
+
+      return aliasMap;
+    }
+
+    async function handle404Routing() {
+      const path = window.location.pathname;
+
+      // Redirect /something.html/ to /something.html
+      const htmlSlashMatch = path.match(/(.*\.html)\/$/i);
+      if (htmlSlashMatch) {
+        const newUrl = htmlSlashMatch[1] + window.location.search + window.location.hash;
+        window.location.replace(newUrl);
+        return;
+      }
+
+      const trimmedPath = decodeURIComponent(path).replace(/^\/+|\/+$/g, "");
+      if (!trimmedPath) {
+        return;
+      }
+
+      const firstSegment = trimmedPath.split("/")[0];
+      const normalizedSegment = normalizeAlias(firstSegment);
+
+      if (!normalizedSegment || RESERVED_PATHS.has(firstSegment.toLowerCase())) {
+        return;
+      }
+
+      try {
+        const response = await fetch(WEBRING_DATA_URL);
+        if (!response.ok) {
+          return;
+        }
+
+        const data = await response.json();
+        const memberList = Array.isArray(data.members) ? data.members : [];
+        const aliasMap = createAliasMap(memberList);
+        const targetUrl = aliasMap.get(normalizedSegment);
+
+        if (targetUrl) {
+          window.location.replace(targetUrl);
+          return;
+        }
+
+        // Unknown shortlink: send users to the main webring instead of leaving them stranded.
+        window.location.replace(WEBRING_HOME_URL);
+      } catch (error) {
+        console.error("Could not load redirect data:", error);
+      }
+    }
+
+    handle404Routing();
   </script>
 </body>
 </html> 
