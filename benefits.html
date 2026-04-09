@@ -58,16 +58,8 @@
         <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a> for the <a href="https://skule.ca">SKULE™ Community</a>. Built on Canada Dry, a most interesting beverage.</p>
     </footer>
 
-    <script src="js/webring-data.js"></script>
     <script src="js/script.js"></script>
     <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const benefitsMemberCount = document.getElementById('benefits-member-count');
-                if (benefitsMemberCount && Array.isArray(members)) {
-                    benefitsMemberCount.textContent = members.length;
-                }
-            });
-
       function updateHeaderIcon() {
         const icon = document.getElementById('header-webring-icon');
         if (!icon) return;

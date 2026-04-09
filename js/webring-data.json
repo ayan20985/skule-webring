@@ -1,0 +1,203 @@
+{
+  "lastUpdated": "1st April 2026",
+  "members": [
+    {
+      "name": "Ayan Ali",
+      "website": "https://ayanali.net",
+      "program": "ECE, EE",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://ayanali.net/badge.gif"
+    },
+    {
+      "name": "Luke Payant",
+      "website": "https://lukepayant.com",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://lukepayant.com/badge.gif"
+    },
+    {
+      "name": "Hayson Cheung",
+      "website": "https://hayson.me/My_Website",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://hayson.me/My_Website/badge-ring.gif"
+    },
+    {
+      "name": "Eric Xie",
+      "website": "https://erictaoxie.com",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://erictaoxie.com/webring-badge.png"
+    },
+    {
+      "name": "Jet Chiang",
+      "website": "https://jetchiang.co",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://jetchiang.co/img/badge.png"
+    },
+    {
+      "name": "Ketevan Gallagher",
+      "website": "https://ketevangallagher.com",
+      "program": "ECE, CE",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://ketevangallagher.com/webringBadge.gif"
+    },
+    {
+      "name": "Jacky Li",
+      "website": "https://jakkii.ca",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T8",
+      "badge": "https://www.jakkii.ca/images/webring.png"
+    },
+    {
+      "name": "Sadman Hossain",
+      "website": "https://sadman.ca",
+      "program": "ECE, CE",
+      "designation": "BASc",
+      "year": "5-25",
+      "grad": "2T5",
+      "badge": "https://sadman.ca/badge.gif"
+    },
+    {
+      "name": "James Huynh",
+      "website": "https://jamesh.skule.ca",
+      "program": "ECE, EE",
+      "designation": "BASc",
+      "year": "6-25",
+      "grad": "2T8",
+      "badge": "https://jamesh.skule.ca/assets/badge.png"
+    },
+    {
+      "name": "Colin Ye",
+      "website": "https://colinye.tech",
+      "program": "Civil",
+      "designation": "BASc",
+      "year": "7-25",
+      "grad": "2T8",
+      "badge": "https://colinye.tech/images/badge.png"
+    },
+    {
+      "name": "Keting Trinh",
+      "website": "https://ketingtrinh.github.io",
+      "program": "Mechanical",
+      "designation": "BASc",
+      "year": "7-25",
+      "grad": "2T8",
+      "badge": "https://ketingtrinh.github.io/monke-badge.png"
+    },
+    {
+      "name": "Vir Patel",
+      "website": "https://www.virpatel.dev",
+      "program": "ECE, CE",
+      "designation": "BASc",
+      "year": "8-25",
+      "grad": "2T8",
+      "badge": "https://virpatel.dev/web_badge.gif"
+    },
+    {
+      "name": "Nick Fry",
+      "website": "https://nickfry.ca",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "8-25",
+      "grad": "2T8",
+      "badge": "https://nickfry.ca/badge.png"
+    },
+    {
+      "name": "Rango LF",
+      "website": "https://rango-lf.github.io/rango-lf",
+      "program": "Mechanical",
+      "designation": "BASc",
+      "year": "8-25",
+      "grad": "2T9",
+      "badge": "https://rango-lf.github.io/rango-lf/itsrangobaby.png"
+    },
+    {
+      "name": "Ted Pinkerton",
+      "website": "https://tedpinkerton.ca",
+      "program": "EngSci, MI",
+      "designation": "BASc",
+      "year": "9-25",
+      "grad": "2T4",
+      "badge": "https://tedpinkerton.ca/assets/badge-87af2813ae1eccb8.png"
+    },
+    {
+      "name": "Karan Chawla",
+      "website": "https://www.karan-chawla.com/",
+      "program": "EngSci, General",
+      "designation": "BASc",
+      "year": "9-25",
+      "grad": "2T9",
+      "badge": "https://www.karan-chawla.com/Karan_Chawla_Banner.png"
+    },
+    {
+      "name": "Jaden Park",
+      "website": "https://jadenpark.ca",
+      "program": "Industrial",
+      "designation": "BASc",
+      "year": "11-25",
+      "grad": "2T8",
+      "badge": "https://jadenpark.ca/badge.png"
+    },
+    {
+      "name": "Ethan Yang",
+      "website": "https://ethanyang.dev/",
+      "program": "ECE, CE",
+      "designation": "BASc",
+      "year": "12-25",
+      "grad": "2T9",
+      "badge": "https://ethanyang.dev/badge.png"
+    },
+    {
+      "name": "Kelvin Cao",
+      "website": "https://kelvincao.ca",
+      "program": "Mechanical",
+      "designation": "BASc",
+      "year": "1-26",
+      "grad": "2T5",
+      "badge": "https://kelvincao.ca/badge.gif"
+    },
+    {
+      "name": "Muhiedin Omar",
+      "website": "https://muhiedin.me",
+      "program": "ECE, EE",
+      "designation": "BASc",
+      "year": "1-26",
+      "grad": "2T8 + PEY",
+      "badge": "https://muhiedin.me/icon/icon.gif"
+    },
+    {
+      "name": "Srijit Iyer",
+      "website": "https://srijitiyer.com",
+      "program": "ECE, CE",
+      "designation": "BASc",
+      "year": "4-26",
+      "grad": "2T8",
+      "badge": "https://srijitiyer.com/badge.svg"
+    },
+    {
+      "name": "Ibrahim Khawar",
+      "website": "https://www.ibrahimkhawar.com",
+      "program": "EngSci",
+      "designation": "BASc",
+      "year": "4-26",
+      "grad": "2T9",
+      "badge": "https://www.ibrahimkhawar.com/res/website-badge.svg"
+    }
+  ]
+}

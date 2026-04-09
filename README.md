@@ -1,16 +1,10 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/842176af-1964-47de-9dde-9e747044502a" alt="icon-dark" width="257.5"/>
   <img src="https://github.com/user-attachments/assets/6f41a501-1088-4487-8fbb-81373a58dfe6" alt="icon-light" width="257.5"/>
-   <br>
-  <img width="88" height="31" alt="webring-member" src="https://github.com/user-attachments/assets/bcd44bc1-dd47-4c12-852b-aac3fcf3106d" />
-  <img width="251" height="31" alt="join-the-webring" src="https://github.com/user-attachments/assets/8aec4e4f-1777-4058-a700-4a091a10c585" />
-  <img width="88" height="31" alt="webring-hardhat" src="https://github.com/user-attachments/assets/8327440c-d5dc-4dde-bebf-1a7b4022a573" />
-  <img width="88" height="31" alt="ring" src="https://github.com/user-attachments/assets/d964ad9a-d6a4-4fde-a598-b83d75678252" />
-
 </div>
 
 # SKULE™ WebRing
-
+   
 A WebRing for University of Toronto Engineering students and the broader UofT community. This WebRing connects personal websites, portfolios, and blogs of UofT students, faculty, and alumni.
 
 ## About
@@ -37,16 +31,16 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
 
 2. Add the WebRing widget to your website HTML (template below). 
 
-3. Fork this repository and add your information to the BOTTOM of the `members` array in `js/WebRing-data.js` following this format:
-   ```js
+3. Fork this repository and add your information to the BOTTOM of the `members` array in `js/webring-data.json` following this format:
+   ```json
    {
      "name": "Your Name",
      "website": "https://your-website.com",
      "program": "Your Program (e.g., Engineering, Arts & Science, etc.)",
      "designation": "Your Role (e.g., Undergrad, Grad, Faculty, etc.)",
-     "year": "1-25",  // Month and year added to the WebRing (e.g., 1-25 for January 2025)
-     "grad": "2T5",   // Expected graduation year in UofT format (e.g., 2T5, 2T8) or standard year (2025)
-     "badge": "https://your-website.com/badge.png"  // URL to your custom website badge (required)
+     "year": "1-25",  // Month and year when added to the WebRing (e.g., 1-25 for January 2025)
+     "grad": "2T5",   // Expected graduation year in Engineering format (i.e. 2T5, 2T8) if in engineering, else standard (2025)
+     "badge": "https://your-website.com/badge.png"  // URL to your custom website badge
    }
    ```
 
@@ -156,11 +150,6 @@ Badges must be 88x31 pixels or some multiple of this, they can png, .gif, or .sv
 Inspired by the [XXIIVV WebRing](https://WebRing.xxiivv.com/) and the early web's interconnected spirit.
 
 <div align="center">
-  <img width="88" height="31" alt="webring-member" src="https://github.com/user-attachments/assets/bcd44bc1-dd47-4c12-852b-aac3fcf3106d" />
-  <img width="251" height="31" alt="join-the-webring" src="https://github.com/user-attachments/assets/8aec4e4f-1777-4058-a700-4a091a10c585" />
-  <img width="88" height="31" alt="webring-hardhat" src="https://github.com/user-attachments/assets/8327440c-d5dc-4dde-bebf-1a7b4022a573" />
-  <img width="88" height="31" alt="ring" src="https://github.com/user-attachments/assets/d964ad9a-d6a4-4fde-a598-b83d75678252" />
-  <br>
   <img src="https://github.com/user-attachments/assets/842176af-1964-47de-9dde-9e747044502a" alt="icon-dark" width="257.5"/>
   <img src="https://github.com/user-attachments/assets/6f41a501-1088-4487-8fbb-81373a58dfe6" alt="icon-light" width="257.5"/>
 </div>

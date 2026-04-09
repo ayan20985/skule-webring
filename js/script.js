@@ -1,6 +1,35 @@
+const WEBRING_DATA_PATH = 'js/webring-data.json';
+let members = [];
+let lastUpdated = '';
+
+async function loadWebringData() {
+    try {
+        const response = await fetch(WEBRING_DATA_PATH);
+        if (!response.ok) {
+            throw new Error(`Failed to load data: ${response.status}`);
+        }
+
+        const data = await response.json();
+        members = Array.isArray(data.members) ? data.members : [];
+        lastUpdated = typeof data.lastUpdated === 'string' ? data.lastUpdated : '';
+    } catch (error) {
+        console.error('Unable to load webring data from JSON:', error);
+        members = [];
+        lastUpdated = '';
+    }
+}
+
+function updateBenefitsMemberCount() {
+    const benefitsMemberCount = document.getElementById('benefits-member-count');
+    if (benefitsMemberCount) {
+        benefitsMemberCount.textContent = members.length;
+    }
+}
+
 // Theme Toggle Functionality
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const dataLoadPromise = loadWebringData();
     
     // Check for saved theme preference or prefer-color-scheme
     const savedTheme = localStorage.getItem('theme');
@@ -70,7 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Preload badges on page load
+    await dataLoadPromise;
     preloadBadgeImages();
+
+    updateBenefitsMemberCount();
     
     // Handle report broken link button
     const reportLinkBtn = document.getElementById('report-link');
@@ -98,11 +130,22 @@ function initWebring() {
     const searchInput = document.getElementById('member-search');
     const searchButton = document.getElementById('search-button');
     const paginationContainer = document.getElementById('members-pagination');
+
+    // Only initialize directory features on the homepage where these elements exist.
+    if (!membersList || !memberCountElement || !randomLink || !searchInput || !searchButton || !paginationContainer) {
+        return;
+    }
+
+    if (!Array.isArray(members) || members.length === 0) {
+        memberCountElement.textContent = '0';
+        membersList.innerHTML = '<tr><td colspan="7">No members available.</td></tr>';
+        return;
+    }
     
     // Update the member count
     memberCountElement.textContent = members.length;
     
-    // Update the last updated date from the master variable in webring-data.js
+    // Update the last updated date from the master value in webring-data.json
     if (lastUpdatedElement) {
         lastUpdatedElement.textContent = lastUpdated;
     }
