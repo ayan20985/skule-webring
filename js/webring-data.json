@@ -102,7 +102,7 @@
     },
     {
       "name": "Vir Patel",
-      "website": "https://www.virpatel.dev",
+      "website": "https://virpatel.dev",
       "program": "ECE, CE",
       "designation": "BASc",
       "year": "8-25",
@@ -138,12 +138,12 @@
     },
     {
       "name": "Karan Chawla",
-      "website": "https://www.karan-chawla.com/",
+      "website": "https://karan-chawla.com/",
       "program": "EngSci, General",
       "designation": "BASc",
       "year": "9-25",
       "grad": "2T9",
-      "badge": "https://www.karan-chawla.com/Karan_Chawla_Banner.png"
+      "badge": "https://karan-chawla.com/Karan_Chawla_Banner.png"
     },
     {
       "name": "Jaden Park",
@@ -192,12 +192,12 @@
     },
     {
       "name": "Ibrahim Khawar",
-      "website": "https://www.ibrahimkhawar.com",
+      "website": "https://ibrahimkhawar.com",
       "program": "EngSci",
       "designation": "BASc",
       "year": "4-26",
       "grad": "2T9",
-      "badge": "https://www.ibrahimkhawar.com/res/website-badge.svg"
+      "badge": "https://ibrahimkhawar.com/res/website-badge.svg"
     }
   ]
 }

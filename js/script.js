@@ -444,6 +444,77 @@ function formatGradYear(grad) {
     return grad;
 }
 
+const WEBRING_HOME_URL = 'https://webring.skule.ca';
+
+function normalizePathname(pathname) {
+    if (!pathname || pathname === '/') return '';
+    return pathname.replace(/\/+$/, '');
+}
+
+function parseWebsiteReference(websiteRef) {
+    if (!websiteRef || typeof websiteRef !== 'string') {
+        return null;
+    }
+
+    const trimmed = websiteRef.trim();
+    if (!trimmed) {
+        return null;
+    }
+
+    const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+
+    try {
+        return new URL(withProtocol);
+    } catch {
+        return null;
+    }
+}
+
+function getNormalizedWebsiteParts(websiteRef) {
+    const parsed = parseWebsiteReference(websiteRef);
+    if (!parsed) {
+        return null;
+    }
+
+    const hostname = parsed.hostname.toLowerCase();
+    return {
+        hostnameNoWww: hostname.replace(/^www\./, ''),
+        pathname: normalizePathname(parsed.pathname.toLowerCase())
+    };
+}
+
+function findMemberIndexByWebsiteReference(websiteRef) {
+    const incoming = getNormalizedWebsiteParts(websiteRef);
+    if (!incoming) {
+        return -1;
+    }
+
+    // Prefer full host+path match first when possible.
+    const exactPathMatch = members.findIndex((member) => {
+        const candidate = getNormalizedWebsiteParts(member.website);
+        return candidate &&
+            candidate.hostnameNoWww === incoming.hostnameNoWww &&
+            candidate.pathname === incoming.pathname;
+    });
+
+    if (exactPathMatch !== -1) {
+        return exactPathMatch;
+    }
+
+    // Fallback: host-only match for widgets that omit path and/or www.
+    return members.findIndex((member) => {
+        const candidate = getNormalizedWebsiteParts(member.website);
+        return candidate && candidate.hostnameNoWww === incoming.hostnameNoWww;
+    });
+}
+
+function navigateToWebringHome(reason) {
+    if (reason) {
+        console.warn(reason);
+    }
+    window.location.href = WEBRING_HOME_URL;
+}
+
 // Handle webring navigation (prev/next)
 function handleNavigation(hashString) {
     // Extract website URL and navigation direction from hash
@@ -453,25 +524,36 @@ function handleNavigation(hashString) {
     console.log('Handling navigation for hash:', hashString);
     
     // Ensure members array is loaded before processing navigation
-    if (!members || members.length === 0) {
-        console.error('Members array not loaded, retrying navigation in 100ms');
-        setTimeout(() => handleNavigation(hashString), 100);
+    if (!Array.isArray(members) || members.length === 0) {
+        console.error('Members array not loaded, redirecting to webring homepage');
+        navigateToWebringHome();
         return;
     }
     
-    const [websiteUrl, navQuery] = hashString.substring(1).split('?');
+    const hashPayload = hashString.substring(1);
+    const querySeparator = hashPayload.lastIndexOf('?');
+    const websiteUrl = querySeparator === -1 ? hashPayload : hashPayload.substring(0, querySeparator);
+    const navQuery = querySeparator === -1 ? '' : hashPayload.substring(querySeparator + 1);
     
     if (!websiteUrl) {
         console.error('No website URL found in hash string');
+        navigateToWebringHome();
         return;
     }
     
-    const navDirection = navQuery ? navQuery.split('=')[1] : null;
+    const navDirection = navQuery ? new URLSearchParams(navQuery).get('nav') : null;
     console.log('Navigation direction:', navDirection);
     console.log('Website URL:', websiteUrl);
+
+    if (navDirection !== 'prev' && navDirection !== 'next') {
+        // Just a hash without valid navigation, possibly for embedding the webring
+        console.log('No valid navigation direction specified');
+        return;
+    }
     
     // Special case: If navigating from the webring homepage
-    if (websiteUrl === 'webring.skule.ca' || websiteUrl === 'https://webring.skule.ca') {
+    const normalizedWebsite = getNormalizedWebsiteParts(websiteUrl);
+    if (normalizedWebsite && normalizedWebsite.hostnameNoWww === 'webring.skule.ca') {
         console.log('Navigating from webring homepage');
         if (navDirection === 'next') {
             // Go to first member when clicking next
@@ -487,65 +569,46 @@ function handleNavigation(hashString) {
         return;
     }
     
-    if (navDirection === 'prev' || navDirection === 'next') {
-        // Find the current website in the members array
-        const currentIndex = members.findIndex(member => 
-            member.website === websiteUrl || 
-            member.website === 'https://' + websiteUrl || 
-            member.website === 'http://' + websiteUrl
-        );
-        
-        console.log('Current index in members array:', currentIndex);
-        console.log('Members array length:', members.length);
-        
-        if (currentIndex !== -1) {
-            let targetIndex;
-            
-            if (navDirection === 'prev') {
-                // Go to previous website, or wrap around to the last one
-                targetIndex = currentIndex === 0 ? members.length - 1 : currentIndex - 1;
-                console.log('Previous navigation: current index', currentIndex, '-> target index', targetIndex);
-            } else {
-                // Go to next website, or wrap around to the first one
-                targetIndex = (currentIndex + 1) % members.length;
-                console.log('Next navigation: current index', currentIndex, '-> target index', targetIndex);
-            }
-            
-            // Validate target index
-            if (targetIndex < 0 || targetIndex >= members.length) {
-                console.error('Invalid target index:', targetIndex, 'for members array of length:', members.length);
-                window.location.href = members[0].website;
-                return;
-            }
-            
-            const targetMember = members[targetIndex];
-            if (!targetMember || !targetMember.website) {
-                console.error('Invalid target member at index:', targetIndex);
-                window.location.href = members[0].website;
-                return;
-            }
-            
-            console.log('Target index:', targetIndex);
-            console.log('Target member:', targetMember.name);
-            console.log('Navigating to:', targetMember.website);
-            
-            // Navigate to the target website
-            window.location.href = targetMember.website;
-        } else {
-            // If website not found in members array, go to first member
-            console.log('Website not found in members array, going to first member');
-            console.log('Searched for variations:', [
-                websiteUrl,
-                'https://' + websiteUrl,
-                'http://' + websiteUrl
-            ]);
-            console.log('Available websites:', members.map(m => m.website));
-            window.location.href = members[0].website;
-        }
-    } else {
-        // Just a hash without navigation, possibly for embedding the webring
-        console.log('No navigation direction specified');
+    // Find the current website in the members array, allowing www/no-www/path differences.
+    const currentIndex = findMemberIndexByWebsiteReference(websiteUrl);
+    
+    console.log('Current index in members array:', currentIndex);
+    console.log('Members array length:', members.length);
+    
+    if (currentIndex === -1) {
+        navigateToWebringHome(`Website not found in members array: ${websiteUrl}`);
+        return;
     }
+
+    let targetIndex;
+    if (navDirection === 'prev') {
+        // Go to previous website, or wrap around to the last one
+        targetIndex = currentIndex === 0 ? members.length - 1 : currentIndex - 1;
+        console.log('Previous navigation: current index', currentIndex, '-> target index', targetIndex);
+    } else {
+        // Go to next website, or wrap around to the first one
+        targetIndex = (currentIndex + 1) % members.length;
+        console.log('Next navigation: current index', currentIndex, '-> target index', targetIndex);
+    }
+
+    // Validate target index
+    if (targetIndex < 0 || targetIndex >= members.length) {
+        navigateToWebringHome(`Invalid target index: ${targetIndex}`);
+        return;
+    }
+
+    const targetMember = members[targetIndex];
+    if (!targetMember || !targetMember.website) {
+        navigateToWebringHome(`Invalid target member at index: ${targetIndex}`);
+        return;
+    }
+
+    console.log('Target index:', targetIndex);
+    console.log('Target member:', targetMember.name);
+    console.log('Navigating to:', targetMember.website);
+    
+    // Navigate to the target website
+    window.location.href = targetMember.website;
 } 
 
 // Table Scroll Indicators
