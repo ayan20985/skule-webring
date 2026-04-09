@@ -595,7 +595,7 @@ footer {
   transform: none;
 }
 
-/* Badge Row (for button.html) */
+/* Badge Row */
 .badge-row {
   display: flex;
   justify-content: center;
@@ -616,7 +616,7 @@ footer {
   }
 }
 
-/* Email Example (for button.html) */
+/* Email Example */
 .email-example {
   background: var(--code-bg);
   padding: 1em;

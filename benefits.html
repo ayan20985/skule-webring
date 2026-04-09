@@ -36,7 +36,7 @@
             </p>
             <p>
                 Every member of the SKULE WebRing creates high-quality backlinks to your website. 
-                Search engines like Google use backlinks as a key ranking factor. With <strong>10 active members</strong> and growing, you gain authoritative backlinks from fellow UofT engineering students and alumni.
+                Search engines like Google use backlinks as a key ranking factor. With <strong><span id="benefits-member-count">0</span> active members</strong> and growing, you gain authoritative backlinks from fellow UofT engineering students and alumni.
             </p>
             <p>
                 These backlinks are from <strong>relevant, high-quality websites</strong> in your field, which Google values much more highly than random or low-quality links.
@@ -57,29 +57,17 @@
     <footer style="display: flex; justify-content: center;">
         <p>Created by <a href="https://ayanali.net">Ayan Ali 2T8</a> for the <a href="https://skule.ca">SKULE™ Community</a>. Built on Canada Dry, a most interesting beverage.</p>
     </footer>
-    <style>s
-      @media (max-width: 600px) {
-        .footer-badges {
-          flex-wrap: wrap;
-          gap: 8px !important;
-          margin: 1rem 0 !important;
-          justify-content: center;
-        }
-        .footer-badges img {
-          margin-bottom: 6px;
-        }
-      }
-    </style>
-    <div class="footer-badges" style="display: flex; justify-content: center; align-items: center; gap: 0; margin: 0;">
-        <a href="button.html"><img src="https://webring.skule.ca/img/webring-member.png" alt="SKULE Webring Member Badge" width="88" height="31" /></a>
-        <a href="button.html"><img src="https://webring.skule.ca/img/join-the-webring.png" alt="Join the SKULE Webring Banner" width="251" height="31" /></a>
-        <a href="button.html"><img src="https://webring.skule.ca/img/webring-hardhat.png" alt="SKULE Webring Hardhat Badge" width="88" height="31" /></a>
-        <a href="button.html"><img src="https://webring.skule.ca/img/ring.png" alt="RING Badge" width="88" height="31" /></a>
-    </div>
 
     <script src="js/webring-data.js"></script>
     <script src="js/script.js"></script>
     <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const benefitsMemberCount = document.getElementById('benefits-member-count');
+                if (benefitsMemberCount && Array.isArray(members)) {
+                    benefitsMemberCount.textContent = members.length;
+                }
+            });
+
       function updateHeaderIcon() {
         const icon = document.getElementById('header-webring-icon');
         if (!icon) return;

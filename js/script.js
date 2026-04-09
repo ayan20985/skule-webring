@@ -134,10 +134,8 @@ function initWebring() {
         performSearch();
     });
     
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
+    searchInput.addEventListener('input', () => {
+        performSearch();
     });
     
     function performSearch() {
