@@ -29,7 +29,7 @@ The SKULE™ WebRing connects websites of UofT SKULE™ members through a retro-
 
 3. **Widget Integration** - The WebRing widget must be included on your website in an accessible location (preferably in the footer or sidebar).
 
-4. **UofT Affiliation** - You must be a UofT student, alumni, faculty, or staff member.
+4. **UofT Affiliation** - You must be a UofT student, alumni, faculty, or staff member that is in the Faculty of Applied Science and Engineering. Special consideration can be granted by sending an email to [webring@skule.ca](mailto:webring@skule.ca).
 
 ### Join Process
 
