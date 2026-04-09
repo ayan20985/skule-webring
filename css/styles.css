@@ -31,48 +31,6 @@
   box-sizing: border-box;
 }
 
-/* Background Canvas */
-#background-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.35; /* Slightly reduced opacity for light mode */
-  pointer-events: auto; /* Allow interacting with the canvas */
-  will-change: transform; /* Force hardware acceleration */
-  transform: translateZ(0); /* Force GPU rendering */
-  backface-visibility: hidden; /* Helps with rendering on mobile devices */
-}
-
-[data-theme="dark"] #background-canvas {
-  opacity: 0.6; /* Increased opacity for dark mode */
-}
-
-/* Apply a mask to fade the background in the center where content is */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-  /* Inverted radial gradient - transparent at edges, solid in center */
-  background: radial-gradient(
-    circle at center,
-    var(--bg-color) 0%,
-    rgba(var(--bg-color-rgb), 0.85) 40%,
-    rgba(var(--bg-color-rgb), 0.5) 70%,
-    rgba(var(--bg-color-rgb), 0) 100%
-  );
-  will-change: opacity; /* Force hardware acceleration */
-  transform: translateZ(0); /* Force GPU rendering */
-  backface-visibility: hidden; /* Helps with rendering */
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -181,15 +139,6 @@ header {
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--text-color);
-}
-
-/* Background toggle specific styles */
-.bg-toggle-off .bg-icon {
-  opacity: 0.5;
-}
-
-.bg-toggle-on .bg-icon {
-  opacity: 1;
 }
 
 /* Main Content */

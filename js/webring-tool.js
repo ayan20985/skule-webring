@@ -16,28 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Theme Toggle Functionality (from original code)
   const themeToggleBtn = document.getElementById("theme-toggle-btn")
-  const bgToggleBtn = document.getElementById("bg-toggle-btn")
 
   // Check for saved theme preference or prefer-color-scheme
   const savedTheme = localStorage.getItem("theme")
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 
-  // Check for saved background preference, default to off
-  const savedBgState = localStorage.getItem("bgEnabled")
-  const bgEnabled = savedBgState ? savedBgState === "true" : false // Default to off
-
   // Apply theme based on saved preference or system preference
   if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
     document.body.setAttribute("data-theme", "dark")
-  }
-
-  // Apply background state based on saved preference
-  if (bgEnabled) {
-    document.getElementById("background-canvas").style.display = "block"
-    bgToggleBtn.className = "bg-toggle-on"
-  } else {
-    document.getElementById("background-canvas").style.display = "none"
-    bgToggleBtn.className = "bg-toggle-off"
   }
 
   // Toggle theme on button click
@@ -45,15 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentTheme = document.body.getAttribute("data-theme") === "dark" ? "light" : "dark"
     document.body.setAttribute("data-theme", currentTheme)
     localStorage.setItem("theme", currentTheme)
-  })
-
-  // Toggle background on button click
-  bgToggleBtn.addEventListener("click", () => {
-    const isEnabled = bgToggleBtn.className === "bg-toggle-on"
-    const newState = !isEnabled
-    document.getElementById("background-canvas").style.display = newState ? "block" : "none"
-    bgToggleBtn.className = newState ? "bg-toggle-on" : "bg-toggle-off"
-    localStorage.setItem("bgEnabled", newState)
   })
 
   // Webring Tool Functionality

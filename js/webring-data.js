@@ -139,9 +139,7 @@ const members = [
         designation: "BASc",
         year: "9-25", 
         grad: "2T4",
-        // this badge has been converted to a palceholder badge as it goes to a undefined link.
-        // badge: "https://tedpinkerton.ca/assets/badge-87af2813ae1eccb8.png"
-        badge: "https://webring.skule.ca/badges/default-badge.png"
+        badge: "https://tedpinkerton.ca/assets/badge-87af2813ae1eccb8.png"
     },
     {
          name: "Karan Chawla",
